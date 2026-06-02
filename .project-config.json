@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663702552407/BQZ3mZXWwzZe6WnFsghK6k",
+    "access_key_id": "ASIAZV3A2ECZOSZHLBFD",
+    "secret_access_key": "VbV1SiKDZ8uM0ydXqFnhZ0K7VD+Osz5N15cd1Wa8",
+    "session_token": "IQoJb3JpZ2luX2VjEOT//////////wEaCXVzLWVhc3QtMSJHMEUCIEBRQ3R/nR2/MJ8J1RQg8jQCAhPoXd/ltAWsUTA8xv3vAiEA+orrEfBe1kzelXLbRvaUftLzxyv3uEqlHFDErkbMeLQq/wMIrP//////////ARAEGgw2NjUzODYwOTg4NjYiDOos6pZkMTmd4cvWRCrTAzavY62pFMZFzPCREwrcotSI4licDR7UTxraaNTqzsSbyK5dEHDV6DTS0Pra1vHMCbguM93v5L7xv2BtlB9giZIyt40e0Dh+WmbKySZU9ffYrqnOY5eNswynUaTYtAyyny3T1HgV3n0vsUWmCOm4amfhBl8ytwF+aupxXZ8f3PemRWot4CsJ5Fyjz0wgzeGFNH06QP557eYXfsG5c18dp/UC5Sz55ig2Ke2IN8J+Jr8+MaXuRKFwCshlMiEQgBKr89DthJozlsYE4Q+/8BCKyqKU5sTdaybW3FaI45sq0aB7b/g4agfzFNQd24zYBk+NZvcWcMqEf0gaiPEGDBrAI+0RaGsqcuCwl8/HomvvtQlvxFUtOhbGsY7UTeiqkysfLy8RBP2zTPsbTuxCMJlkp8ji/SudTb/9wbnpcKuld3VQgqEl1W/M2R5Bv82MEfk1aWStU38EiogadMEj7clJIC91GhNKXxi0S03+4LolMWzAC1I+Euwwvj5y9X/keoHRKluw8AwTPpLhmR+8HsQ8SiNM6nTXiQQDpLLqDmPQW59Q+ntI1YwPIT3H2JCgs/Nldclp8LWLRXyyj5JX4I8erl+s5v7Tc68IMJQi+clMO5hEBYeUMKnF4NAGOp0BP8mqbJILR7bV7iQ91W6fsnL/d7UN86btGPHy26IiEvTaogVciR4q2W2h7n2HOj9fxhl4oUIYj0v1e+1WUNRjmYljncmAhjd9xiIeyUD5nNcur5WmcNwKrmaxSqzP4qc3IaqYzqgGCp5dGvpXQaSMxKbwhIeImAgYp3jTMgH4h6kl3BudovNQjkwGhygFO19+3wobm+zc/mlC1927cg==",
+    "expiration": "2026-05-28T23:10:33.000Z"
+  },
+  "name": "geenie-styleguide-website",
+  "path": "/home/ubuntu/geenie-styleguide-website",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "ctgjDwZx8d5fYqDb8uQCWT",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "dz6q29HkCsMn7JbwmPDd4m",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "yannis.denzler",
+    "OWNER_OPEN_ID": "dkJzjX4EJtqzQSx5WA4d9W",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "ef1a065c-10aa-4962-93a6-b97f991c35c9",
+    "VITE_APP_ID": "BQZ3mZXWwzZe6WnFsghK6k",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Geenie Media Styleguide",
+    "VITE_FRONTEND_FORGE_API_KEY": "4rxLNECF8gQWS4BiZGQbqf",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
