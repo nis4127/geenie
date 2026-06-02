@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  /* Geenie Media Custom Brand Colors */
+  --color-geenie-black: #050505;
+  --color-geenie-graphite: #111318;
+  --color-geenie-grey: #242832;
+  --color-geenie-white: #F6F4EA;
+  --color-geenie-gold: #FFD400;
+  --color-geenie-lime: #DEFF9A;
+  --color-geenie-blue: #1B6BFF;
+}
+
+:root {
+  --radius: 0.5rem;
+  
+  /* Dark Mode standardmässig als Root für den "Dark Workspace" / "Tactical Magic" Stil */
+  --background: #050505; /* Operator Black */
+  --foreground: #F6F4EA; /* Signal White */
+  
+  --card: #111318; /* Graphite System */
+  --card-foreground: #F6F4EA;
+  
+  --popover: #111318;
+  --popover-foreground: #F6F4EA;
+  
+  --primary: #FFD400; /* Geenie Gold */
+  --primary-foreground: #050505;
+  
+  --secondary: #242832; /* Tactical Grey */
+  --secondary-foreground: #F6F4EA;
+  
+  --muted: #242832;
+  --muted-foreground: #94A3B8;
+  
+  --accent: #DEFF9A; /* System Lime */
+  --accent-foreground: #050505;
+  
+  --destructive: #FF4D4F;
+  --destructive-foreground: #FFFFFF;
+  
+  --border: #242832;
+  --input: #242832;
+  --ring: #FFD400;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1440px;
+    }
+  }
+}
