@@ -41,18 +41,14 @@ export default function Home() {
     setIsSubmitting(true);
 
     try {
-      // Wir nutzen Web3Forms für den direkten E-Mail-Versand aus dem statischen Frontend an geenie.schweiz@gmail.com
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Formspree Integration
+      const response = await fetch("https://formspree.io/f/mlgvqkba", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json"
         },
         body: JSON.stringify({
-          // Dieser öffentliche Web3Forms-Zugriffsschlüssel leitet die Mails direkt an geenie.schweiz@gmail.com weiter
-          access_key: "66708682-1433-4700-8438-e6b360b9f074", 
-          subject: `Neue Geenie System-Check Anfrage von ${formData.company}`,
-          from_name: "Geenie Media Website",
           name: formData.name,
           email: formData.email,
           company: formData.company,
@@ -61,10 +57,8 @@ export default function Home() {
         })
       });
 
-      const result = await response.json();
-
-      if (result.success) {
-        toast.success("Anfrage erfolgreich gesendet! Wir haben eine Bestätigung an geenie.schweiz@gmail.com übermittelt.");
+      if (response.ok) {
+        toast.success("Anfrage erfolgreich gesendet! Wir melden uns in Kürze.");
         setSystemCheckOpen(false);
         setFormData({ name: "", email: "", company: "", phone: "" });
       } else {
