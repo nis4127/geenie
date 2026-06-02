@@ -26,6 +26,7 @@ import { toast } from "sonner";
 
 export default function Home() {
   const [systemCheckOpen, setSystemCheckOpen] = useState(false);
+  const [impressumOpen, setImpressumOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"0-to-1" | "framing" | "hacking">("0-to-1");
   const [mobileMenuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", company: "", phone: "" });
@@ -693,17 +694,16 @@ export default function Home() {
             <div>
               <h4 className="text-xs font-mono text-[#DEFF9A] uppercase tracking-wider mb-4">Rechtliches</h4>
               <ul className="space-y-2 text-xs">
-                <li><a href="https://help.manus.im" target="_blank" rel="noreferrer" className="hover:text-[#DEFF9A] transition-colors">Impressum</a></li>
-                <li><a href="https://help.manus.im" target="_blank" rel="noreferrer" className="hover:text-[#DEFF9A] transition-colors">Datenschutz</a></li>
+                <li><button onClick={() => setImpressumOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Impressum & Datenschutz</button></li>
                 <li className="text-slate-400 font-mono text-[10px]">VERSION: 2.0.0 (CH)</li>
               </ul>
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <p>&copy; 2026 Geenie. Alle Rechte vorbehalten. Konsequent umgesetzt in der Schweiz.</p>
+            <p>&copy; 2026 Geenie Media. Alle Rechte vorbehalten. Konsequent umgesetzt in der Schweiz.</p>
             <div className="flex gap-6">
-              <a href="https://help.manus.im" target="_blank" rel="noreferrer" className="hover:text-[#DEFF9A] transition-colors">Feedback &amp; Support</a>
+              <a href="mailto:geenie.schweiz@gmail.com" className="hover:text-[#DEFF9A] transition-colors">Feedback &amp; Support</a>
             </div>
           </div>
         </div>
@@ -789,6 +789,58 @@ export default function Home() {
                 )}
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Interactive Impressum Modal */}
+      {impressumOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-[#111318] border border-[#242832] rounded-lg p-6 sm:p-10 max-w-2xl w-full relative max-h-[85vh] overflow-y-auto">
+            <button 
+              onClick={() => setImpressumOpen(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-[#F6F4EA] transition-colors"
+            >
+              <XCircle className="w-6 h-6" />
+            </button>
+
+            <h3 className="text-3xl font-bold text-[#F6F4EA] mb-8 font-sans">Impressum</h3>
+            
+            <div className="space-y-6 text-sm text-slate-400 leading-relaxed">
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontaktadresse & Betreiber</h4>
+                <p className="text-[#F6F4EA] font-medium">Geenie Media</p>
+                <p>Yannis Denzler</p>
+                <p>Pestalozzistrasse 68a</p>
+                <p>4132 Muttenz</p>
+                <p>Schweiz</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontakt</h4>
+                <p>E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#1B6BFF] hover:underline">geenie.schweiz@gmail.com</a></p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Unternehmens-Identifikationsnummer (UID)</h4>
+                <p>CHE-260.224.627</p>
+              </div>
+
+              <div className="pt-6 border-t border-[#242832]">
+                <h4 className="text-[#F6F4EA] font-bold mb-2">Haftungsausschluss</h4>
+                <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#F6F4EA] font-bold mb-2">Haftung für Links</h4>
+                <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#F6F4EA] font-bold mb-2">Urheberrechte</h4>
+                <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich Geenie Media oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
+              </div>
+            </div>
           </div>
         </div>
       )}
