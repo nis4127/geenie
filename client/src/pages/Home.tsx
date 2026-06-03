@@ -648,7 +648,7 @@ export default function Home() {
       <footer className="bg-[#050505] text-slate-500 py-16 border-t border-[#242832] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
           <img 
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663702552407/BQZ3mZXWwzZe6WnFsghK6k/geenie_abstract_footer-fx7AgbG36FeUoSmeDyscw3.webp" 
+            src="/manus-storage/geenie-cta-bg.png" 
             alt="Abstract Footer Background" 
             className="w-full h-full object-cover"
           />
