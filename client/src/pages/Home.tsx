@@ -621,7 +621,7 @@ export default function Home() {
       <section className="py-24 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
           <img 
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663702552407/BQZ3mZXWwzZe6WnFsghK6k/geenie_brand_values-W8R67SVFRcR3DLuuHkG9NQ.webp" 
+            src="/manus-storage/geenie-cta-bg.png" 
             alt="Brand Values Background" 
             className="w-full h-full object-cover"
           />
