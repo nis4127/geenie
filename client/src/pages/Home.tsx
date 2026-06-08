@@ -89,7 +89,7 @@ export default function Home() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="/manus-storage/Sekundärlogo_Geenie_farbig.svg" 
+              src="/manus-storage/sekundärlogo_geenie_farbig.svg" 
               alt="Geenie Icon" 
               className="w-8 h-8 object-contain"
             />
