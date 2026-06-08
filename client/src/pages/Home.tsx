@@ -149,7 +149,7 @@ export default function Home() {
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-30 mix-blend-screen pointer-events-none">
           <img 
-            src="client/public/manus-storage/geenie-cta-bg.png" 
+            src="/manus-storage/geenie-cta-bg.png" 
             alt="Abstract Background" 
             className="w-full h-full object-cover"
           />
@@ -296,7 +296,7 @@ export default function Home() {
             <div className="lg:col-span-7">
               <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
-                  <img src="/manus-storage/sekundärlogo_geenie_schwarz-weiss" alt="Geenie Icon" />
+                  <img src="/manus-storage/sekundärlogo_geenie_schwarz-weiss.svg" alt="Geenie Icon" />
                 </div>
                 
                 <h3 className="text-lg font-mono text-[#DEFF9A] tracking-widest uppercase mb-6">Der Geenie-Unterschied</h3>
@@ -621,7 +621,7 @@ export default function Home() {
       <section className="py-24 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
           <img 
-            src="client/public/manus-storage/geenie-cta-bg.png" 
+            src="/manus-storage/geenie-cta-bg.png" 
             alt="Brand Values Background" 
             className="w-full h-full object-cover"
           />
@@ -648,7 +648,7 @@ export default function Home() {
       <footer className="bg-[#050505] text-slate-500 py-16 border-t border-[#242832] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
           <img 
-            src="client/public/manus-storage/geenie-cta-bg.png" 
+            src="/manus-storage/geenie-cta-bg.png" 
             alt="Abstract Footer Background" 
             className="w-full h-full object-cover"
           />
@@ -658,7 +658,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <img 
-                  src="/manus-storage/Sekundärlogo_Geenie_farbig.svg" 
+                  src="/manus-storage/sekundärlogo_geenie_farbig.svg" 
                   alt="Geenie Icon" 
                   className="w-8 h-8 object-contain"
                 />
