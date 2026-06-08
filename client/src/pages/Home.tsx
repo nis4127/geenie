@@ -296,7 +296,7 @@ export default function Home() {
             <div className="lg:col-span-7">
               <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
-                  <img src="/manus-storage/BildspracheIcon_weissschwarz_DarkMode_46b2a613.png" alt="Geenie Icon" />
+                  <img src="/manus-storage/sekundärlogo_geenie_schwarz-weiss" alt="Geenie Icon" />
                 </div>
                 
                 <h3 className="text-lg font-mono text-[#DEFF9A] tracking-widest uppercase mb-6">Der Geenie-Unterschied</h3>
