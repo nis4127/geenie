@@ -149,7 +149,7 @@ export default function Home() {
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-30 mix-blend-screen pointer-events-none">
           <img 
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663702552407/BQZ3mZXWwzZe6WnFsghK6k/geenie_hero_banner-W7Q57SVFRcR3DLuuHkG9NQ.webp" 
+            src="client/public/manus-storage/geenie-cta-bg.png" 
             alt="Abstract Background" 
             className="w-full h-full object-cover"
           />
@@ -621,7 +621,7 @@ export default function Home() {
       <section className="py-24 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
           <img 
-            src="/manus-storage/geenie-cta-bg.png" 
+            src="client/public/manus-storage/geenie-cta-bg.png" 
             alt="Brand Values Background" 
             className="w-full h-full object-cover"
           />
@@ -648,7 +648,7 @@ export default function Home() {
       <footer className="bg-[#050505] text-slate-500 py-16 border-t border-[#242832] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
           <img 
-            src="/manus-storage/geenie-cta-bg.png" 
+            src="client/public/manus-storage/geenie-cta-bg.png" 
             alt="Abstract Footer Background" 
             className="w-full h-full object-cover"
           />
