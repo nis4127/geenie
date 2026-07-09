@@ -20,7 +20,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
   const navLinks = [
     { name: "Strategie & Consulting", href: "/" },
     { name: "Kreation & Umsetzung", href: "/kreation" },
-    { name: "Über uns", href: "/#positioning" },
+    { name: "Über uns", href: "/ueber-uns" },
     { name: "Kontakt", href: "/projektanfrage" },
   ];
 
