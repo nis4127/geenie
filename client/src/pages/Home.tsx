@@ -89,10 +89,10 @@ export default function Home() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="/manus-storage/sekundärlogo_geenie_farbig.svg" 
-              alt="Geenie Icon" 
-              className="w-8 h-8 object-contain"
-            />
+  src="/manus-storage/logo-primaer-farbig.png" 
+  alt="Geenie Logo" 
+  className="w-auto h-10 object-contain" 
+/>
             <div>
               <span className="font-sans font-bold text-lg tracking-wider block">GEENIE</span>
               <span className="text-[9px] tracking-widest text-[#DEFF9A] uppercase font-mono block">Growth Operator</span>
