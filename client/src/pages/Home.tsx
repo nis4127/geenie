@@ -89,7 +89,7 @@ export default function Home() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="/assets/logo-primaer-farbig.png" 
+              src="/assets/logo-primaer-farbig.svg" 
               alt="Geenie Logo" 
               className="w-auto h-10 object-contain" 
             />
@@ -308,8 +308,9 @@ export default function Home() {
             
             <div className="lg:col-span-7 relative">
               <div className="aspect-square sm:aspect-video rounded-2xl bg-[#111318] border border-[#242832] overflow-hidden relative">
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
-                  <img src="/assets/sekundaerlogo-geenie-schwarz-weiss.svg" alt="Geenie Icon" />
+                {/* Abstract Background for the feature box */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                  <img src="/assets/geenie-cta-bg.png" alt="Background" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12">
                   <div className="grid grid-cols-2 gap-4 w-full h-full">
@@ -544,7 +545,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Social Proof Section (Restored) */}
+      {/* 7. Social Proof Section */}
       <section id="social-proof" className="py-20 bg-[#050505] border-b border-[#242832]">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -666,7 +667,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
               <img 
-                src="/assets/logo-primaer-farbig.png" 
+                src="/assets/logo-primaer-farbig.svg" 
                 alt="Geenie Logo" 
                 className="w-auto h-8 object-contain" 
               />
