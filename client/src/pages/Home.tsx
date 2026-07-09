@@ -164,7 +164,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#242832] max-w-6xl mx-auto border border-[#242832]">
             <div className="bg-[#050505] p-12 transition-all group">
               <div className="space-y-6">
-                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Fehler 01</span>
+                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Engpass 01</span>
                 <h3 className="text-2xl font-bold text-[#F6F4EA] uppercase">Digitale Unsichtbarkeit</h3>
                 <p className="text-slate-400 leading-relaxed font-medium">
                   Deine Arbeit ist exzellent, aber deine Webseite ist ein Relikt. Langsame Ladezeiten und fehlende mobile Optimierung lassen Premium-Kunden abspringen, bevor der erste Kontakt entsteht.
@@ -174,7 +174,7 @@ export default function Home() {
 
             <div className="bg-[#050505] p-12 transition-all group">
               <div className="space-y-6">
-                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Fehler 02</span>
+                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Engpass 02</span>
                 <h3 className="text-2xl font-bold text-[#F6F4EA] uppercase">Die Vergleichbarkeits-Falle</h3>
                 <p className="text-slate-400 leading-relaxed font-medium">
                   Ohne klare Positionierung wirst du über den Preis verglichen. Du verkaufst dich unter Wert, weil dein digitaler Auftritt deine fachliche Autorität nicht widerspiegelt.
@@ -184,7 +184,7 @@ export default function Home() {
 
             <div className="bg-[#050505] p-12 transition-all group">
               <div className="space-y-6">
-                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Fehler 03</span>
+                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Engpass 03</span>
                 <h3 className="text-2xl font-bold text-[#F6F4EA] uppercase">Vertrauens-Vakuum</h3>
                 <p className="text-slate-400 leading-relaxed font-medium">
                   Schlechtes Design signalisiert unbewusst operative Schwäche. Wer digital nicht präzise auftritt, dem traut man auch bei der eigentlichen Dienstleistung keine Perfektion zu.
@@ -194,7 +194,7 @@ export default function Home() {
 
             <div className="bg-[#050505] p-12 transition-all group">
               <div className="space-y-6">
-                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Fehler 04</span>
+                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Engpass 04</span>
                 <h3 className="text-2xl font-bold text-[#F6F4EA] uppercase">Budget-Verbrennung</h3>
                 <p className="text-slate-400 leading-relaxed font-medium">
                   Marketing ohne System ist Glücksspiel. Ohne technische und psychologische Optimierung verpuffen Werbeausgaben wirkungslos, statt qualifizierte Anfragen zu generieren.
@@ -225,7 +225,7 @@ export default function Home() {
                 Wir sind keine typische Marketingagentur, die dich mit Buzzwords überhäuft, und kein Anbieter von kurzlebigen Social-Media-Gimmicks. 
               </p>
               <p className="text-slate-400 leading-relaxed">
-                Geenie agiert als dein **Fractional CMO**, der das grosse Ganze im Blick behält: Von der strategischen Positionierung über die technische Exzellenz bis hin zur messbaren Lead-Generierung.
+                Geenie agiert als dein **strategischer Marketing-Partner**, der das grosse Ganze im Blick behält: Von der strategischen Positionierung über die technische Exzellenz bis hin zur messbaren Lead-Generierung.
               </p>
               
               <div className="space-y-4 pt-4">
