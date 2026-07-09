@@ -34,7 +34,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
           <Link href="/">
             <a className="flex items-center gap-4 cursor-pointer group">
               <img 
-                src="/assets/sekundaerlogo-geenie-farbig.svg" 
+                src="/assets/logo-primaer-schwarz-weiss.svg" 
                 alt="Geenie Logo" 
                 className="w-auto h-12 object-contain" 
               />
@@ -99,7 +99,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-4">
               <img 
-                src="/assets/sekundaerlogo-geenie-farbig.svg" 
+                src="/assets/logo-primaer-schwarz-weiss.svg" 
                 alt="Geenie Logo" 
                 className="w-auto h-10 object-contain" 
               />
