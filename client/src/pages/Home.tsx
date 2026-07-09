@@ -22,13 +22,12 @@ import {
   BarChart3,
   Award
 } from "lucide-react";
+import { Link } from "wouter";
 import { toast } from "sonner";
+import Layout from "../components/Layout";
 
 export default function Home() {
   const [systemCheckOpen, setSystemCheckOpen] = useState(false);
-  const [impressumOpen, setImpressumOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<"0-to-1" | "framing" | "hacking">("0-to-1");
-  const [mobileMenuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", company: "", phone: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -42,7 +41,6 @@ export default function Home() {
     setIsSubmitting(true);
 
     try {
-      // Formspree Integration
       const response = await fetch("https://formspree.io/f/mlgvqkba", {
         method: "POST",
         headers: {
@@ -78,73 +76,10 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setMenuOpen(false);
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F6F4EA] flex flex-col font-sans selection:bg-[#DEFF9A] selection:text-[#050505]">
-      
-      {/* 1. Navigation Header */}
-      <header className="sticky top-0 z-50 bg-[#050505] border-b border-[#242832] backdrop-blur-md bg-opacity-90">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img 
-              src="/assets/logo-primaer-farbig.svg" 
-              alt="Geenie Logo" 
-              className="w-auto h-10 object-contain" 
-            />
-            <div>
-              <span className="font-sans font-bold text-lg tracking-wider block">GEENIE</span>
-              <span className="text-[9px] tracking-widest text-[#DEFF9A] uppercase font-mono block">Growth Operator</span>
-            </div>
-          </div>
-
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
-            <button onClick={() => scrollToSection("problem")} className="text-slate-400 hover:text-[#DEFF9A] transition-colors">Das Problem</button>
-            <button onClick={() => scrollToSection("positioning")} className="text-slate-400 hover:text-[#DEFF9A] transition-colors">Unser Ansatz</button>
-            <button onClick={() => scrollToSection("services")} className="text-slate-400 hover:text-[#DEFF9A] transition-colors">Kernsäulen</button>
-            <button onClick={() => scrollToSection("transformation")} className="text-slate-400 hover:text-[#DEFF9A] transition-colors">Transformation</button>
-            <button onClick={() => scrollToSection("process")} className="text-slate-400 hover:text-[#DEFF9A] transition-colors">Prozess</button>
-            <button onClick={() => scrollToSection("social-proof")} className="text-slate-400 hover:text-[#DEFF9A] transition-colors">Social Proof</button>
-          </nav>
-
-          <button 
-            onClick={() => setSystemCheckOpen(true)}
-            className="hidden sm:block bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] text-xs font-mono font-bold px-4 py-2 rounded transition-all active:scale-[0.98]"
-          >
-            15-Minuten System-Check
-          </button>
-
-          {/* Mobile Menu Trigger */}
-          <button 
-            onClick={() => setMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#F6F4EA] hover:text-[#DEFF9A]"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </header>
-
-      {/* Mobile Navigation Drawer */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[65px] z-40 bg-[#050505] text-[#F6F4EA] flex flex-col p-6 lg:hidden border-t border-[#242832] animate-in fade-in slide-in-from-top duration-200">
-          <div className="flex flex-col gap-6 text-lg font-medium">
-            <button onClick={() => scrollToSection("problem")} className="text-left py-2 border-b border-[#242832] hover:text-[#DEFF9A]">Das Problem</button>
-            <button onClick={() => scrollToSection("positioning")} className="text-left py-2 border-b border-[#242832] hover:text-[#DEFF9A]">Unser Ansatz</button>
-            <button onClick={() => scrollToSection("services")} className="text-left py-2 border-b border-[#242832] hover:text-[#DEFF9A]">Kernsäulen</button>
-            <button onClick={() => scrollToSection("transformation")} className="text-left py-2 border-b border-[#242832] hover:text-[#DEFF9A]">Transformation</button>
-            <button onClick={() => scrollToSection("process")} className="text-left py-2 border-b border-[#242832] hover:text-[#DEFF9A]">Prozess</button>
-            <button onClick={() => scrollToSection("social-proof")} className="text-left py-2 border-b border-[#242832] hover:text-[#DEFF9A]">Social Proof</button>
-            <button 
-              onClick={() => { setSystemCheckOpen(true); setMenuOpen(false); }}
-              className="mt-4 bg-[#DEFF9A] text-[#050505] py-3 rounded text-center font-mono flex items-center justify-center gap-2"
-            >
-              15-Minuten System-Check <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      )}
-
+    <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
       {/* 1. Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
@@ -160,7 +95,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#111318] border border-[#DEFF9A] border-opacity-20 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#DEFF9A] animate-pulse"></span>
-              <span className="text-[10px] font-mono tracking-widest text-[#DEFF9A] uppercase">Offline stark. Online dominant.</span>
+              <span className="text-[10px] font-mono tracking-widest text-[#DEFF9A] uppercase">Strategie &bull; Consulting &bull; Wachstum</span>
             </div>
 
             <h1 className="font-sans font-bold text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none mb-6">
@@ -179,7 +114,7 @@ export default function Home() {
                 onClick={() => setSystemCheckOpen(true)}
                 className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-8 py-4 rounded font-mono font-bold flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
               >
-                15-Minuten System-Check <ArrowRight className="w-4 h-4" />
+                Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
               </button>
               <button 
                 onClick={() => scrollToSection("problem")}
@@ -525,7 +460,7 @@ export default function Home() {
 
       {/* 6. Process Section */}
       <section id="process" className="py-24 bg-[#111318] border-b border-[#242832] relative overflow-hidden">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-xs font-mono text-[#1B6BFF] tracking-widest uppercase font-bold">Fahrplan &bull; Der Weg</span>
             <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">In 4 Schritten zur Marktführerschaft</h2>
@@ -582,7 +517,6 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Testimonial 1: Confiserie Jonasch */}
             <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative flex flex-col justify-between group hover:border-[#DEFF9A] transition-all">
               <div>
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -602,7 +536,6 @@ export default function Home() {
                 <span className="text-xs font-mono text-[#DEFF9A] bg-[#DEFF9A] bg-opacity-10 px-2 py-0.5 rounded">CH</span>
               </div>
             </div>
-            {/* Testimonial 2: Forst & Bagger Schnepf */}
             <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative flex flex-col justify-between group hover:border-[#FFD400] transition-all">
               <div>
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -621,7 +554,6 @@ export default function Home() {
                 <span className="text-xs font-mono text-[#FFD400] bg-[#FFD400] bg-opacity-10 px-2 py-0.5 rounded">CH</span>
               </div>
             </div>
-            {/* Testimonial 3: Balero */}
             <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative flex flex-col justify-between group hover:border-[#1B6BFF] transition-all">
               <div>
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -644,7 +576,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. CTA Section */}
+      {/* CTA Section */}
       <section className="py-24 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
           <img 
@@ -670,7 +602,7 @@ export default function Home() {
                   onClick={() => setSystemCheckOpen(true)}
                   className="bg-[#050505] text-[#DEFF9A] hover:bg-[#111318] px-10 py-5 rounded-xl font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-xl"
                 >
-                  Jetzt System-Check buchen <ArrowRight className="w-5 h-5" />
+                  Kostenloses Erstgespräch <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
               <p className="mt-8 text-xs font-mono uppercase tracking-widest opacity-60">
@@ -680,40 +612,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* 9. Footer */}
-      <footer className="bg-[#050505] text-slate-500 py-16 border-t border-[#242832] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
-          <img 
-            src="/assets/bg-hero.png" 
-            alt="Footer Background" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/assets/logo-primaer-farbig.svg" 
-                alt="Geenie Logo" 
-                className="w-auto h-8 object-contain" 
-              />
-              <span className="font-sans font-bold text-lg tracking-wider text-[#F6F4EA]">GEENIE</span>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest text-slate-400">
-              <button onClick={() => setImpressumOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Impressum</button>
-              <a href="#" className="hover:text-[#DEFF9A] transition-colors">Datenschutz</a>
-              <a href="https://linkedin.com" className="hover:text-[#DEFF9A] transition-colors">LinkedIn</a>
-              <a href="https://instagram.com" className="hover:text-[#DEFF9A] transition-colors">Instagram</a>
-            </div>
-            
-            <div className="text-[10px] font-mono text-slate-600">
-              &copy; 2024 Geenie Media. Alle Rechte vorbehalten.
-            </div>
-          </div>
-        </div>
-      </footer>
 
       {/* System-Check Modal */}
       {systemCheckOpen && (
@@ -789,60 +687,11 @@ export default function Home() {
                     <>Anfrage senden <ArrowRight className="w-4 h-4" /></>
                   )}
                 </button>
-                <p className="text-[10px] text-center text-slate-600 mt-4">
-                  Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Daten einverstanden.
-                </p>
               </form>
             </div>
           </div>
         </div>
       )}
-
-      {/* Impressum Modal */}
-      {impressumOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-          <div className="absolute inset-0 bg-[#050505] bg-opacity-90 backdrop-blur-sm" onClick={() => setImpressumOpen(false)}></div>
-          <div className="bg-[#111318] border border-[#242832] w-full max-w-2xl rounded-2xl relative z-10 overflow-hidden animate-in zoom-in-95 duration-200 max-h-[80vh] flex flex-col">
-            <div className="p-8 border-b border-[#242832] flex justify-between items-center">
-              <h3 className="text-xl font-bold text-[#F6F4EA]">Impressum</h3>
-              <button onClick={() => setImpressumOpen(false)} className="p-2 hover:bg-[#050505] rounded-full text-slate-500 hover:text-[#F6F4EA] transition-all">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="p-8 overflow-y-auto text-sm text-slate-400 leading-relaxed space-y-6">
-              <div>
-                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontaktadresse & Betreiber</h4>
-                <p className="text-[#F6F4EA] font-medium">Geenie Media</p>
-                <p>Yannis Denzler</p>
-                <p>Pestalozzistrasse 68a</p>
-                <p>4132 Muttenz</p>
-                <p>Schweiz</p>
-              </div>
-              <div>
-                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontakt</h4>
-                <p>E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#1B6BFF] hover:underline">geenie.schweiz@gmail.com</a></p>
-              </div>
-              <div>
-                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Unternehmens-Identifikationsnummer (UID)</h4>
-                <p>CHE-260.224.627</p>
-              </div>
-              <div className="pt-6 border-t border-[#242832]">
-                <h4 className="text-[#F6F4EA] font-bold mb-2">Haftungsausschluss</h4>
-                <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
-              </div>
-              <div>
-                <h4 className="text-[#F6F4EA] font-bold mb-2">Haftung für Links</h4>
-                <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.</p>
-              </div>
-              <div>
-                <h4 className="text-[#F6F4EA] font-bold mb-2">Urheberrechte</h4>
-                <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich Geenie Media oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-    </div>
+    </Layout>
   );
 }
