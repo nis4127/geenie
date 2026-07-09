@@ -106,6 +106,10 @@
     min-width: 0;
   }
 
+  img[src*="logo"] {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+  }
+
   @media (min-width: 1024px) {
     .container {
       padding-left: 3rem;

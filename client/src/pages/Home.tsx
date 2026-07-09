@@ -257,7 +257,7 @@ export default function Home() {
             
             <div className="lg:col-span-7 relative">
               <div className="aspect-square sm:aspect-video rounded-2xl bg-[#111318] border border-[#242832] overflow-hidden relative">
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute inset-0 opacity-20 pointer-events-none">
                   <img src="/assets/geenie-cta-bg.png" alt="Background" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12">

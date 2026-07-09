@@ -10,10 +10,12 @@ import {
   Sparkles
 } from "lucide-react";
 import { toast } from "sonner";
+import Layout from "../components/Layout";
 
 export default function Projektanfrage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [systemCheckOpen, setSystemCheckOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -57,7 +59,8 @@ export default function Projektanfrage() {
 
   if (submitted) {
     return (
-      <div className="min-h-[70vh] flex items-center justify-center container mx-auto px-6 py-20">
+      <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
+        <div className="min-h-[70vh] flex items-center justify-center container mx-auto px-6 py-20">
         <div className="max-w-2xl w-full bg-[#111318] border border-[#242832] rounded-3xl p-10 sm:p-16 text-center animate-in zoom-in-95 duration-300">
           <div className="w-20 h-20 bg-[#DEFF9A] rounded-full flex items-center justify-center mx-auto mb-8">
             <CheckCircle2 className="w-10 h-10 text-[#050505]" />
@@ -74,11 +77,13 @@ export default function Projektanfrage() {
           </button>
         </div>
       </div>
+      </Layout>
     );
   }
 
   return (
-    <div className="py-20 lg:py-32 relative overflow-hidden">
+    <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
+      <div className="py-20 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
         <img 
           src="/assets/bg-transformation.png" 
@@ -240,5 +245,6 @@ export default function Projektanfrage() {
         </div>
       </div>
     </div>
+    </Layout>
   );
 }

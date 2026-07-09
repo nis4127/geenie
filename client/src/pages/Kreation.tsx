@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "wouter";
+import React, { useState } from "react";
+import { Link } from "wouter"; 
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -17,8 +17,10 @@ import {
   Share2,
   Sparkles
 } from "lucide-react";
+import Layout from "../components/Layout";
 
 export default function Kreation() {
+  const [systemCheckOpen, setSystemCheckOpen] = useState(false);
   const digitalServices = [
     {
       title: "Unternehmenswebsites",
@@ -81,7 +83,8 @@ export default function Kreation() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
+      <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
@@ -210,6 +213,7 @@ export default function Kreation() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </Layout>
   );
 }
