@@ -17,6 +17,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
   const [location] = useLocation();
   const [impressumOpen, setImpressumOpen] = useState(false);
   const [datenschutzOpen, setDatenschutzOpen] = useState(false);
+  const [agbOpen, setAgbOpen] = useState(false);
 
   const navLinks = [
     { name: "Strategie & Consulting", href: "/" },
@@ -107,6 +108,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
             <div className="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest text-slate-400">
               <button onClick={() => setImpressumOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Impressum</button>
               <button onClick={() => setDatenschutzOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Datenschutz</button>
+              <button onClick={() => setAgbOpen(true)} className="hover:text-[#DEFF9A] transition-colors">AGB</button>
               <a href="https://linkedin.com" className="hover:text-[#DEFF9A] transition-colors">LinkedIn</a>
               <a href="https://instagram.com" className="hover:text-[#DEFF9A] transition-colors">Instagram</a>
             </div>
@@ -208,6 +210,70 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
               <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">8. Änderungen</h4>
                 <p>Wir können diese Datenschutzerklärung jederzeit ohne Vorankündigung anpassen. Es gilt die jeweils aktuelle, auf unserer Webseite publizierte Fassung.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* AGB Modal */}
+      {agbOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          <div className="absolute inset-0 bg-[#050505] bg-opacity-90 backdrop-blur-sm" onClick={() => setAgbOpen(false)}></div>
+          <div className="bg-[#111318] border border-[#242832] w-full max-w-2xl rounded-2xl relative z-10 overflow-hidden animate-in zoom-in-95 duration-200 max-h-[80vh] flex flex-col shadow-2xl">
+            <div className="p-8 border-b border-[#242832] flex justify-between items-center">
+              <h3 className="text-xl font-bold text-[#F6F4EA]">Allgemeine Geschäftsbedingungen</h3>
+              <button onClick={() => setAgbOpen(false)} className="p-2 hover:bg-[#050505] rounded-full text-slate-500 hover:text-[#F6F4EA] transition-all">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-8 overflow-y-auto text-sm text-slate-400 leading-relaxed space-y-8">
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">1. Geltungsbereich</h4>
+                <p>Diese AGB gelten für alle Dienstleistungen und Lieferungen von Geenie Media (Yannis Denzler). Mit der Auftragserteilung erkennt der Kunde diese AGB vollumfänglich an.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">2. Vertragsabschluss</h4>
+                <p>Ein Vertrag kommt durch die schriftliche Annahme eines Angebots durch den Kunden zustande. Alle Preise verstehen sich in Schweizer Franken (CHF), exklusive Mehrwertsteuer, sofern nicht anders ausgewiesen.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">3. Dienstleistungen & Webdesign</h4>
+                <p><span className="text-[#F6F4EA] font-bold">Mitwirkung:</span> Der Kunde stellt alle notwendigen Inhalte rechtzeitig zur Verfügung. Verzögerungen durch den Kunden können die Projektzeitpläne verschieben.</p>
+                <p className="mt-4"><span className="text-[#F6F4EA] font-bold">Abnahme:</span> Nach Fertigstellung der vereinbarten Leistungen erfolgt eine Abnahme durch den Kunden. Erfolgt innerhalb von 5 Arbeitstagen keine Rückmeldung, gelten die Leistungen als abgenommen.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">4. Printprodukte & Warenlieferung</h4>
+                <p><span className="text-[#F6F4EA] font-bold">Druckdaten:</span> Der Kunde ist für die inhaltliche Richtigkeit und die Druckfähigkeit seiner Daten verantwortlich. Geenie Media prüft Daten nur auf offensichtliche Mängel, übernimmt aber keine Garantie für das Druckergebnis bei fehlerhaften Kundendaten.</p>
+                <p className="mt-4"><span className="text-[#F6F4EA] font-bold">Lieferung:</span> Liefertermine sind Richtwerte. Produktionsbedingte Abweichungen (z.B. bei Farben oder Schnitt) im branchenüblichen Rahmen sind zulässig.</p>
+                <p className="mt-4"><span className="text-[#F6F4EA] font-bold">Mängelrüge:</span> Mängel müssen innerhalb von 48 Stunden nach Erhalt der Ware schriftlich gerügt werden.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">5. Geistiges Eigentum & Nutzungsrechte</h4>
+                <p>Alle durch Geenie Media erstellten Konzepte, Designs und Codes bleiben bis zur vollständigen Bezahlung Eigentum von Geenie Media. Mit vollständiger Zahlung erhält der Kunde ein einfaches, räumlich und zeitlich unbeschränktes Nutzungsrecht für den vereinbarten Zweck.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">6. Haftung</h4>
+                <p>Geenie Media haftet nur für grobe Fahrlässigkeit und Vorsatz. Eine Haftung für indirekte Schäden, entgangenen Gewinn oder Datenverlust ist ausgeschlossen. Die Haftung für Mängel bei Drucksachen ist auf den Warenwert begrenzt.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">7. Zahlungsbedingungen</h4>
+                <p>Rechnungen sind innert 14 Tagen netto zahlbar. Bei Zahlungsverzug ist Geenie Media berechtigt, weitere Arbeiten am Projekt einzustellen.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">8. Datenschutz</h4>
+                <p>Es gilt die separate Datenschutzerklärung, die integrierter Bestandteil dieser AGB ist.</p>
+              </div>
+
+              <div>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">9. Gerichtsstand & Anwendbares Recht</h4>
+                <p>Es gilt ausschliesslich Schweizer Recht. Gerichtsstand ist der Sitz von Geenie Media (Muttenz).</p>
               </div>
             </div>
           </div>
