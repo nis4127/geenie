@@ -124,18 +124,18 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 mt-16 pt-8 border-t border-[#242832] border-opacity-50 w-full max-w-lg">
-              <div className="text-center">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-16 pt-8 border-t border-[#242832] border-opacity-50 w-full max-w-xl">
+              <div className="text-center flex flex-col items-center justify-start">
                 <span className="block text-xl sm:text-2xl font-bold text-[#FFD400]">0%</span>
-                <span className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Marketing-Gelaber</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-500 font-mono uppercase tracking-wider leading-tight">Leere Versprechen</span>
               </div>
-              <div className="text-center border-x border-[#242832] border-opacity-50 px-2">
+              <div className="text-center border-x border-[#242832] border-opacity-50 px-2 flex flex-col items-center justify-start">
                 <span className="block text-xl sm:text-2xl font-bold text-[#DEFF9A]">100%</span>
-                <span className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Umsetzungsfokus</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-500 font-mono uppercase tracking-wider leading-tight">Umsetzungsfokus</span>
               </div>
-              <div className="text-center">
+              <div className="text-center flex flex-col items-center justify-start">
                 <span className="block text-xl sm:text-2xl font-bold text-[#1B6BFF]">100%</span>
-                <span className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Volle Kontrolle</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-500 font-mono uppercase tracking-wider leading-tight">Volle Kontrolle</span>
               </div>
             </div>
           </div>
