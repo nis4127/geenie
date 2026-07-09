@@ -147,10 +147,10 @@ export default function Home() {
 
       {/* 1. Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
-        <div className="absolute inset-0 opacity-30 mix-blend-screen pointer-events-none">
+        <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
           <img 
-            src="/assets/geenie-cta-bg.png" 
-            alt="Abstract Background" 
+            src="/assets/bg-hero.png" 
+            alt="Hero Background" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -208,8 +208,15 @@ export default function Home() {
       </section>
 
       {/* 2. Problem Section */}
-      <section id="problem" className="py-20 bg-[#111318] border-b border-[#242832]">
-        <div className="container mx-auto px-6">
+      <section id="problem" className="py-20 bg-[#111318] border-b border-[#242832] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
+          <img 
+            src="/assets/bg-problem.png" 
+            alt="Problem Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-xs font-mono text-[#1B6BFF] tracking-widest uppercase font-bold">Analyse &bull; Status Quo</span>
             <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">Warum hervorragende Qualität online oft verliert</h2>
@@ -269,8 +276,15 @@ export default function Home() {
       </section>
 
       {/* 3. Positioning Section */}
-      <section id="positioning" className="py-20 bg-[#050505] border-b border-[#242832]">
-        <div className="container mx-auto px-6">
+      <section id="positioning" className="py-20 bg-[#050505] border-b border-[#242832] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
+          <img 
+            src="/assets/geenie-cta-bg.png" 
+            alt="Positioning Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
             <div className="lg:col-span-5 space-y-6">
               <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold">Konzept &bull; Unser Ansatz</span>
@@ -308,9 +322,8 @@ export default function Home() {
             
             <div className="lg:col-span-7 relative">
               <div className="aspect-square sm:aspect-video rounded-2xl bg-[#111318] border border-[#242832] overflow-hidden relative">
-                {/* Abstract Background for the feature box */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                  <img src="/assets/geenie-cta-bg.png" alt="Background" className="w-full h-full object-cover" />
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
+                  <img src="/assets/logo-primaer-schwarz-weiss.svg" alt="Geenie Icon" />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12">
                   <div className="grid grid-cols-2 gap-4 w-full h-full">
@@ -342,8 +355,15 @@ export default function Home() {
       </section>
 
       {/* 4. Services / Columns Section */}
-      <section id="services" className="py-24 bg-[#111318] border-b border-[#242832]">
-        <div className="container mx-auto px-6">
+      <section id="services" className="py-24 bg-[#111318] border-b border-[#242832] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
+          <img 
+            src="/assets/bg-services.png" 
+            alt="Services Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-xs font-mono text-[#FFD400] tracking-widest uppercase font-bold">Leistungen &bull; Kernsäulen</span>
             <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">Das Geenie Media Betriebssystem</h2>
@@ -424,8 +444,15 @@ export default function Home() {
       </section>
 
       {/* 5. Transformation Section */}
-      <section id="transformation" className="py-24 bg-[#050505] border-b border-[#242832]">
-        <div className="container mx-auto px-6">
+      <section id="transformation" className="py-24 bg-[#050505] border-b border-[#242832] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
+          <img 
+            src="/assets/bg-transformation.png" 
+            alt="Transformation Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold">Vorher / Nachher &bull; Transformation</span>
             <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">Die Geenie Evolution</h2>
@@ -497,7 +524,7 @@ export default function Home() {
       </section>
 
       {/* 6. Process Section */}
-      <section id="process" className="py-24 bg-[#111318] border-b border-[#242832]">
+      <section id="process" className="py-24 bg-[#111318] border-b border-[#242832] relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="text-xs font-mono text-[#1B6BFF] tracking-widest uppercase font-bold">Fahrplan &bull; Der Weg</span>
@@ -621,12 +648,12 @@ export default function Home() {
       <section className="py-24 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
           <img 
-            src="/assets/geenie-cta-bg.png" 
-            alt="Brand Values Background" 
+            src="/assets/bg-cta.png" 
+            alt="CTA Background" 
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto bg-[#DEFF9A] rounded-3xl p-10 sm:p-16 text-[#050505] text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-20 blur-3xl -mr-32 -mt-32 rounded-full"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1B6BFF] opacity-10 blur-3xl -ml-32 -mb-32 rounded-full"></div>
