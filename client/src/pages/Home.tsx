@@ -149,7 +149,7 @@ export default function Home() {
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-30 mix-blend-screen pointer-events-none">
           <img 
-            src="/manus-storage/geenie-cta-bg.png" 
+            src="/assets/geenie-cta-bg.png" 
             alt="Abstract Background" 
             className="w-full h-full object-cover"
           />
@@ -308,6 +308,9 @@ export default function Home() {
             
             <div className="lg:col-span-7 relative">
               <div className="aspect-square sm:aspect-video rounded-2xl bg-[#111318] border border-[#242832] overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
+                  <img src="/assets/sekundaerlogo-geenie-schwarz-weiss.svg" alt="Geenie Icon" />
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12">
                   <div className="grid grid-cols-2 gap-4 w-full h-full">
                     <div className="bg-[#050505] border border-[#242832] rounded-xl p-6 flex flex-col justify-between hover:border-[#DEFF9A] transition-all group">
@@ -541,45 +544,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Social Proof Section */}
-      <section id="social-proof" className="py-24 bg-[#050505] border-b border-[#242832]">
+      {/* 7. Social Proof Section (Restored) */}
+      <section id="social-proof" className="py-20 bg-[#050505] border-b border-[#242832]">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold">Referenzen &bull; Social Proof</span>
+            <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">Was unsere Partner sagen</h2>
+            <p className="text-slate-400 mt-2">Echte Ergebnisse von echten Unternehmen.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Testimonial 1: Confiserie Jonasch */}
+            <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative flex flex-col justify-between group hover:border-[#DEFF9A] transition-all">
               <div>
-                <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold">Referenzen &bull; Vertrauen</span>
-                <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">Warum Macher auf Geenie setzen</h2>
-                <p className="text-slate-400 mt-4 leading-relaxed">
-                  Wir arbeiten nicht mit jedem. Wir suchen Partner, die in ihrem Bereich bereits exzellente Arbeit leisten und nun bereit sind, digital die Führung zu übernehmen.
-                </p>
-                <div className="flex items-center gap-6 mt-8">
-                  <div className="flex -space-x-3">
-                    {[1,2,3,4].map(i => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-[#050505] bg-[#111318] flex items-center justify-center text-[10px] font-bold">
-                        {String.fromCharCode(64 + i)}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="text-xs text-slate-500">
-                    <span className="text-[#DEFF9A] font-bold">15+</span> Projekte erfolgreich <br />transformiert
-                  </div>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  <span className="text-[9px] font-mono bg-[#DEFF9A] bg-opacity-10 text-[#DEFF9A] px-2 py-0.5 rounded">IST-ANALYSE</span>
+                  <span className="text-[9px] font-mono bg-[#DEFF9A] bg-opacity-10 text-[#DEFF9A] px-2 py-0.5 rounded">MARKETINGSTRATEGIE</span>
+                  <span className="text-[9px] font-mono bg-[#DEFF9A] bg-opacity-10 text-[#DEFF9A] px-2 py-0.5 rounded">VERKAUFSKONZEPT</span>
                 </div>
+                <p className="text-slate-300 italic leading-relaxed text-sm">
+                  &ldquo;Die Zusammenarbeit mit Geenie Media war für die Confiserie Jonasch ein entscheidender Schritt nach vorn. Anstatt uns mit Standardlösungen abzuspeisen, wurde unsere Ist-Situation präzise analysiert. Darauf basierend hat Geenie Media eine massgeschneiderte Marketingstrategie und ein fundiertes Verkaufskonzept für uns entwickelt. Besonders wertvoll waren die klaren, konkreten Handlungsanweisungen, die wir direkt in unseren Arbeitsalltag integrieren konnten. Ein absolut professioneller und zielgerichteter Partner!&rdquo;
+                </p>
               </div>
-              
-              <div className="bg-[#111318] p-8 rounded-2xl border border-[#242832] relative">
-                <div className="absolute -top-4 -left-4">
-                  <Award className="w-12 h-12 text-[#FFD400] drop-shadow-lg" />
+              <div className="mt-6 pt-4 border-t border-[#242832] flex items-center justify-between">
+                <div>
+                  <span className="block font-bold text-sm text-[#F6F4EA]">Gian Jonasch</span>
+                  <span className="block text-xs text-slate-500">Confiserie Jonasch</span>
                 </div>
-                <p className="text-lg italic text-[#F6F4EA] leading-relaxed mb-6">
-                  "Geenie hat verstanden, dass wir keine fancy Agentur brauchen, sondern jemanden, der unsere Qualität online so darstellt, dass Kunden sofort verstehen, warum wir teurer sind als der Rest."
+                <span className="text-xs font-mono text-[#DEFF9A] bg-[#DEFF9A] bg-opacity-10 px-2 py-0.5 rounded">CH</span>
+              </div>
+            </div>
+            {/* Testimonial 2: Forst & Bagger Schnepf */}
+            <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative flex flex-col justify-between group hover:border-[#FFD400] transition-all">
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  <span className="text-[9px] font-mono bg-[#FFD400] bg-opacity-10 text-[#FFD400] px-2 py-0.5 rounded">DIGITALE PRÄSENZ</span>
+                  <span className="text-[9px] font-mono bg-[#FFD400] bg-opacity-10 text-[#FFD400] px-2 py-0.5 rounded">ONLINEANFRAGEN</span>
+                </div>
+                <p className="text-slate-300 italic leading-relaxed text-sm">
+                  &ldquo;Als Unternehmen im Forst- und Baggerbetrieb lag unser Fokus immer auf der Arbeit draussen – online waren wir praktisch unsichtbar. Geenie Media hat uns dabei geholfen, unsere digitale Präsenz professionell auszubauen. Das Ergebnis hat mich absolut überzeugt: Wir bekommen nun endlich erste, direkte Onlineanfragen und neue Aufträge ganz unkompliziert über unsere eigene Homepage. Schnelle Umsetzung, ehrliche Beratung und messbare Ergebnisse.&rdquo;
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-slate-800"></div>
-                  <div>
-                    <h5 className="font-bold text-sm">Markus Weber</h5>
-                    <p className="text-xs text-slate-500">Geschäftsführer, Weber Holzbau</p>
-                  </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#242832] flex items-center justify-between">
+                <div>
+                  <span className="block font-bold text-sm text-[#F6F4EA]">Michael Schnepf</span>
+                  <span className="block text-xs text-slate-500">Forst &amp; Bagger Schnepf</span>
                 </div>
+                <span className="text-xs font-mono text-[#FFD400] bg-[#FFD400] bg-opacity-10 px-2 py-0.5 rounded">CH</span>
+              </div>
+            </div>
+            {/* Testimonial 3: Balero */}
+            <div className="bg-[#111318] p-8 rounded-lg border border-[#242832] relative flex flex-col justify-between group hover:border-[#1B6BFF] transition-all">
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  <span className="text-[9px] font-mono bg-[#1B6BFF] bg-opacity-10 text-[#1B6BFF] px-2 py-0.5 rounded">NEUE HOMEPAGE</span>
+                  <span className="text-[9px] font-mono bg-[#1B6BFF] bg-opacity-10 text-[#1B6BFF] px-2 py-0.5 rounded">QUALIFIZIERTE LEADS</span>
+                </div>
+                <p className="text-slate-300 italic leading-relaxed text-sm">
+                  &ldquo;Wir brauchten für Balero dringend einen frischen digitalen Auftritt, der nicht nur gut aussieht, sondern auch funktioniert. Geenie Media hat uns eine komplett neue Homepage und eine starke digitale Präsenz aufgebaut. Für mich in der Produktion ist das Resultat Gold wert: Die neue Seite bringt uns direkt und zuverlässig qualifizierte Kontakte für neue Aufträge ein. Wer eine Agentur sucht, die echtes Geschäft generiert, ist hier genau richtig.&rdquo;
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#242832] flex items-center justify-between">
+                <div>
+                  <span className="block font-bold text-sm text-[#F6F4EA]">Joël Kunz</span>
+                  <span className="block text-xs text-slate-500">Produktionsleiter, Balero</span>
+                </div>
+                <span className="text-xs font-mono text-[#1B6BFF] bg-[#1B6BFF] bg-opacity-10 px-2 py-0.5 rounded">CH</span>
               </div>
             </div>
           </div>
@@ -587,7 +617,14 @@ export default function Home() {
       </section>
 
       {/* 8. CTA Section */}
-      <section className="py-24 bg-gradient-to-b from-[#111318] to-[#050505]">
+      <section className="py-24 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
+        <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
+          <img 
+            src="/assets/geenie-cta-bg.png" 
+            alt="Brand Values Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto bg-[#DEFF9A] rounded-3xl p-10 sm:p-16 text-[#050505] text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-20 blur-3xl -mr-32 -mt-32 rounded-full"></div>
@@ -617,7 +654,14 @@ export default function Home() {
       </section>
 
       {/* 9. Footer */}
-      <footer className="py-12 bg-[#050505] border-t border-[#242832]">
+      <footer className="bg-[#050505] text-slate-500 py-16 border-t border-[#242832] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
+          <img 
+            src="/assets/geenie-cta-bg.png" 
+            alt="Abstract Footer Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
@@ -739,24 +783,32 @@ export default function Home() {
             </div>
             <div className="p-8 overflow-y-auto text-sm text-slate-400 leading-relaxed space-y-6">
               <div>
-                <h4 className="font-bold text-[#F6F4EA] mb-2">Angaben gemäss § 5 TMG</h4>
-                <p>Geenie Media GmbH<br />Musterstrasse 123<br />12345 Berlin</p>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontaktadresse & Betreiber</h4>
+                <p className="text-[#F6F4EA] font-medium">Geenie Media</p>
+                <p>Yannis Denzler</p>
+                <p>Pestalozzistrasse 68a</p>
+                <p>4132 Muttenz</p>
+                <p>Schweiz</p>
               </div>
               <div>
-                <h4 className="font-bold text-[#F6F4EA] mb-2">Vertreten durch</h4>
-                <p>Max Mustermann</p>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontakt</h4>
+                <p>E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#1B6BFF] hover:underline">geenie.schweiz@gmail.com</a></p>
               </div>
               <div>
-                <h4 className="font-bold text-[#F6F4EA] mb-2">Kontakt</h4>
-                <p>Telefon: +49 (0) 123 44 55 66<br />E-Mail: hello@geenie.media</p>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Unternehmens-Identifikationsnummer (UID)</h4>
+                <p>CHE-260.224.627</p>
+              </div>
+              <div className="pt-6 border-t border-[#242832]">
+                <h4 className="text-[#F6F4EA] font-bold mb-2">Haftungsausschluss</h4>
+                <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
               </div>
               <div>
-                <h4 className="font-bold text-[#F6F4EA] mb-2">Registereintrag</h4>
-                <p>Eintragung im Handelsregister.<br />Registergericht: Amtsgericht Berlin<br />Registernummer: HRB 123456</p>
+                <h4 className="text-[#F6F4EA] font-bold mb-2">Haftung für Links</h4>
+                <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.</p>
               </div>
               <div>
-                <h4 className="font-bold text-[#F6F4EA] mb-2">Umsatzsteuer-ID</h4>
-                <p>Umsatzsteuer-Identifikationsnummer gemäss § 27 a Umsatzsteuergesetz:<br />DE 123 456 789</p>
+                <h4 className="text-[#F6F4EA] font-bold mb-2">Urheberrechte</h4>
+                <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich Geenie Media oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
               </div>
             </div>
           </div>
