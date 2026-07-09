@@ -163,12 +163,12 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
               </button>
             </div>
             <div className="p-8 overflow-y-auto text-sm text-slate-400 leading-relaxed space-y-8">
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">1. Einleitung</h4>
                 <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir bearbeiten Ihre Daten gemäss den Anforderungen des schweizerischen Datenschutzgesetzes (nDSG). In dieser Datenschutzerklärung informieren wir Sie darüber, welche Daten wir erheben und zu welchem Zweck.</p>
-              </section>
+              </div>
 
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">2. Verantwortliche Stelle</h4>
                 <p className="text-[#F6F4EA] font-medium">Geenie Media</p>
                 <p>Yannis Denzler</p>
@@ -177,38 +177,38 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
                 <p>Schweiz</p>
                 <p className="mt-2">E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a></p>
                 <p>UID: CHE-260.224.627</p>
-              </section>
+              </div>
 
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">3. Erhebung von Daten</h4>
                 <p>Wenn Sie unsere Webseite besuchen, werden automatisch technische Daten (wie IP-Adresse, Datum/Uhrzeit des Zugriffs, Browseranfrage) erhoben. Diese dienen der Systemsicherheit und Stabilität.</p>
-              </section>
+              </div>
 
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">4. Kontaktformulare & E-Mail</h4>
                 <p>Wenn Sie uns via E-Mail oder Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-              </section>
+              </div>
 
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">5. Cookies</h4>
                 <p>Unsere Webseite nutzt Cookies, um die Funktionalität zu gewährleisten und die Benutzererfahrung zu verbessern. Sie können Ihren Browser so einstellen, dass er Cookies ablehnt oder Sie warnt, bevor ein Cookie gespeichert wird.</p>
-              </section>
+              </div>
 
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">6. Externe Dienste</h4>
                 <p><span className="text-[#F6F4EA] font-bold">Vercel:</span> Unsere Website wird über Vercel gehostet. Vercel kann Informationen über Ihre Nutzung der Website (wie IP-Adressen) verarbeiten.</p>
                 <p className="mt-2"><span className="text-[#F6F4EA] font-bold">Google-Dienste:</span> Wir nutzen ggf. Analyse-Tools von Google (z.B. Google Analytics). Diese Datenübermittlung erfolgt im Rahmen der gesetzlichen Bestimmungen.</p>
-              </section>
+              </div>
 
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">7. Rechte der betroffenen Person</h4>
                 <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Bearbeitung Ihrer bei uns gespeicherten Daten. Bitte wenden Sie sich hierfür direkt an uns unter: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a>.</p>
-              </section>
+              </div>
 
-              <section>
+              <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">8. Änderungen</h4>
                 <p>Wir können diese Datenschutzerklärung jederzeit ohne Vorankündigung anpassen. Es gilt die jeweils aktuelle, auf unserer Webseite publizierte Fassung.</p>
-              </section>
+              </div>
             </div>
           </div>
         </div>
