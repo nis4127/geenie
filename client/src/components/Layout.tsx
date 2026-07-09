@@ -16,6 +16,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
   const [mobileMenuOpen, setMenuOpen] = useState(false);
   const [location] = useLocation();
   const [impressumOpen, setImpressumOpen] = useState(false);
+  const [datenschutzOpen, setDatenschutzOpen] = useState(false);
 
   const navLinks = [
     { name: "Strategie & Consulting", href: "/" },
@@ -105,7 +106,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
             
             <div className="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest text-slate-400">
               <button onClick={() => setImpressumOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Impressum</button>
-              <a href="#" className="hover:text-[#DEFF9A] transition-colors">Datenschutz</a>
+              <button onClick={() => setDatenschutzOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Datenschutz</button>
               <a href="https://linkedin.com" className="hover:text-[#DEFF9A] transition-colors">LinkedIn</a>
               <a href="https://instagram.com" className="hover:text-[#DEFF9A] transition-colors">Instagram</a>
             </div>
@@ -117,11 +118,11 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
         </div>
       </footer>
 
-      {/* Impressum Modal (simplified for reuse) */}
+      {/* Impressum Modal */}
       {impressumOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
           <div className="absolute inset-0 bg-[#050505] bg-opacity-90 backdrop-blur-sm" onClick={() => setImpressumOpen(false)}></div>
-          <div className="bg-[#111318] border border-[#242832] w-full max-w-2xl rounded-2xl relative z-10 overflow-hidden animate-in zoom-in-95 duration-200 max-h-[80vh] flex flex-col">
+          <div className="bg-[#111318] border border-[#242832] w-full max-w-2xl rounded-2xl relative z-10 overflow-hidden animate-in zoom-in-95 duration-200 max-h-[80vh] flex flex-col shadow-2xl">
             <div className="p-8 border-b border-[#242832] flex justify-between items-center">
               <h3 className="text-xl font-bold text-[#F6F4EA]">Impressum</h3>
               <button onClick={() => setImpressumOpen(false)} className="p-2 hover:bg-[#050505] rounded-full text-slate-500 hover:text-[#F6F4EA] transition-all">
@@ -139,12 +140,75 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
               </div>
               <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontakt</h4>
-                <p>E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#1B6BFF] hover:underline">geenie.schweiz@gmail.com</a></p>
+                <p>E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a></p>
               </div>
               <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Unternehmens-Identifikationsnummer (UID)</h4>
                 <p>CHE-260.224.627</p>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Datenschutz Modal */}
+      {datenschutzOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          <div className="absolute inset-0 bg-[#050505] bg-opacity-90 backdrop-blur-sm" onClick={() => setDatenschutzOpen(false)}></div>
+          <div className="bg-[#111318] border border-[#242832] w-full max-w-2xl rounded-2xl relative z-10 overflow-hidden animate-in zoom-in-95 duration-200 max-h-[80vh] flex flex-col shadow-2xl">
+            <div className="p-8 border-b border-[#242832] flex justify-between items-center">
+              <h3 className="text-xl font-bold text-[#F6F4EA]">Datenschutzerklärung</h3>
+              <button onClick={() => setDatenschutzOpen(false)} className="p-2 hover:bg-[#050505] rounded-full text-slate-500 hover:text-[#F6F4EA] transition-all">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-8 overflow-y-auto text-sm text-slate-400 leading-relaxed space-y-8">
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">1. Einleitung</h4>
+                <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir bearbeiten Ihre Daten gemäss den Anforderungen des schweizerischen Datenschutzgesetzes (nDSG). In dieser Datenschutzerklärung informieren wir Sie darüber, welche Daten wir erheben und zu welchem Zweck.</p>
+              </section>
+
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">2. Verantwortliche Stelle</h4>
+                <p className="text-[#F6F4EA] font-medium">Geenie Media</p>
+                <p>Yannis Denzler</p>
+                <p>Pestalozzistrasse 68a</p>
+                <p>4132 Muttenz</p>
+                <p>Schweiz</p>
+                <p className="mt-2">E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a></p>
+                <p>UID: CHE-260.224.627</p>
+              </section>
+
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">3. Erhebung von Daten</h4>
+                <p>Wenn Sie unsere Webseite besuchen, werden automatisch technische Daten (wie IP-Adresse, Datum/Uhrzeit des Zugriffs, Browseranfrage) erhoben. Diese dienen der Systemsicherheit und Stabilität.</p>
+              </section>
+
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">4. Kontaktformulare & E-Mail</h4>
+                <p>Wenn Sie uns via E-Mail oder Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+              </section>
+
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">5. Cookies</h4>
+                <p>Unsere Webseite nutzt Cookies, um die Funktionalität zu gewährleisten und die Benutzererfahrung zu verbessern. Sie können Ihren Browser so einstellen, dass er Cookies ablehnt oder Sie warnt, bevor ein Cookie gespeichert wird.</p>
+              </section>
+
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">6. Externe Dienste</h4>
+                <p><span className="text-[#F6F4EA] font-bold">Vercel:</span> Unsere Website wird über Vercel gehostet. Vercel kann Informationen über Ihre Nutzung der Website (wie IP-Adressen) verarbeiten.</p>
+                <p className="mt-2"><span className="text-[#F6F4EA] font-bold">Google-Dienste:</span> Wir nutzen ggf. Analyse-Tools von Google (z.B. Google Analytics). Diese Datenübermittlung erfolgt im Rahmen der gesetzlichen Bestimmungen.</p>
+              </section>
+
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">7. Rechte der betroffenen Person</h4>
+                <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Bearbeitung Ihrer bei uns gespeicherten Daten. Bitte wenden Sie sich hierfür direkt an uns unter: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a>.</p>
+              </section>
+
+              <section>
+                <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">8. Änderungen</h4>
+                <p>Wir können diese Datenschutzerklärung jederzeit ohne Vorankündigung anpassen. Es gilt die jeweils aktuelle, auf unserer Webseite publizierte Fassung.</p>
+              </section>
             </div>
           </div>
         </div>

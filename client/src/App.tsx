@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Kreation from "./pages/Kreation";
 import Projektanfrage from "./pages/Projektanfrage";
 import UeberUns from "./pages/UeberUns";
+import Datenschutz from "./pages/Datenschutz";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/kreation" component={Kreation} />
       <Route path="/ueber-uns" component={UeberUns} />
       <Route path="/projektanfrage" component={Projektanfrage} />
+      <Route path="/datenschutz" component={Datenschutz} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
