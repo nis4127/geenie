@@ -98,14 +98,12 @@ export default function Projektanfrage() {
           <div className="space-y-8 lg:sticky lg:top-32">
             <div>
               <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold">Projektanfrage</span>
-              <h1 className="text-4xl sm:text-5xl font-sans font-bold mt-4 leading-tight">
-                Lassen Sie uns etwas <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD400] via-[#DEFF9A] to-[#1B6BFF]">
-                  Grossartiges schaffen.
-                </span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mt-4 leading-[0.9] uppercase">
+                Bereit für <br />
+                <span className="text-[#DEFF9A]">Präzision?</span>
               </h1>
-              <p className="text-slate-400 mt-6 text-lg leading-relaxed">
-                Egal ob Sie eine neue Website benötigen, Ihr Branding auffrischen wollen oder Printmedien brauchen – wir sind Ihr Partner für die Umsetzung.
+              <p className="text-slate-400 mt-8 text-xl leading-relaxed font-medium">
+                Kein Marketing-Gelaber. Wir bauen Systeme, die funktionieren. Erzähl uns von deinem Projekt und wir prüfen die Machbarkeit.
               </p>
             </div>
 
@@ -141,60 +139,60 @@ export default function Projektanfrage() {
           </div>
 
           {/* Form Side */}
-          <div className="bg-[#111318] border border-[#242832] rounded-3xl p-8 sm:p-10 shadow-2xl relative">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-slate-500">Name *</label>
+          <div className="bg-[#111318] border border-[#242832] p-10 sm:p-12 relative">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">Name *</label>
                   <input 
                     type="text" 
                     required
                     placeholder="Max Mustermann"
-                    className="w-full bg-[#050505] border border-[#242832] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all"
+                    className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all font-medium"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-slate-500">Firma</label>
+                <div className="space-y-3">
+                  <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">Firma</label>
                   <input 
                     type="text" 
                     placeholder="Firma GmbH"
-                    className="w-full bg-[#050505] border border-[#242832] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all"
+                    className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all font-medium"
                     value={formData.company}
                     onChange={(e) => setFormData({...formData, company: e.target.value})}
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-slate-500">E-Mail *</label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">E-Mail *</label>
                   <input 
                     type="email" 
                     required
                     placeholder="max@beispiel.ch"
-                    className="w-full bg-[#050505] border border-[#242832] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all"
+                    className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all font-medium"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-widest text-slate-500">Telefon</label>
+                <div className="space-y-3">
+                  <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">Telefon</label>
                   <input 
                     type="tel" 
                     placeholder="+41 79 123 45 67"
-                    className="w-full bg-[#050505] border border-[#242832] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all"
+                    className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all font-medium"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-widest text-slate-500">Art des Projekts</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">Art des Projekts</label>
                 <select 
-                  className="w-full bg-[#050505] border border-[#242832] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all appearance-none"
+                  className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all appearance-none font-medium"
                   value={formData.projectType}
                   onChange={(e) => setFormData({...formData, projectType: e.target.value})}
                 >
@@ -206,24 +204,24 @@ export default function Projektanfrage() {
                 </select>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-widest text-slate-500">Budget (optional)</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">Budget (optional)</label>
                 <input 
                   type="text" 
                   placeholder="z.B. 2.000 - 5.000 CHF"
-                  className="w-full bg-[#050505] border border-[#242832] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all"
+                  className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all font-medium"
                   value={formData.budget}
                   onChange={(e) => setFormData({...formData, budget: e.target.value})}
                 />
               </div>
 
-              <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-widest text-slate-500">Ihre Nachricht *</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">Nachricht *</label>
                 <textarea 
                   required
                   rows={4}
-                  placeholder="Beschreiben Sie kurz Ihr Vorhaben..."
-                  className="w-full bg-[#050505] border border-[#242832] rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all resize-none"
+                  placeholder="Beschreibe kurz dein Vorhaben..."
+                  className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all resize-none font-medium"
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
@@ -232,9 +230,9 @@ export default function Projektanfrage() {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] py-5 rounded-xl font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] disabled:opacity-50"
+                className="w-full bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] py-6 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] disabled:opacity-50 uppercase tracking-widest"
               >
-                {isSubmitting ? "Wird gesendet..." : "Projektanfrage senden"} <Send className="w-4 h-4" />
+                {isSubmitting ? "Wird gesendet..." : "Anfrage senden"} <Send className="w-4 h-4" />
               </button>
 
               <p className="text-[10px] text-center text-slate-600">

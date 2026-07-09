@@ -59,18 +59,16 @@ export default function UeberUns() {
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-              <h1 className="font-sans font-bold text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-tight mb-8">
-                Warum Sie bei Geenie Media <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD400] via-[#DEFF9A] to-[#1B6BFF]">
-                  genau richtig sind.
-                </span>
+              <h1 className="font-bold text-5xl sm:text-6xl lg:text-8xl tracking-tight leading-[0.9] mb-8 uppercase">
+                Warum wir <br />
+                <span className="text-[#DEFF9A]">Verantwortung</span> übernehmen.
               </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-[#94A3B8] leading-relaxed max-w-3xl mb-12">
-                Sie suchen keine weitere Marketing-Agentur. Sie suchen jemanden, der Verantwortung übernimmt und Projekte zuverlässig zum Erfolg führt.
+              <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mb-12 font-medium">
+                Geenie Media ist kein Dienstleister für Werbeversprechen. Wir sind die operative Instanz, die dein Unternehmen digital auf Premium-Niveau hebt und dort hält.
               </p>
               <Link href="/projektanfrage">
-                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 rounded-xl font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-xl">
-                  Projekt anfragen <ArrowRight className="w-5 h-5" />
+                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
+                  System-Check starten <ArrowRight className="w-5 h-5" />
                 </a>
               </Link>
             </div>
@@ -83,21 +81,18 @@ export default function UeberUns() {
             <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold">Ihre Entlastung</span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold mt-4 leading-tight">
-                  Ihr Fokus bleibt Ihr Unternehmen. <br />
-                  <span className="text-[#DEFF9A]">Den Rest übernehmen wir.</span>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 leading-tight uppercase">
+                  Dein Fokus: Wachstum. <br />
+                  <span className="text-[#DEFF9A]">Unser Fokus: Das System.</span>
                 </h2>
               </div>
-              <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
+              <div className="space-y-8 text-slate-400 text-lg leading-relaxed font-medium">
                 <p>
-                  Viele KMU verlieren wertvolle Zeit mit der Koordination verschiedener Agenturen, Designer, Druckereien oder Freelancer.
+                  KMUs verlieren wertvolle Zeit in der Koordination von Agenturen, Designern und Freelancern. Das Ergebnis ist oft Stückwerk statt System.
                 </p>
                 <p>
-                  Briefings müssen geschrieben werden. Termine abgestimmt. Korrekturen verfolgt. Qualität kontrolliert. 
-                  <span className="text-[#F6F4EA] font-medium block mt-4">Genau diese Verantwortung übernehmen wir.</span>
-                </p>
-                <p>
-                  Sie konzentrieren sich auf Ihr Unternehmen. Wir kümmern uns um die Umsetzung.
+                  Wir eliminieren Reibungsverluste. Wir schreiben die Briefings, wir halten die Termine, wir kontrollieren die Qualität. 
+                  <span className="text-[#F6F4EA] font-bold block mt-4 uppercase tracking-tight">Wir sind die einzige Schnittstelle, die du brauchst.</span>
                 </p>
               </div>
             </div>
@@ -110,12 +105,11 @@ export default function UeberUns() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-5">
                 <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#DEFF9A] to-[#1B6BFF] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#242832]">
+                  <div className="relative aspect-[4/5] overflow-hidden border border-[#242832] bg-[#111318]">
                     <img 
-                      src="/assets/portrait-yannis.webp" 
+                      src="/assets/Portrait Bild Yannis Denzler_Geenie Media.png" 
                       alt="Yannis K. Denzler" 
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                      className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
                     />
                   </div>
                 </div>
@@ -146,12 +140,12 @@ export default function UeberUns() {
               <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-4">Eine Schnittstelle. Alle Möglichkeiten.</h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#242832] max-w-6xl mx-auto border border-[#242832]">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-[#111318] p-10 rounded-2xl border border-[#242832] hover:border-[#DEFF9A] transition-all duration-300 group">
-                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">{benefit.icon}</div>
-                  <h3 className="text-xl font-bold mb-4 text-[#F6F4EA]">{benefit.title}</h3>
-                  <p className="text-slate-400 leading-relaxed text-sm">{benefit.description}</p>
+                <div key={index} className="bg-[#111318] p-12 transition-all group">
+                  <div className="mb-8">{benefit.icon}</div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#F6F4EA] uppercase tracking-tight">{benefit.title}</h3>
+                  <p className="text-slate-400 leading-relaxed font-medium">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -161,28 +155,26 @@ export default function UeberUns() {
         {/* ABSCHNITT 4: Ihr Vorteil */}
         <section className="py-24 bg-[#050505] relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto bg-[#111318] border border-[#242832] rounded-3xl p-10 sm:p-16 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#DEFF9A] opacity-5 blur-3xl -mr-32 -mt-32 rounded-full"></div>
-              
+            <div className="max-w-5xl mx-auto bg-[#111318] border border-[#242832] p-12 sm:p-20 relative overflow-hidden">
               <div className="relative z-10">
                 <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold mb-4 block">Zusammenfassung</span>
-                <h2 className="text-3xl sm:text-4xl font-sans font-bold mb-8">Ihr entscheidender Vorteil</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                  <div className="space-y-4">
-                    <p className="text-slate-400 text-lg leading-relaxed">
-                      Sie erhalten die Betreuung einer eigenen Marketing-Abteilung. Mit einem entscheidenden Unterschied:
+                <h2 className="text-4xl sm:text-5xl font-bold mb-12 uppercase">Dein System-Vorteil.</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                  <div className="space-y-6">
+                    <p className="text-slate-400 text-xl leading-relaxed font-medium">
+                      Du erhältst die Schlagkraft einer eigenen Marketing-Abteilung, ohne deren Komplexität.
                     </p>
-                    <ul className="space-y-3">
-                      {["Sie müssen niemanden führen", "Keine Prozesse koordinieren", "Keine Dienstleister organisieren", "Keine Qualität kontrollieren"].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
-                          <CheckCircle2 className="w-4 h-4 text-[#DEFF9A] shrink-0" /> {item}
+                    <ul className="space-y-4">
+                      {["Keine Personalführung", "Keine Prozess-Koordination", "Kein Dienstleister-Chaos", "Keine Qualitäts-Sorgen"].map((item, i) => (
+                        <li key={i} className="flex items-center gap-4 text-[#F6F4EA] font-bold uppercase tracking-tight text-sm">
+                          <CheckCircle2 className="w-5 h-5 text-[#DEFF9A] shrink-0" /> {item}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="flex flex-col justify-center border-l border-[#242832] pl-12 hidden md:flex">
-                    <p className="text-xl font-medium text-[#F6F4EA] leading-relaxed italic">
-                      "Sie haben einen Ansprechpartner. Wir kümmern uns um den Rest."
+                  <div className="flex flex-col justify-center border-l border-[#242832] pl-16 hidden md:flex">
+                    <p className="text-2xl font-bold text-[#F6F4EA] leading-tight uppercase italic">
+                      "Eine Schnittstelle. <br />Volle Kontrolle. <br />Maximale Wirkung."
                     </p>
                   </div>
                 </div>
@@ -192,7 +184,7 @@ export default function UeberUns() {
         </section>
 
         {/* CALL TO ACTION */}
-        <section className="py-24 bg-[#111318] relative overflow-hidden border-t border-[#242832]">
+        <section className="py-32 bg-[#111318] relative overflow-hidden border-t border-[#242832]">
           <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
             <img 
               src="/assets/bg-cta.png" 
@@ -200,23 +192,19 @@ export default function UeberUns() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto bg-[#DEFF9A] rounded-3xl p-10 sm:p-16 text-[#050505] text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-20 blur-3xl -mr-32 -mt-32 rounded-full"></div>
-              
-              <div className="relative z-10">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold tracking-tight mb-6">
-                  Lassen Sie uns Ihr nächstes Projekt gemeinsam realisieren.
-                </h2>
-                <p className="text-lg font-medium mb-10 max-w-xl mx-auto opacity-80">
-                  Erzählen Sie uns von Ihrem Vorhaben. Wir zeigen Ihnen, wie daraus eine professionelle Lösung wird.
-                </p>
-                <Link href="/projektanfrage">
-                  <a className="bg-[#050505] text-[#DEFF9A] hover:bg-[#111318] px-10 py-5 rounded-xl font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-xl">
-                    Projekt-Anfrage starten <ArrowRight className="w-5 h-5" />
-                  </a>
-                </Link>
-              </div>
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-8 uppercase leading-[0.9]">
+                Bereit für das <br /><span className="text-[#DEFF9A]">nächste Level?</span>
+              </h2>
+              <p className="text-xl lg:text-2xl font-medium mb-12 max-w-2xl mx-auto text-slate-400">
+                Lass uns prüfen, wie wir dein Können in ein digitales System übersetzen, das Premium-Kunden anzieht.
+              </p>
+              <Link href="/projektanfrage">
+                <a className="inline-flex bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-12 py-6 font-mono font-bold items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
+                  System-Check starten <ArrowRight className="w-5 h-5" />
+                </a>
+              </Link>
             </div>
           </div>
         </section>

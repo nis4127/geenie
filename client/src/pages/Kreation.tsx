@@ -103,21 +103,19 @@ export default function Kreation() {
               <span className="text-[10px] font-mono tracking-widest text-[#DEFF9A] uppercase">Sichtbarkeit &bull; Ästhetik &bull; Performance</span>
             </div>
 
-            <h1 className="font-sans font-bold text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none mb-6">
-              Wir machen Qualität <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD400] via-[#DEFF9A] to-[#1B6BFF]">
-                online & offline sichtbar.
-              </span>
+            <h1 className="font-bold text-5xl sm:text-6xl lg:text-8xl tracking-tight leading-[0.9] mb-8 uppercase">
+              Qualität braucht <br />
+              <span className="text-[#DEFF9A]">Sichtbarkeit.</span>
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-[#94A3B8] leading-relaxed max-w-2xl mb-8">
-              Von der ersten Website bis zum vollständigen Corporate Design: Wir setzen Ihre Marke professionell um. Technisch brillant und visuell beeindruckend.
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mb-12 font-medium">
+              Von der technischen Exzellenz bis zum haptischen Erlebnis: Wir übersetzen dein Können in ein konsistentes System, das Vertrauen schafft und Ergebnisse liefert.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
               <Link href="/projektanfrage">
-                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-8 py-4 rounded font-mono font-bold flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
-                  Jetzt Projekt anfragen <ArrowRight className="w-4 h-4" />
+                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
+                  Projekt anfragen <ArrowRight className="w-5 h-5" />
                 </a>
               </Link>
             </div>
@@ -135,18 +133,17 @@ export default function Kreation() {
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="text-xs font-mono text-[#DEFF9A] tracking-widest uppercase font-bold">Web & Digital</span>
-            <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">Digitale Umsetzung</h2>
-            <p className="text-slate-400 mt-2">Hochwertige Web-Lösungen für maximale digitale Wirkung.</p>
+          <div className="max-w-4xl mx-auto mb-20">
+            <span className="text-xs font-mono text-[#DEFF9A] tracking-[0.2em] uppercase font-bold">Web & Digital &bull; Systembau</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 uppercase leading-tight">Digitale <br />Umsetzung.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#242832] max-w-6xl mx-auto border border-[#242832]">
             {digitalServices.map((service, index) => (
-              <div key={index} className="bg-[#050505] p-8 rounded-xl border border-[#242832] hover:border-[#DEFF9A] transition-all group">
-                <div className="mb-6">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-[#F6F4EA]">{service.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{service.description}</p>
+              <div key={index} className="bg-[#050505] p-12 transition-all group">
+                <div className="mb-8">{service.icon}</div>
+                <h3 className="text-2xl font-bold mb-4 text-[#F6F4EA] uppercase tracking-tight">{service.title}</h3>
+                <p className="text-slate-400 leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
           </div>
@@ -163,18 +160,17 @@ export default function Kreation() {
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="text-xs font-mono text-[#1B6BFF] tracking-widest uppercase font-bold">Branding & Print</span>
-            <h2 className="text-3xl sm:text-4xl font-sans font-bold mt-2">Print & Design</h2>
-            <p className="text-slate-400 mt-2">Haptische Erlebnisse und ein konsistentes Markenbild.</p>
+          <div className="max-w-4xl mx-auto mb-20">
+            <span className="text-xs font-mono text-[#1B6BFF] tracking-[0.2em] uppercase font-bold">Branding & Print &bull; Ästhetik</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 uppercase leading-tight">Print & <br />Design.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#242832] max-w-6xl mx-auto border border-[#242832]">
             {printServices.map((service, index) => (
-              <div key={index} className="bg-[#111318] p-8 rounded-xl border border-[#242832] hover:border-[#1B6BFF] transition-all group">
-                <div className="mb-6">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-[#F6F4EA]">{service.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{service.description}</p>
+              <div key={index} className="bg-[#111318] p-12 transition-all group">
+                <div className="mb-8">{service.icon}</div>
+                <h3 className="text-2xl font-bold mb-4 text-[#F6F4EA] uppercase tracking-tight">{service.title}</h3>
+                <p className="text-slate-400 leading-relaxed font-medium">{service.description}</p>
               </div>
             ))}
           </div>
@@ -190,26 +186,19 @@ export default function Kreation() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto bg-[#DEFF9A] rounded-3xl p-10 sm:p-16 text-[#050505] text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-20 blur-3xl -mr-32 -mt-32 rounded-full"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1B6BFF] opacity-10 blur-3xl -ml-32 -mb-32 rounded-full"></div>
-            
-            <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold tracking-tight mb-6">
-                Starten wir Ihr <br />nächstes Projekt?
-              </h2>
-              <p className="text-lg font-medium mb-10 max-w-xl mx-auto opacity-80">
-                Ob neue Website oder frisches Design – wir setzen Ihre Vision professionell um. Fragen Sie jetzt unverbindlich an.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/projektanfrage">
-                  <a className="bg-[#050505] text-[#DEFF9A] hover:bg-[#111318] px-10 py-5 rounded-xl font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-xl">
-                    Jetzt Projekt anfragen <ArrowRight className="w-5 h-5" />
-                  </a>
-                </Link>
-              </div>
-            </div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-8 uppercase leading-[0.9]">
+              Bereit für <br /><span className="text-[#DEFF9A]">echte Sichtbarkeit?</span>
+            </h2>
+            <p className="text-xl lg:text-2xl font-medium mb-12 max-w-2xl mx-auto text-slate-400">
+              Wir übersetzen dein Können in ein digitales System, das Premium-Kunden anzieht und deine Qualität sichtbar macht.
+            </p>
+            <Link href="/projektanfrage">
+              <a className="inline-flex bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-12 py-6 font-mono font-bold items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
+                Projekt anfragen <ArrowRight className="w-5 h-5" />
+              </a>
+            </Link>
           </div>
         </div>
       </section>

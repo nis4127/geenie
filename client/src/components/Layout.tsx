@@ -25,28 +25,24 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F6F4EA] flex flex-col font-sans selection:bg-[#DEFF9A] selection:text-[#050505]">
+    <div className="min-h-screen bg-[#050505] text-[#F6F4EA] flex flex-col selection:bg-[#DEFF9A] selection:text-[#050505]">
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-[#050505] border-b border-[#242832] backdrop-blur-md bg-opacity-90">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-50 bg-[#050505] border-b border-[#242832] backdrop-blur-md bg-opacity-95">
+        <div className="container mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-3 cursor-pointer">
-            <img 
-              src="/assets/logo-primaer-farbig.svg" 
-              alt="Geenie Logo" 
-              className="w-auto h-10 object-contain" 
-            />
-            <div>
-              <span className="font-sans font-bold text-lg tracking-wider block">GEENIE</span>
-              <span className="text-[9px] tracking-widest text-[#DEFF9A] uppercase font-mono block">Growth Operator</span>
-            </div>
+            <a className="flex items-center gap-4 cursor-pointer group">
+              <img 
+                src="/assets/sekundaerlogo-geenie-farbig.svg" 
+                alt="Geenie Logo" 
+                className="w-auto h-12 object-contain" 
+              />
             </a>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <nav className="hidden lg:flex items-center gap-12 text-[13px] font-bold uppercase tracking-widest">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <a className={`transition-colors hover:text-[#DEFF9A] ${location === link.href ? 'text-[#DEFF9A]' : 'text-slate-400'}`}>
+                <a className={`transition-all hover:text-[#DEFF9A] ${location === link.href ? 'text-[#DEFF9A]' : 'text-slate-500'}`}>
                   {link.name}
                 </a>
               </Link>
@@ -55,9 +51,9 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
 
           <button 
             onClick={onSystemCheckOpen}
-            className="hidden sm:block bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] text-xs font-mono font-bold px-4 py-2 rounded transition-all active:scale-[0.98]"
+            className="hidden sm:block bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] text-[11px] font-mono font-bold px-6 py-3 transition-all active:scale-[0.98] uppercase tracking-widest"
           >
-            15-Minuten System-Check
+            System-Check
           </button>
 
           {/* Mobile Menu Trigger */}
@@ -96,23 +92,15 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#050505] text-slate-500 py-16 border-t border-[#242832] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
-          <img 
-            src="/assets/bg-hero.png" 
-            alt="Footer Background" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-3">
+      <footer className="bg-[#050505] text-slate-500 py-24 border-t border-[#242832] relative overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+            <div className="flex items-center gap-4">
               <img 
-                src="/assets/logo-primaer-farbig.svg" 
+                src="/assets/sekundaerlogo-geenie-farbig.svg" 
                 alt="Geenie Logo" 
-                className="w-auto h-8 object-contain" 
+                className="w-auto h-10 object-contain" 
               />
-              <span className="font-sans font-bold text-lg tracking-wider text-[#F6F4EA]">GEENIE</span>
             </div>
             
             <div className="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-widest text-slate-400">
