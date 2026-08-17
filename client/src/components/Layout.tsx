@@ -10,32 +10,16 @@ import { useSystemCheck } from "../contexts/SystemCheckContext";
 
 interface LayoutProps {
   children: React.ReactNode;
-  onSystemCheckOpen?: () => void; // Keep for backward compatibility during migration
 }
 
-export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMenuOpen] = useState(false);
   const [location] = useLocation();
   const [impressumOpen, setImpressumOpen] = useState(false);
   const [datenschutzOpen, setDatenschutzOpen] = useState(false);
   const [agbOpen, setAgbOpen] = useState(false);
 
-  const { isSystemCheckOpen, openSystemCheck, closeSystemCheck, submitSystemCheck, isSubmitting } = useSystemCheck();
-  const [formData, setFormData] = useState({ name: "", email: "", company: "", phone: "" });
-
-  const handleOpen = () => {
-    if (onSystemCheckOpen) {
-      onSystemCheckOpen();
-    } else {
-      openSystemCheck();
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await submitSystemCheck(formData);
-    setFormData({ name: "", email: "", company: "", phone: "" });
-  };
+  const { openSystemCheck } = useSystemCheck();
 
   const navLinks = [
     { name: "Strategie & Consulting", href: "/" },
@@ -70,7 +54,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
           </nav>
 
           <button 
-            onClick={handleOpen}
+            onClick={openSystemCheck}
             className="hidden sm:block bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] text-[11px] font-mono font-bold px-6 py-3 transition-all active:scale-[0.98] uppercase tracking-widest"
           >
             System-Check
@@ -98,7 +82,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
               </Link>
             ))}
             <button 
-              onClick={() => { handleOpen(); setMenuOpen(false); }}
+              onClick={() => { openSystemCheck(); setMenuOpen(false); }}
               className="mt-4 bg-[#DEFF9A] text-[#050505] py-3 rounded text-center font-mono flex items-center justify-center gap-2"
             >
               15-Minuten System-Check <ArrowRight className="w-4 h-4" />
@@ -207,7 +191,7 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
 
               <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">4. Kontaktformulare & E-Mail</h4>
-                <p>Wenn Sie uns via E-Mail or Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                <p>Wenn Sie uns via E-Mail oder Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
               </div>
 
               <div>
@@ -267,86 +251,6 @@ export default function Layout({ children, onSystemCheckOpen }: LayoutProps) {
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">4. Printprodukte & Warenlieferung</h4>
                 <p><span className="text-[#F6F4EA] font-bold">Druckdaten:</span> Der Kunde ist für die inhaltliche Richtigkeit und die Druckfähigkeit seiner Daten verantwortlich. Geenie Media prüft Daten nur auf offensichtliche Mängel, übernimmt aber keine Garantie für das Druckergebnis bei fehlerhaften Kundendaten.</p>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* System-Check Modal */}
-      {isSystemCheckOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-          <div className="absolute inset-0 bg-[#050505] bg-opacity-90 backdrop-blur-sm" onClick={closeSystemCheck}></div>
-          <div className="bg-[#111318] border border-[#242832] w-full max-w-lg rounded-2xl relative z-10 overflow-hidden animate-in zoom-in-95 duration-200 shadow-2xl">
-            <div className="p-8">
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#F6F4EA]">System-Check buchen</h3>
-                  <p className="text-sm text-slate-400 mt-1">Wähle deinen Termin für die 15-minütige Analyse.</p>
-                </div>
-                <button onClick={closeSystemCheck} className="p-2 hover:bg-[#050505] rounded-full text-slate-500 hover:text-[#F6F4EA] transition-all">
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-widest text-slate-500 mb-2">Name *</label>
-                  <input 
-                    type="text" 
-                    required
-                    className="w-full bg-[#050505] border border-[#242832] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#DEFF9A] transition-colors"
-                    placeholder="Dein voller Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-widest text-slate-500 mb-2">E-Mail Adresse *</label>
-                  <input 
-                    type="email" 
-                    required
-                    className="w-full bg-[#050505] border border-[#242832] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#DEFF9A] transition-colors"
-                    placeholder="deine@email.de"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-mono uppercase tracking-widest text-slate-500 mb-2">Unternehmen *</label>
-                    <input 
-                      type="text" 
-                      required
-                      className="w-full bg-[#050505] border border-[#242832] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#DEFF9A] transition-colors"
-                      placeholder="Firma GmbH"
-                      value={formData.company}
-                      onChange={(e) => setFormData({...formData, company: e.target.value})}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-mono uppercase tracking-widest text-slate-500 mb-2">Telefon (optional)</label>
-                    <input 
-                      type="tel" 
-                      className="w-full bg-[#050505] border border-[#242832] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#DEFF9A] transition-colors"
-                      placeholder="+49 123 456789"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    />
-                  </div>
-                </div>
-
-                <button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] py-4 rounded-xl font-mono font-bold mt-4 flex items-center justify-center gap-2 transition-all disabled:opacity-50"
-                >
-                  {isSubmitting ? (
-                    <>Sende Anfrage...</>
-                  ) : (
-                    <>Anfrage senden <ArrowRight className="w-4 h-4" /></>
-                  )}
-                </button>
-              </form>
             </div>
           </div>
         </div>

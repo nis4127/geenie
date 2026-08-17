@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 
 export default function Agb() {
   return (
-    <Layout onSystemCheckOpen={() => {}}>
+    <Layout>
       <div className="py-24 lg:py-32 bg-[#050505]">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           <span className="text-xs font-mono text-[#DEFF9A] tracking-[0.2em] uppercase font-bold">Rechtliches</span>
