@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -13,9 +13,10 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "../components/Layout";
+import { useSystemCheck } from "../contexts/SystemCheckContext";
 
 export default function UeberUns() {
-  const [systemCheckOpen, setSystemCheckOpen] = useState(false);
+  const { openSystemCheck } = useSystemCheck();
 
   const benefits = [
     {
@@ -46,13 +47,13 @@ export default function UeberUns() {
   ];
 
   return (
-    <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
+    <Layout>
       <div className="flex flex-col bg-[#050505]">
         {/* HERO SECTION */}
         <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
           <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
             <img 
-              src="/assets/bg-hero.png" 
+              src="/assets/bg-hero.webp" 
               alt="Hero Background" 
               className="w-full h-full object-cover"
             />
@@ -66,11 +67,12 @@ export default function UeberUns() {
               <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mb-12 font-medium">
                 Geenie Media ist kein Dienstleister für Werbeversprechen. Wir sind die operative Instanz, die dein Unternehmen digital auf Premium-Niveau hebt und dort hält.
               </p>
-              <Link href="/projektanfrage">
-                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
-                  System-Check starten <ArrowRight className="w-5 h-5" />
-                </a>
-              </Link>
+              <button 
+                onClick={openSystemCheck}
+                className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider"
+              >
+                System-Check starten <ArrowRight className="w-5 h-5" />
+              </button>
             </div>
           </div>
         </section>
@@ -107,7 +109,7 @@ export default function UeberUns() {
                 <div className="relative group">
                   <div className="relative aspect-[4/5] overflow-hidden border border-[#242832] bg-[#111318]">
                     <img 
-                      src="/assets/Portrait Bild Yannis Denzler_Geenie Media.png" 
+                      src="/assets/portrait-yannis-optimized.webp" 
                       alt="Yannis K. Denzler" 
                       className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
                     />
@@ -187,7 +189,7 @@ export default function UeberUns() {
         <section className="py-32 bg-[#111318] relative overflow-hidden border-t border-[#242832]">
           <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
             <img 
-              src="/assets/bg-cta.png" 
+              src="/assets/bg-cta.webp" 
               alt="CTA Background" 
               className="w-full h-full object-cover"
             />
@@ -200,11 +202,12 @@ export default function UeberUns() {
               <p className="text-xl lg:text-2xl font-medium mb-12 max-w-2xl mx-auto text-slate-400">
                 Lass uns prüfen, wie wir dein Können in ein digitales System übersetzen, das Premium-Kunden anzieht.
               </p>
-              <Link href="/projektanfrage">
-                <a className="inline-flex bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-12 py-6 font-mono font-bold items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
-                  System-Check starten <ArrowRight className="w-5 h-5" />
-                </a>
-              </Link>
+              <button 
+                onClick={openSystemCheck}
+                className="inline-flex bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-12 py-6 font-mono font-bold items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider"
+              >
+                System-Check starten <ArrowRight className="w-5 h-5" />
+              </button>
             </div>
           </div>
         </section>

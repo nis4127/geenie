@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "wouter"; 
 import { 
   ArrowRight, 
@@ -18,9 +18,11 @@ import {
   Sparkles
 } from "lucide-react";
 import Layout from "../components/Layout";
+import { useSystemCheck } from "../contexts/SystemCheckContext";
 
 export default function Kreation() {
-  const [systemCheckOpen, setSystemCheckOpen] = useState(false);
+  const { openSystemCheck } = useSystemCheck();
+
   const digitalServices = [
     {
       title: "Unternehmenswebsites",
@@ -83,13 +85,13 @@ export default function Kreation() {
   ];
 
   return (
-    <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
+    <Layout>
       <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
           <img 
-            src="/assets/bg-services.png" 
+            src="/assets/bg-services.webp" 
             alt="Kreation Background" 
             className="w-full h-full object-cover"
           />
@@ -127,7 +129,7 @@ export default function Kreation() {
       <section className="py-24 bg-[#111318] border-b border-[#242832] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
           <img 
-            src="/assets/bg-transformation.png" 
+            src="/assets/bg-transformation.webp" 
             alt="Digital Background" 
             className="w-full h-full object-cover"
           />
@@ -154,7 +156,7 @@ export default function Kreation() {
       <section className="py-24 bg-[#050505] border-b border-[#242832] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
           <img 
-            src="/assets/bg-problem.png" 
+            src="/assets/bg-problem.webp" 
             alt="Design Background" 
             className="w-full h-full object-cover"
           />
@@ -181,7 +183,7 @@ export default function Kreation() {
       <section className="py-24 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
           <img 
-            src="/assets/bg-cta.png" 
+            src="/assets/bg-cta.webp" 
             alt="CTA Background" 
             className="w-full h-full object-cover"
           />

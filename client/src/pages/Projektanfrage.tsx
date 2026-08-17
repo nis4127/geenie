@@ -11,11 +11,12 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import Layout from "../components/Layout";
+import { useSystemCheck } from "../contexts/SystemCheckContext";
 
 export default function Projektanfrage() {
+  const { openSystemCheck } = useSystemCheck();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [systemCheckOpen, setSystemCheckOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -31,7 +32,6 @@ export default function Projektanfrage() {
     setIsSubmitting(true);
 
     try {
-      // Formspree Integration (using same endpoint as existing form for now, or separate if provided)
       const response = await fetch("https://formspree.io/f/mlgvqkba", {
         method: "POST",
         headers: {
@@ -59,7 +59,7 @@ export default function Projektanfrage() {
 
   if (submitted) {
     return (
-      <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
+      <Layout>
         <div className="min-h-[70vh] flex items-center justify-center container mx-auto px-6 py-20">
         <div className="max-w-2xl w-full bg-[#111318] border border-[#242832] rounded-3xl p-10 sm:p-16 text-center animate-in zoom-in-95 duration-300">
           <div className="w-20 h-20 bg-[#DEFF9A] rounded-full flex items-center justify-center mx-auto mb-8">
@@ -82,11 +82,11 @@ export default function Projektanfrage() {
   }
 
   return (
-    <Layout onSystemCheckOpen={() => setSystemCheckOpen(true)}>
+    <Layout>
       <div className="py-20 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
         <img 
-          src="/assets/bg-transformation.png" 
+          src="/assets/bg-transformation.webp" 
           alt="Background" 
           className="w-full h-full object-cover"
         />
