@@ -53,7 +53,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#111318] border border-[#DEFF9A] border-opacity-20 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#DEFF9A] animate-pulse"></span>
-              <span className="text-[10px] font-mono tracking-widest text-[#DEFF9A] uppercase">Strategie &bull; Consulting &bull; Wachstum</span>
+              <span className="text-[10px] font-mono tracking-widest text-[#DEFF9A] uppercase">Weniger Marketing. Mehr System.</span>
             </div>
 
             <h1 className="font-bold text-5xl sm:text-6xl lg:text-8xl tracking-tight leading-[0.9] mb-8 uppercase">
