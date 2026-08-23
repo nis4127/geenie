@@ -62,7 +62,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mb-12 font-medium">
-              Wir bauen digitale Systeme, die echte Qualität sichtbar machen und Premiumpreise legitimieren. Keine Agentur-Floskeln. Nur präzise Systemlogik für messbares Wachstum.
+              Geenie Media aus Muttenz baut digitale Systeme, die echte Qualität sichtbar machen und Premiumpreise legitimieren. Keine Agentur-Floskeln. Nur präzise Systemlogik für messbares Wachstum – für KMU in Basel und der ganzen Schweiz.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
