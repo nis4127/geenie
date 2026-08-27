@@ -10,6 +10,7 @@
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "test:direct-links": "node scripts/test-direct-links.mjs",
+    "test:jsonld": "node scripts/test-jsonld-syntax.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {
