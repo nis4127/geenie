@@ -5,11 +5,11 @@ const analytics = `    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-
 const pages = [
   { path: "", title: "Geenie Media | Webdesign & Print für KMU in Basel", description: "Webdesign, Corporate Identity und Print aus Muttenz: Geenie Media macht Qualität für KMU in Basel und der ganzen Schweiz sichtbar.", image: "/assets/bg-hero.webp" },
   { path: "ueber-uns", title: "Über uns | Geenie Media aus Muttenz", description: "Lerne Geenie Media kennen: strategisches Webdesign, klare Markenauftritte und präzise Umsetzung für KMU in Basel und der Schweiz.", image: "/assets/bg-hero.webp" },
-  { path: "kreation", title: "Kreation & Print | Geenie Media", description: "Corporate Design, Printprodukte und digitale Umsetzung: Geenie Media entwickelt klare Auftritte, die Qualität sichtbar und nutzbar machen.", image: "/assets/showroom/hero.jpg" },
+  { path: "kreation", title: "Kreation & Print | Geenie Media", description: "Corporate Design, Printprodukte und digitale Umsetzung: Geenie Media entwickelt klare Auftritte, die Qualität sichtbar und nutzbar machen.", image: "/assets/showroom/hero.webp" },
   { path: "projektanfrage", title: "Projektanfrage | Geenie Media", description: "Beschreibe dein Projekt und starte den Geenie System-Check für Webdesign, Corporate Identity oder Print aus Muttenz.", image: "/assets/bg-cta.webp" },
   { path: "datenschutz", title: "Datenschutz | Geenie Media", description: "Datenschutzerklärung von Geenie Media: Informationen zur Bearbeitung personenbezogener Daten auf unserer Website.", image: "/assets/bg-hero.webp" },
   { path: "agb", title: "AGB | Geenie Media", description: "Allgemeine Geschäftsbedingungen von Geenie Media für Webdesign, Corporate Identity, Printprodukte und weitere Dienstleistungen.", image: "/assets/bg-hero.webp" },
-  { path: "showroom", title: "Print Showroom | Geenie Media", description: "Printprodukte für Corporate Identity: Präsentationsmappen, Papeterie, Publikationen, Werbeartikel und Premium-Hardcover im Geenie Showroom.", image: "/assets/showroom/hero.jpg" },
+  { path: "showroom", title: "Print Showroom | Geenie Media", description: "Printprodukte für Corporate Identity: Präsentationsmappen, Papeterie, Publikationen, Werbeartikel und Premium-Hardcover im Geenie Showroom.", image: "/assets/showroom/hero.webp" },
 ];
 
 function html(page) {

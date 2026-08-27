@@ -11,7 +11,7 @@ import "../showroom.css";
 
 const base = "/assets/showroom";
 const logo = `${base}/geenie-logo-original.svg`;
-const mark = `${base}/mark.png`;
+const mark = `${base}/mark.webp`;
 
 const categories = [
   { id: "01", name: "Präsentationsmappen", short: "Mappen" },
@@ -81,7 +81,7 @@ export default function Showroom() {
     <Layout>
       <div className="gm-showroom">
         <section className="gm-hero">
-          <img className="gm-hero-image" src={`${base}/hero.jpg`} alt="Taktile schwarze Printmaterialien und Papierlagen" />
+          <img className="gm-hero-image" src={`${base}/hero.webp`} alt="Taktile schwarze Printmaterialien und Papierlagen" />
           <div className="gm-hero-shade" />
           <div className="gm-hero-content">
             <p className="gm-kicker gm-kicker--light">GEENIE MEDIA / DIGITALER SHOWROOM</p>
@@ -100,8 +100,8 @@ export default function Showroom() {
             <p>Wir denken Print nicht als einzelne Artikel, sondern als zusammenhängende Materialwelt. Jede Oberfläche, jedes Format und jede Veredelung folgt Ihrem Auftritt — präzise geplant, hochwertig produziert.</p>
             <Link href="/projektanfrage"><a className="gm-text-cta gm-text-cta--dark">Projekt besprechen <ArrowUpRight size={15} /></a></Link>
           </div>
-          <div className="gm-intro-paper"><img src={`${base}/paper-texture.jpg`} alt="Warme Papierlagen mit sichtbarer Materialstruktur" /></div>
-          <div className="gm-intro-detail"><img src={`${base}/system-detail.jpg`} alt="Präzise arrangierte Printmaterialien" /><span>01—05 / TACTILE SYSTEM</span></div>
+          <div className="gm-intro-paper"><img src={`${base}/paper-texture.webp`} alt="Warme Papierlagen mit sichtbarer Materialstruktur" /></div>
+          <div className="gm-intro-detail"><img src={`${base}/system-detail.webp`} alt="Präzise arrangierte Printmaterialien" /><span>01—05 / TACTILE SYSTEM</span></div>
         </section>
 
         <section className="gm-archive">
@@ -111,10 +111,10 @@ export default function Showroom() {
             <p className="gm-archive-note">Kein Shop.<br />Ein Materialarchiv.</p>
           </aside>
           <div className="gm-archive-content">
-            <ProductSection id="01" number="01" title="Präsentationsmappen" description="Der erste Eindruck hat Gewicht. Unsere hochwertigen Präsentationsmappen aus schwerem Naturkarton bringen Ihre Unterlagen perfekt geordnet und haptisch überzeugend zu Ihren Kunden. Mit integrierten Taschen und optionalen Veredelungen." images={[{ src: `${base}/presentation-folder-closed.png`, alt: "Geschlossene Präsentationsmappe aus Naturkarton", className: "gm-media--large" }, { src: `${base}/presentation-folder-open.jpg`, alt: "Geöffnete Präsentationsmappe mit integrierten Taschen", className: "gm-media--small" }]} specs={["NATURKARTON", "INTEGRIERTE TASCHE", "VEREDLUNGEN"]} />
+            <ProductSection id="01" number="01" title="Präsentationsmappen" description="Der erste Eindruck hat Gewicht. Unsere hochwertigen Präsentationsmappen aus schwerem Naturkarton bringen Ihre Unterlagen perfekt geordnet und haptisch überzeugend zu Ihren Kunden. Mit integrierten Taschen und optionalen Veredelungen." images={[{ src: `${base}/presentation-folder-closed.webp`, alt: "Geschlossene Präsentationsmappe aus Naturkarton", className: "gm-media--large" }, { src: `${base}/presentation-folder-open.webp`, alt: "Geöffnete Präsentationsmappe mit integrierten Taschen", className: "gm-media--small" }]} specs={["NATURKARTON", "INTEGRIERTE TASCHE", "VEREDLUNGEN"]} />
             <ProductSection id="02" number="02" title={<>Visitenkarten &<br />Papeterie</>} description="Haptik, die beim ersten Händedruck bleibt. Von schweren, strukturierten Visitenkarten mit edler Prägung bis hin zu klassischem, bedrucktem A4-Briefpapier und passenden Couverts – für einen durchgehenden, professionellen Auftritt." images={[{ src: `${base}/papeterie-cards.webp`, alt: "Stapel hochwertiger Visitenkarten", className: "gm-media--medium" }, { src: `${base}/letter-envelope.webp`, alt: "Bedrucktes Briefpapier und passende Couverts", className: "gm-media--tall" }, { src: `${base}/letterhead.webp`, alt: "A4-Briefpapier mit hochwertigem Druck", className: "gm-media--small" }]} specs={["PRÄGUNG", "A4 BRIEFSET", "COUVERTS"]} reverse />
             <ProductSection id="03" number="03" title={<>Notizblöcke &<br />Publikationen</>} description="Perfekt für den täglichen Büroalltag oder als edles Give-away. Unsere A4-Notizblöcke mit sauberer Leimbindung bieten viel Raum für Ideen. Ergänzt durch klassische Musterkataloge und Broschüren mit sauberer Drahtheftung." images={[{ src: `${base}/notepad.webp`, alt: "A4-Notizblock mit sauberer Leimbindung", className: "gm-media--large" }, { src: `${base}/brochure.webp`, alt: "Aufgeschlagene Broschüre mit sauberer Bindung", className: "gm-media--small" }]} specs={["A4 FORMAT", "LEIMBINDUNG", "DRAHTHEFTUNG"]} />
-            <ProductSection id="04" number="04" title={<>Werbeartikel &<br />Büroausstattung</>} description="Kleine Details mit grosser Wirkung. Verleihen Sie Ihrem Büro oder Ihren Events den letzten Schliff – mit minimalistischen, edlen Kugelschreibern, hochwertigen Computer-Mausmatten und detailgetreuen Pins." images={[{ src: `${base}/pen.webp`, alt: "Edler Kugelschreiber", className: "gm-media--small" }, { src: `${base}/mouse-mat.jpg`, alt: "Hochwertige Computer-Mausmatte", className: "gm-media--large" }, { src: `${base}/pin.jpg`, alt: "Detailgetreuer Metall-Pin", className: "gm-media--small" }]} specs={["OFFICE", "EVENTS", "DETAILS"]} reverse />
+            <ProductSection id="04" number="04" title={<>Werbeartikel &<br />Büroausstattung</>} description="Kleine Details mit grosser Wirkung. Verleihen Sie Ihrem Büro oder Ihren Events den letzten Schliff – mit minimalistischen, edlen Kugelschreibern, hochwertigen Computer-Mausmatten und detailgetreuen Pins." images={[{ src: `${base}/pen.webp`, alt: "Edler Kugelschreiber", className: "gm-media--small" }, { src: `${base}/mouse-mat.webp`, alt: "Hochwertige Computer-Mausmatte", className: "gm-media--large" }, { src: `${base}/pin.webp`, alt: "Detailgetreuer Metall-Pin", className: "gm-media--small" }]} specs={["OFFICE", "EVENTS", "DETAILS"]} reverse />
             <ProductSection id="05" number="05" title={<>Premium-Broschüren &<br />Hardcover</>} description="Wenn es exklusiver sein muss. Tiefschwarze Feinpapier-Einbände, veredelt mit edlen Heissfolienprägungen und haptischem Relief, sorgen dafür, dass Ihre Publikationen garantiert im Gedächtnis bleiben." images={[{ src: `${base}/premium-hardcover.webp`, alt: "Schwarze Premium-Broschüre mit haptischem Einband", className: "gm-media--hero" }]} specs={["FEINPAPIER", "HEISSFOLIE", "RELIEF"]} />
           </div>
         </section>
