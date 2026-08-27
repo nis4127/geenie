@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
+    "test:direct-links": "node scripts/test-direct-links.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {
