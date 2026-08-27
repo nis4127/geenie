@@ -11,12 +11,14 @@ import Projektanfrage from "./pages/Projektanfrage";
 import UeberUns from "./pages/UeberUns";
 import Datenschutz from "./pages/Datenschutz";
 import Agb from "./pages/Agb";
+import Showroom from "./pages/Showroom";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/kreation" component={Kreation} />
+      <Route path="/showroom" component={Showroom} />
       <Route path="/ueber-uns" component={UeberUns} />
       <Route path="/projektanfrage" component={Projektanfrage} />
       <Route path="/datenschutz" component={Datenschutz} />

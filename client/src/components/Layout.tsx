@@ -24,6 +24,7 @@ export default function Layout({ children }: LayoutProps) {
   const navLinks = [
     { name: "Strategie & Consulting", href: "/" },
     { name: "Kreation & Umsetzung", href: "/kreation" },
+    { name: "Print Showroom", href: "/showroom" },
     { name: "Über uns", href: "/ueber-uns" },
     { name: "Kontakt", href: "/projektanfrage" },
   ];

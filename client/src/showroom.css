@@ -1,0 +1,77 @@
+/*
+ * Geenie Media Showroom — bestehende Homepage-Integration
+ * Tactical Magic: Graphit/Signal White, System Lime als präzises Indexsignal, klare Kanten.
+ */
+.gm-showroom { background:#050505; color:#F6F4EA; overflow:hidden; font-family:'Inter',sans-serif; }
+.gm-showroom h1,.gm-showroom h2,.gm-showroom h3 { font-family:'Space Grotesk',sans-serif; letter-spacing:-.055em; }
+.gm-hero { min-height:760px; position:relative; display:flex; align-items:flex-end; isolation:isolate; border-bottom:1px solid #242832; }
+.gm-hero-image,.gm-hero-shade { position:absolute; inset:0; width:100%; height:100%; }
+.gm-hero-image { object-fit:cover; object-position:center; z-index:-2; }
+.gm-hero-shade { z-index:-1; background:linear-gradient(90deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.74) 36%,rgba(5,5,5,.12) 84%),linear-gradient(0deg,rgba(5,5,5,.66),transparent 52%); }
+.gm-hero-content { width:min(1320px,calc(100% - 96px)); margin:0 auto; padding-bottom:100px; }
+.gm-kicker { margin:0 0 22px; color:#94A3B8; font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.2; font-weight:600; letter-spacing:.18em; text-transform:uppercase; }
+.gm-kicker--light { color:#DEFF9A; }
+.gm-hero h1 { max-width:780px; margin:0; font-size:clamp(4.2rem,8vw,8.6rem); line-height:.85; font-weight:700; text-transform:none; }
+.gm-hero h1 span { color:#DEFF9A; }
+.gm-hero-content > p:not(.gm-kicker) { max-width:430px; margin:31px 0 27px; color:#CBD1DB; font-size:16px; line-height:1.6; }
+.gm-text-cta { display:inline-flex; align-items:center; gap:11px; padding:10px 0; color:#F6F4EA; border-bottom:1px solid rgba(246,244,234,.5); font-size:12px; font-weight:700; letter-spacing:.04em; transition:color .2s ease,gap .22s ease,border-color .2s ease; }
+.gm-text-cta:hover { color:#DEFF9A; border-color:#DEFF9A; gap:17px; }
+.gm-hero-index { position:absolute; right:48px; bottom:104px; color:#94A3B8; font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.65; letter-spacing:.16em; text-align:right; }
+.gm-hero-index span { color:#DEFF9A; }
+.gm-intro { width:min(1320px,calc(100% - 96px)); min-height:610px; margin:0 auto; padding:125px 0 120px; display:grid; grid-template-columns:70px 1.25fr .85fr .52fr; gap:6%; align-items:center; border-bottom:1px solid #242832; }
+.gm-intro-mark { align-self:start; display:flex; align-items:center; gap:14px; color:#94A3B8; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.13em; writing-mode:vertical-rl; transform:rotate(180deg); }
+.gm-intro-mark img { width:28px; height:28px; object-fit:contain; transform:rotate(90deg); }
+.gm-intro-copy h2 { max-width:560px; margin:0 0 28px; color:#F6F4EA; font-size:clamp(2.7rem,4.4vw,5.2rem); line-height:.94; }
+.gm-intro-copy h2 span { color:#DEFF9A; }
+.gm-intro-copy > p:not(.gm-kicker) { max-width:470px; margin:0 0 26px; color:#94A3B8; font-size:16px; line-height:1.7; }
+.gm-text-cta--dark { color:#F6F4EA; }
+.gm-intro-paper { height:390px; overflow:hidden; border:1px solid #242832; }
+.gm-intro-paper img,.gm-intro-detail img { width:100%; height:100%; object-fit:cover; filter:saturate(.74) contrast(1.03); }
+.gm-intro-detail { align-self:end; }
+.gm-intro-detail img { display:block; aspect-ratio:4/5; }
+.gm-intro-detail span { display:block; margin-top:11px; color:#94A3B8; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.15em; }
+.gm-archive { width:min(1320px,calc(100% - 96px)); margin:0 auto; padding:105px 0 130px; display:grid; grid-template-columns:195px 1fr; gap:8%; }
+.gm-archive-nav { position:sticky; top:98px; align-self:start; }
+.gm-archive-nav nav { border-top:1px solid #242832; }
+.gm-archive-nav nav a { display:grid; grid-template-columns:30px 1fr 14px; align-items:center; gap:6px; min-height:46px; border-bottom:1px solid #242832; color:#94A3B8; font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.04em; transition:padding .22s ease,color .2s ease; }
+.gm-archive-nav nav a b { color:#647084; font-size:9px; }
+.gm-archive-nav nav a svg { opacity:0; transition:opacity .2s ease,transform .2s ease; }
+.gm-archive-nav nav a:hover,.gm-archive-nav nav a.is-active { padding-left:6px; color:#F6F4EA; }
+.gm-archive-nav nav a.is-active b { color:#DEFF9A; }
+.gm-archive-nav nav a:hover svg,.gm-archive-nav nav a.is-active svg { opacity:1; transform:translateX(2px); color:#DEFF9A; }
+.gm-archive-note { margin-top:30px; color:#647084; font-size:12px; line-height:1.55; }
+.gm-product-section { display:grid; grid-template-columns:42px minmax(220px,.74fr) minmax(380px,1.25fr); gap:28px; padding:80px 0 120px; border-top:1px solid #242832; scroll-margin-top:40px; }
+.gm-section-rail { display:flex; flex-direction:column; align-items:center; gap:17px; }
+.gm-section-rail strong { color:#DEFF9A; font-family:'IBM Plex Mono',monospace; font-size:12px; }
+.gm-section-rail span { width:1px; height:78px; background:#242832; }
+.gm-section-rail small { color:#647084; font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.12em; writing-mode:vertical-rl; transform:rotate(180deg); }
+.gm-product-copy { padding-top:10px; }
+.gm-product-copy h2 { max-width:450px; margin:0 0 22px; color:#F6F4EA; font-size:clamp(2.2rem,3.8vw,4.2rem); line-height:.93; }
+.gm-description { max-width:425px; margin:0; color:#94A3B8; font-size:15px; line-height:1.72; }
+.gm-specs { display:flex; flex-wrap:wrap; gap:9px 16px; margin-top:28px; padding-top:15px; border-top:1px solid #242832; color:#647084; font-family:'IBM Plex Mono',monospace; font-size:8px; font-weight:600; letter-spacing:.13em; }
+.gm-specs span { white-space:nowrap; }
+.gm-specs span::first-letter { color:#DEFF9A; }
+.gm-product-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; align-items:start; }
+.gm-product-section--reverse .gm-product-copy { order:3; }
+.gm-product-section--reverse .gm-product-gallery { order:2; }
+.gm-media { position:relative; min-height:190px; margin:0; overflow:hidden; background:#111318; border:1px solid #242832; }
+.gm-media img { width:100%; height:100%; min-height:190px; display:block; object-fit:cover; filter:saturate(.86) contrast(1.03); transition:transform .45s cubic-bezier(.23,1,.32,1),filter .45s ease; }
+.gm-media:hover img { transform:scale(1.035); filter:saturate(1) contrast(1.04); }
+.gm-media figcaption { position:absolute; left:12px; bottom:10px; color:rgba(246,244,234,.72); font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.13em; mix-blend-mode:difference; }
+.gm-media--large { grid-row:span 2; min-height:440px; }
+.gm-media--large img { min-height:440px; }
+.gm-media--small { min-height:212px; }
+.gm-media--small img { min-height:212px; }
+.gm-media--medium { min-height:305px; }
+.gm-media--medium img { min-height:305px; }
+.gm-media--tall { grid-row:span 2; min-height:430px; }
+.gm-media--tall img { min-height:430px; }
+.gm-media--hero { grid-column:1/-1; min-height:500px; }
+.gm-media--hero img { min-height:500px; }
+.gm-showroom-cta { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; padding:105px max(48px,calc((100% - 1320px)/2)) 110px; background:#111318; border-top:1px solid #242832; }
+.gm-showroom-cta h2 { margin:0; font-size:clamp(3rem,5.8vw,6.4rem); line-height:.88; }
+.gm-showroom-cta h2 span { color:#DEFF9A; }
+.gm-button { display:inline-flex; align-items:center; gap:10px; padding:15px 18px; border:1px solid #DEFF9A; color:#DEFF9A; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; transition:background .2s ease,color .2s ease,transform .18s ease; }
+.gm-button:hover { background:#DEFF9A; color:#050505; transform:translateY(-3px); }
+@media (max-width:1100px) { .gm-hero-content,.gm-intro,.gm-archive { width:calc(100% - 64px); } .gm-intro { grid-template-columns:45px 1.1fr .9fr; } .gm-intro-detail { display:none; } .gm-archive { grid-template-columns:160px 1fr; gap:35px; } .gm-product-section { grid-template-columns:40px 1fr; } .gm-product-copy { grid-column:2; } .gm-product-gallery { grid-column:2; } .gm-product-section--reverse .gm-product-copy,.gm-product-section--reverse .gm-product-gallery { order:initial; } }
+@media (max-width:720px) { .gm-hero { min-height:670px; } .gm-hero-content,.gm-intro,.gm-archive { width:calc(100% - 40px); } .gm-hero-content { padding-bottom:72px; } .gm-hero h1 { font-size:clamp(3.2rem,15vw,5.6rem); } .gm-hero-content > p:not(.gm-kicker) { font-size:14px; max-width:320px; } .gm-hero-index { right:20px; bottom:26px; font-size:8px; } .gm-intro { display:flex; flex-direction:column; align-items:stretch; padding:88px 0 80px; gap:36px; } .gm-intro-mark { writing-mode:horizontal-tb; transform:none; } .gm-intro-mark img { transform:none; } .gm-intro-copy h2 { font-size:3.1rem; } .gm-intro-paper { height:250px; } .gm-intro-detail { display:block; width:58%; align-self:flex-end; } .gm-archive { display:block; padding:80px 0 75px; } .gm-archive-nav { position:relative; top:auto; margin-bottom:48px; overflow-x:auto; } .gm-archive-nav > .gm-kicker,.gm-archive-note { display:none; } .gm-archive-nav nav { display:flex; width:max-content; gap:8px; border-top:0; } .gm-archive-nav nav a { display:flex; gap:8px; min-height:35px; padding:0 11px; border:1px solid #242832; } .gm-archive-nav nav a:hover,.gm-archive-nav nav a.is-active { padding-left:11px; border-color:#DEFF9A; } .gm-archive-nav nav a svg { display:none; } .gm-product-section { grid-template-columns:25px 1fr; gap:15px; padding:58px 0 76px; } .gm-product-section .gm-product-copy,.gm-product-section .gm-product-gallery { grid-column:2; } .gm-product-copy h2 { font-size:2.7rem; } .gm-description { font-size:14px; } .gm-product-gallery { grid-template-columns:1fr 1fr; gap:8px; } .gm-media--large,.gm-media--large img,.gm-media--tall,.gm-media--tall img { min-height:300px; } .gm-media--medium,.gm-media--medium img { min-height:220px; } .gm-media--small,.gm-media--small img { min-height:145px; } .gm-media--hero,.gm-media--hero img { min-height:300px; } .gm-showroom-cta { flex-direction:column; align-items:flex-start; padding:75px 20px 80px; } .gm-showroom-cta h2 { font-size:3.3rem; } }
