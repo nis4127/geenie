@@ -2,6 +2,14 @@ import { mkdir, writeFile } from "node:fs/promises";
 
 const site = "https://www.geenie-media.ch";
 const analytics = `    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>`;
+const showroomProducts = [
+  { id: "01", name: "Präsentationsmappen", description: "Hochwertige Präsentationsmappen aus schwerem Naturkarton mit integrierten Taschen und optionalen Veredelungen.", image: "/assets/showroom/presentation-folder-closed.webp", category: "Präsentationsmappen" },
+  { id: "02", name: "Visitenkarten & Papeterie", description: "Strukturierte Visitenkarten, bedrucktes A4-Briefpapier und passende Couverts für einen professionellen Auftritt.", image: "/assets/showroom/papeterie-cards.webp", category: "Visitenkarten und Papeterie" },
+  { id: "03", name: "Notizblöcke & Publikationen", description: "A4-Notizblöcke mit Leimbindung sowie Broschüren und Musterkataloge mit sauberer Bindung.", image: "/assets/showroom/notepad.webp", category: "Notizblöcke und Publikationen" },
+  { id: "04", name: "Werbeartikel & Büroausstattung", description: "Edle Kugelschreiber, hochwertige Mausmatten und detailgetreue Pins für Büro und Events.", image: "/assets/showroom/pen.webp", category: "Werbeartikel und Büroausstattung" },
+  { id: "05", name: "Premium-Broschüren & Hardcover", description: "Tiefschwarze Feinpapier-Einbände mit Heissfolienprägung und haptischem Relief.", image: "/assets/showroom/premium-hardcover.webp", category: "Premium-Broschüren und Hardcover" },
+];
+
 const pages = [
   { path: "", title: "Geenie Media | Webdesign & Print für KMU in Basel", description: "Webdesign, Corporate Identity und Print aus Muttenz: Geenie Media macht Qualität für KMU in Basel und der ganzen Schweiz sichtbar.", image: "/assets/bg-hero.webp" },
   { path: "ueber-uns", title: "Über uns | Geenie Media aus Muttenz", description: "Lerne Geenie Media kennen: strategisches Webdesign, klare Markenauftritte und präzise Umsetzung für KMU in Basel und der Schweiz.", image: "/assets/bg-hero.webp" },
@@ -15,7 +23,13 @@ const pages = [
 function html(page) {
   const url = page.path ? `${site}/${page.path}` : site;
   const image = `${site}${page.image}`;
-  const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: page.title, description: page.description, url, isPartOf: { "@type": "WebSite", name: "Geenie Media", url: site } });
+  const webPage = { "@type": "WebPage", "@id": `${url}#webpage`, name: page.title, description: page.description, url, isPartOf: { "@type": "WebSite", name: "Geenie Media", url: site } };
+  if (page.path === "showroom") {
+    webPage.mainEntity = { "@id": `${url}#product-list` };
+  }
+  const jsonLd = page.path === "showroom"
+    ? JSON.stringify({ "@context": "https://schema.org", "@graph": [webPage, { "@type": "ItemList", "@id": `${url}#product-list`, name: "Geenie Media Print Showroom", description: page.description, url, numberOfItems: showroomProducts.length, itemListOrder: "https://schema.org/ItemListOrderUnordered", itemListElement: showroomProducts.map((product, index) => ({ "@type": "ListItem", position: index + 1, item: { "@type": "Product", "@id": `${url}#product-${product.id}`, name: product.name, description: product.description, image: `${site}${product.image}`, url: `${url}#gm-category-${product.id}`, brand: { "@type": "Brand", name: "Geenie Media" }, category: product.category } })) } ] })
+    : JSON.stringify({ "@context": "https://schema.org", ...webPage });
   return `<!doctype html>
 <html lang="de-CH">
   <head>
