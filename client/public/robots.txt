@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://www.geenie-media.ch/sitemap.xml
