@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/ueber-uns", "destination": "/ueber-uns/index.html" },
+    { "source": "/kreation", "destination": "/kreation/index.html" },
+    { "source": "/projektanfrage", "destination": "/projektanfrage/index.html" },
+    { "source": "/datenschutz", "destination": "/datenschutz/index.html" },
+    { "source": "/agb", "destination": "/agb/index.html" },
+    { "source": "/showroom", "destination": "/showroom/index.html" }
+  ]
+}

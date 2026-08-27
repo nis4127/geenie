@@ -219,6 +219,17 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(import.meta.dirname, "client/index.html"),
+        kreation: path.resolve(import.meta.dirname, "client/kreation/index.html"),
+        ueberUns: path.resolve(import.meta.dirname, "client/ueber-uns/index.html"),
+        projektanfrage: path.resolve(import.meta.dirname, "client/projektanfrage/index.html"),
+        datenschutz: path.resolve(import.meta.dirname, "client/datenschutz/index.html"),
+        agb: path.resolve(import.meta.dirname, "client/agb/index.html"),
+        showroom: path.resolve(import.meta.dirname, "client/showroom/index.html"),
+      },
+    },
   },
   server: {
     port: 3000,
