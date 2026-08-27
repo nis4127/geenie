@@ -24,7 +24,7 @@ const categories = [
 function ProductImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
     <figure className={`gm-media ${className}`}>
-      <img src={src} alt={alt} loading="lazy" />
+      <img src={src} alt={alt} loading="lazy" decoding="async" sizes="(max-width: 720px) 50vw, (max-width: 1100px) 42vw, 32vw" />
       <figcaption>GEENIE / MATERIAL</figcaption>
     </figure>
   );
@@ -81,7 +81,7 @@ export default function Showroom() {
     <Layout>
       <div className="gm-showroom">
         <section className="gm-hero">
-          <img className="gm-hero-image" src={`${base}/hero.webp`} alt="Taktile schwarze Printmaterialien und Papierlagen" />
+          <img className="gm-hero-image" src={`${base}/hero.webp`} alt="Taktile schwarze Printmaterialien und Papierlagen" width={2560} height={1440} loading="eager" fetchPriority="high" decoding="async" />
           <div className="gm-hero-shade" />
           <div className="gm-hero-content">
             <p className="gm-kicker gm-kicker--light">GEENIE MEDIA / DIGITALER SHOWROOM</p>
@@ -93,15 +93,15 @@ export default function Showroom() {
         </section>
 
         <section className="gm-intro">
-          <div className="gm-intro-mark"><img src={mark} alt="" /><span>CURATED<br />MATERIALS</span></div>
+          <div className="gm-intro-mark"><img src={mark} alt="" loading="lazy" decoding="async" width={768} height={768} /><span>CURATED<br />MATERIALS</span></div>
           <div className="gm-intro-copy">
             <p className="gm-kicker">DAS PRINZIP</p>
             <h2>Ein System für alles,<br /><span>was Ihre Marke berührt.</span></h2>
             <p>Wir denken Print nicht als einzelne Artikel, sondern als zusammenhängende Materialwelt. Jede Oberfläche, jedes Format und jede Veredelung folgt Ihrem Auftritt — präzise geplant, hochwertig produziert.</p>
             <Link href="/projektanfrage"><a className="gm-text-cta gm-text-cta--dark">Projekt besprechen <ArrowUpRight size={15} /></a></Link>
           </div>
-          <div className="gm-intro-paper"><img src={`${base}/paper-texture.webp`} alt="Warme Papierlagen mit sichtbarer Materialstruktur" /></div>
-          <div className="gm-intro-detail"><img src={`${base}/system-detail.webp`} alt="Präzise arrangierte Printmaterialien" /><span>01—05 / TACTILE SYSTEM</span></div>
+          <div className="gm-intro-paper"><img src={`${base}/paper-texture.webp`} alt="Warme Papierlagen mit sichtbarer Materialstruktur" loading="lazy" decoding="async" width={2304} height={1536} /></div>
+          <div className="gm-intro-detail"><img src={`${base}/system-detail.webp`} alt="Präzise arrangierte Printmaterialien" loading="lazy" decoding="async" width={1664} height={2080} /><span>01—05 / TACTILE SYSTEM</span></div>
         </section>
 
         <section className="gm-archive">

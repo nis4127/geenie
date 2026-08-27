@@ -39,6 +39,7 @@ function html(page) {
     <meta name="robots" content="index,follow" />
     <meta name="description" content="${page.description}" />
     <link rel="canonical" href="${url}" />
+${page.path === "showroom" ? `    <link rel="preload" as="image" href="${image}" fetchpriority="high" type="image/webp" />` : ""}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Geenie Media" />
     <meta property="og:locale" content="de_CH" />
