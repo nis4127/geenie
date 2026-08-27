@@ -3,13 +3,13 @@ import { mkdir, writeFile } from "node:fs/promises";
 const site = "https://www.geenie-media.ch";
 const analytics = `    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>`;
 const pages = [
-  { path: "", title: "Geenie Media | Webdesign & digitale Systeme in Muttenz", description: "Geenie Media baut digitale Systeme und Markenauftritte für KMU in Basel und der ganzen Schweiz.", image: "/assets/bg-hero.webp" },
-  { path: "ueber-uns", title: "Über uns — Geenie Media", description: "Geenie Media — Über uns, Arbeitsweise und Systemverständnis.", image: "/assets/bg-hero.webp" },
-  { path: "kreation", title: "Kreation & Umsetzung — Geenie Media", description: "Geenie Media — Kreation, Print und digitale Umsetzung.", image: "/assets/showroom/hero.jpg" },
-  { path: "projektanfrage", title: "Projektanfrage — Geenie Media", description: "Geenie Media — Projektanfrage und System-Check.", image: "/assets/bg-cta.webp" },
-  { path: "datenschutz", title: "Datenschutz — Geenie Media", description: "Datenschutzerklärung von Geenie Media.", image: "/assets/bg-hero.webp" },
-  { path: "agb", title: "AGB — Geenie Media", description: "Allgemeine Geschäftsbedingungen von Geenie Media.", image: "/assets/bg-hero.webp" },
-  { path: "showroom", title: "Print Showroom — Geenie Media", description: "Geenie Media — digitaler Showroom für Corporate Identity und Print.", image: "/assets/showroom/hero.jpg" },
+  { path: "", title: "Geenie Media | Webdesign & Print für KMU in Basel", description: "Webdesign, Corporate Identity und Print aus Muttenz: Geenie Media macht Qualität für KMU in Basel und der ganzen Schweiz sichtbar.", image: "/assets/bg-hero.webp" },
+  { path: "ueber-uns", title: "Über uns | Geenie Media aus Muttenz", description: "Lerne Geenie Media kennen: strategisches Webdesign, klare Markenauftritte und präzise Umsetzung für KMU in Basel und der Schweiz.", image: "/assets/bg-hero.webp" },
+  { path: "kreation", title: "Kreation & Print | Geenie Media", description: "Corporate Design, Printprodukte und digitale Umsetzung: Geenie Media entwickelt klare Auftritte, die Qualität sichtbar und nutzbar machen.", image: "/assets/showroom/hero.jpg" },
+  { path: "projektanfrage", title: "Projektanfrage | Geenie Media", description: "Beschreibe dein Projekt und starte den Geenie System-Check für Webdesign, Corporate Identity oder Print aus Muttenz.", image: "/assets/bg-cta.webp" },
+  { path: "datenschutz", title: "Datenschutz | Geenie Media", description: "Datenschutzerklärung von Geenie Media: Informationen zur Bearbeitung personenbezogener Daten auf unserer Website.", image: "/assets/bg-hero.webp" },
+  { path: "agb", title: "AGB | Geenie Media", description: "Allgemeine Geschäftsbedingungen von Geenie Media für Webdesign, Corporate Identity, Printprodukte und weitere Dienstleistungen.", image: "/assets/bg-hero.webp" },
+  { path: "showroom", title: "Print Showroom | Geenie Media", description: "Printprodukte für Corporate Identity: Präsentationsmappen, Papeterie, Publikationen, Werbeartikel und Premium-Hardcover im Geenie Showroom.", image: "/assets/showroom/hero.jpg" },
 ];
 
 function html(page) {
@@ -37,6 +37,7 @@ function html(page) {
     <meta name="twitter:title" content="${page.title}" />
     <meta name="twitter:description" content="${page.description}" />
     <meta name="twitter:image" content="${image}" />
+    <meta name="twitter:image:alt" content="Geenie Media — ${page.title}" />
     <script type="application/ld+json">${jsonLd}</script>
     <title>${page.title}</title>
   </head>
