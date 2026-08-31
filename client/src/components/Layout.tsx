@@ -3,10 +3,8 @@ import { Link, useLocation } from "wouter";
 import { 
   Menu, 
   X, 
-  ArrowRight,
   ChevronDown
 } from "lucide-react";
-import { useSystemCheck } from "../contexts/SystemCheckContext";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -19,7 +17,6 @@ export default function Layout({ children }: LayoutProps) {
   const [datenschutzOpen, setDatenschutzOpen] = useState(false);
   const [agbOpen, setAgbOpen] = useState(false);
 
-  const { openSystemCheck } = useSystemCheck();
 
   const navLinks = [
     { name: "Strategie & Consulting", href: "/" },
@@ -54,12 +51,6 @@ export default function Layout({ children }: LayoutProps) {
             ))}
           </nav>
 
-          <button 
-            onClick={openSystemCheck}
-            className="hidden sm:block bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] text-[11px] font-mono font-bold px-6 py-3 transition-all active:scale-[0.98] uppercase tracking-widest"
-          >
-            System-Check
-          </button>
 
           {/* Mobile Menu Trigger */}
           <button 
@@ -82,12 +73,6 @@ export default function Layout({ children }: LayoutProps) {
                 </a>
               </Link>
             ))}
-            <button 
-              onClick={() => { openSystemCheck(); setMenuOpen(false); }}
-              className="mt-4 bg-[#DEFF9A] text-[#050505] py-3 rounded text-center font-mono flex items-center justify-center gap-2"
-            >
-              15-Minuten System-Check <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
         </div>
       )}

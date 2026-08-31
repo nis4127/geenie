@@ -24,10 +24,8 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "../components/Layout";
-import { useSystemCheck } from "../contexts/SystemCheckContext";
 
 export default function Home() {
-  const { openSystemCheck } = useSystemCheck();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -66,12 +64,11 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
-              <button 
-                onClick={openSystemCheck}
-                className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider"
-              >
-                System-Check starten <ArrowRight className="w-5 h-5" />
-              </button>
+              <Link href="/projektanfrage">
+                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
+                  Projektanfrage senden <ArrowRight className="w-5 h-5" />
+                </a>
+              </Link>
               <button 
                 onClick={() => scrollToSection("problem")}
                 className="bg-transparent hover:bg-[#111318] text-[#F6F4EA] border border-[#242832] px-10 py-5 font-mono font-bold flex items-center justify-center transition-all uppercase tracking-wider"
@@ -375,9 +372,11 @@ export default function Home() {
                       <p className="text-sm text-slate-300 leading-relaxed font-medium">Premium-Positionierung, die Preise rechtfertigt</p>
                     </div>
                   </div>
-                  <button onClick={openSystemCheck} className="w-full bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] py-4 font-mono font-bold uppercase tracking-widest transition-all">
-                    System-Check starten
-                  </button>
+                  <Link href="/projektanfrage">
+                    <a className="block w-full bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] py-4 text-center font-mono font-bold uppercase tracking-widest transition-all">
+                      Projektanfrage senden
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -470,12 +469,11 @@ export default function Home() {
               Lass uns in 15 Minuten prüfen, wie wir dein Können in ein digitales System übersetzen, das Premium-Kunden anzieht.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button 
-                onClick={openSystemCheck}
-                className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-12 py-6 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider"
-              >
-                System-Check starten <ArrowRight className="w-5 h-5" />
-              </button>
+              <Link href="/projektanfrage">
+                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-12 py-6 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
+                  Projektanfrage senden <ArrowRight className="w-5 h-5" />
+                </a>
+              </Link>
             </div>
             <p className="mt-12 text-xs font-mono uppercase tracking-[0.3em] text-slate-500 font-bold">
               Begrenzte Kapazitäten &bull; Fokus auf Qualität
