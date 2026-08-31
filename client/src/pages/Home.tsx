@@ -24,8 +24,19 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "../components/Layout";
+import { useCtaExperiment } from "../hooks/useCtaExperiment";
+
+const HOME_CTA_EXPERIMENT = {
+  id: "home_cta_01",
+  page: "home",
+  ctaId: "home_hero_project_request",
+} as const;
 
 export default function Home() {
+  const { variant, onCtaClick } = useCtaExperiment(HOME_CTA_EXPERIMENT);
+  const heroCtaLabel = variant === "variant_b"
+    ? "Nächsten Schritt klären"
+    : "Projektanfrage senden";
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -65,8 +76,13 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
               <Link href="/projektanfrage">
-                <a className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider">
-                  Projektanfrage senden <ArrowRight className="w-5 h-5" />
+                <a
+                  onClick={() => onCtaClick("hero")}
+                  data-test-id={HOME_CTA_EXPERIMENT.id}
+                  data-variant={variant}
+                  className="bg-[#DEFF9A] hover:bg-[#cbf47d] text-[#050505] px-10 py-5 font-mono font-bold flex items-center justify-center gap-3 transition-all active:scale-[0.98] uppercase tracking-wider"
+                >
+                  {heroCtaLabel} <ArrowRight className="w-5 h-5" />
                 </a>
               </Link>
               <button 

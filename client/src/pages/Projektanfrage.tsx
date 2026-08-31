@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -12,10 +12,30 @@ import {
 import { toast } from "sonner";
 import Layout from "../components/Layout";
 import { useSystemCheck } from "../contexts/SystemCheckContext";
+import {
+  getOrAssignVariant,
+  trackProjectRequestStart,
+  trackProjectRequestSubmit,
+} from "../lib/ctaExperiment";
+
+const PROJECT_REQUEST_EXPERIMENT = {
+  id: "home_cta_01",
+  page: "home",
+  ctaId: "home_hero_project_request",
+} as const;
 
 export default function Projektanfrage() {
   const { openSystemCheck } = useSystemCheck();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const hasTrackedFormStart = useRef(false);
+
+  const handleFormStart = () => {
+    if (hasTrackedFormStart.current) return;
+
+    hasTrackedFormStart.current = true;
+    const variant = getOrAssignVariant(PROJECT_REQUEST_EXPERIMENT.id);
+    trackProjectRequestStart(PROJECT_REQUEST_EXPERIMENT, variant);
+  };
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -45,6 +65,8 @@ export default function Projektanfrage() {
       });
 
       if (response.ok) {
+        const variant = getOrAssignVariant(PROJECT_REQUEST_EXPERIMENT.id);
+        trackProjectRequestSubmit(PROJECT_REQUEST_EXPERIMENT, variant);
         setSubmitted(true);
         toast.success("Anfrage erfolgreich gesendet!");
       } else {
@@ -144,8 +166,9 @@ export default function Projektanfrage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-bold">Name *</label>
-                  <input 
-                    type="text" 
+                  <input
+                    onFocus={handleFormStart}
+                    type="text"
                     required
                     placeholder="Max Mustermann"
                     className="w-full bg-[#050505] border border-[#242832] px-6 py-4 text-sm focus:outline-none focus:border-[#DEFF9A] transition-all font-medium"
