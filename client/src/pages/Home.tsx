@@ -24,7 +24,6 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "../components/Layout";
-import WhatsAppPopup from "../components/WhatsAppPopup";
 import { useCtaExperiment } from "../hooks/useCtaExperiment";
 
 const HOME_CTA_EXPERIMENT = {
@@ -498,7 +497,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <WhatsAppPopup />
     </Layout>
   );
 }

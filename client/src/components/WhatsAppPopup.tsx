@@ -4,7 +4,7 @@ import { trackAnalytics } from "../lib/analytics";
 
 const WHATSAPP_URL =
   "https://api.whatsapp.com/send/?phone=41799253192&text&type=phone_number&app_absent=0";
-const SHOW_DELAY_MS = 7000;
+const SHOW_DELAY_MS = 3000;
 const DISMISSED_KEY = "geenie_whatsapp_popup_dismissed";
 
 export default function WhatsAppPopup() {
@@ -56,7 +56,7 @@ export default function WhatsAppPopup() {
               rel="noopener noreferrer"
               onClick={() =>
                 trackAnalytics("contact_click", {
-                  page: "home",
+                  page: window.location.pathname,
                   channel: "whatsapp",
                   source_cta: "whatsapp_popup",
                 })

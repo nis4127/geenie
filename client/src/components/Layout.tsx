@@ -5,6 +5,7 @@ import {
   X, 
   ChevronDown
 } from "lucide-react";
+import WhatsAppPopup from "./WhatsAppPopup";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -82,6 +83,8 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
+      <WhatsAppPopup />
+
       <footer className="bg-[#050505] text-slate-500 py-24 border-t border-[#242832] relative overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
