@@ -131,7 +131,7 @@ export default function Layout({ children }: LayoutProps) {
               </div>
               <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Kontakt</h4>
-                <p>E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a></p>
+                <p>E-Mail: <a href="mailto:info@geenie-media.ch" className="text-[#DEFF9A] hover:underline">info@geenie-media.ch</a></p>
               </div>
               <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">Unternehmens-Identifikationsnummer (UID)</h4>
@@ -166,7 +166,7 @@ export default function Layout({ children }: LayoutProps) {
                 <p>Pestalozzistrasse 68a</p>
                 <p>4132 Muttenz</p>
                 <p>Schweiz</p>
-                <p className="mt-2">E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a></p>
+                <p className="mt-2">E-Mail: <a href="mailto:info@geenie-media.ch" className="text-[#DEFF9A] hover:underline">info@geenie-media.ch</a></p>
                 <p>UID: CHE-260.224.627</p>
               </div>
 
@@ -193,7 +193,7 @@ export default function Layout({ children }: LayoutProps) {
 
               <div>
                 <h4 className="text-[#DEFF9A] font-mono uppercase tracking-wider mb-2 text-xs">7. Rechte der betroffenen Person</h4>
-                <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Bearbeitung Ihrer bei uns gespeicherten Daten. Bitte wenden Sie sich hierfür direkt an uns unter: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a>.</p>
+                <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Bearbeitung Ihrer bei uns gespeicherten Daten. Bitte wenden Sie sich hierfür direkt an uns unter: <a href="mailto:info@geenie-media.ch" className="text-[#DEFF9A] hover:underline">info@geenie-media.ch</a>.</p>
               </div>
 
               <div>

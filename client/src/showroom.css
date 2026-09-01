@@ -45,13 +45,13 @@
 .gm-section-rail strong { color:#DEFF9A; font-family:'IBM Plex Mono',monospace; font-size:12px; }
 .gm-section-rail span { width:1px; height:78px; background:#242832; }
 .gm-section-rail small { color:#647084; font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.12em; writing-mode:vertical-rl; transform:rotate(180deg); }
-.gm-product-copy { padding-top:10px; }
+.gm-product-copy { position:relative; z-index:3; align-self:start; padding:10px 18px 0 0; background:#050505; }
 .gm-product-copy h2 { max-width:450px; margin:0 0 22px; color:#F6F4EA; font-size:clamp(2.2rem,3.8vw,4.2rem); line-height:.93; }
 .gm-description { max-width:425px; margin:0; color:#94A3B8; font-size:15px; line-height:1.72; }
 .gm-specs { display:flex; flex-wrap:wrap; gap:9px 16px; margin-top:28px; padding-top:15px; border-top:1px solid #242832; color:#647084; font-family:'IBM Plex Mono',monospace; font-size:8px; font-weight:600; letter-spacing:.13em; }
 .gm-specs span { white-space:nowrap; }
 .gm-specs span::first-letter { color:#DEFF9A; }
-.gm-product-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; align-items:start; }
+.gm-product-gallery { position:relative; z-index:1; display:grid; grid-template-columns:repeat(2,1fr); gap:12px; align-items:start; }
 .gm-product-section--reverse .gm-product-copy { order:3; }
 .gm-product-section--reverse .gm-product-gallery { order:2; }
 .gm-media { position:relative; min-height:190px; margin:0; overflow:hidden; background:#111318; border:1px solid #242832; }

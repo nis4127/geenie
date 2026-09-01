@@ -24,7 +24,7 @@ export default function Datenschutz() {
                 <p>Pestalozzistrasse 68a</p>
                 <p>4132 Muttenz</p>
                 <p>Schweiz</p>
-                <p className="mt-2">E-Mail: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a></p>
+                <p className="mt-2">E-Mail: <a href="mailto:info@geenie-media.ch" className="text-[#DEFF9A] hover:underline">info@geenie-media.ch</a></p>
                 <p>UID: CHE-260.224.627</p>
               </div>
             </section>
@@ -36,7 +36,7 @@ export default function Datenschutz() {
 
             <section>
               <h2 className="text-xl font-bold text-[#F6F4EA] uppercase tracking-tight mb-4">4. Kontaktformulare & E-Mail</h2>
-              <p>Wenn Sie uns via E-Mail (geenie.schweiz@gmail.com) oder Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+              <p>Wenn Sie uns via E-Mail (info@geenie-media.ch) oder Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
             </section>
 
             <section>
@@ -54,7 +54,7 @@ export default function Datenschutz() {
 
             <section>
               <h2 className="text-xl font-bold text-[#F6F4EA] uppercase tracking-tight mb-4">7. Rechte der betroffenen Person</h2>
-              <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Bearbeitung Ihrer bei uns gespeicherten Daten. Bitte wenden Sie sich hierfür direkt an uns unter: <a href="mailto:geenie.schweiz@gmail.com" className="text-[#DEFF9A] hover:underline">geenie.schweiz@gmail.com</a>.</p>
+              <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Bearbeitung Ihrer bei uns gespeicherten Daten. Bitte wenden Sie sich hierfür direkt an uns unter: <a href="mailto:info@geenie-media.ch" className="text-[#DEFF9A] hover:underline">info@geenie-media.ch</a>.</p>
             </section>
 
             <section>
