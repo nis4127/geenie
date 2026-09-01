@@ -27,7 +27,7 @@ export default function WhatsAppPopup() {
   return (
     <aside
       aria-label="WhatsApp-Kontakt"
-      className="fixed bottom-5 right-5 z-[110] w-[min(360px,calc(100vw-2.5rem))] animate-in slide-in-from-right-4 fade-in duration-300 motion-reduce:animate-none sm:bottom-6 sm:right-6"
+      className="fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-4 z-[110] w-[min(340px,calc(100vw-2rem))] animate-in slide-in-from-right-4 fade-in duration-300 motion-reduce:animate-none sm:bottom-6 sm:right-6 sm:w-[min(360px,calc(100vw-2.5rem))]"
     >
       <div className="relative border border-[#3a414d] bg-[#111318] p-4 pr-12 text-[#F6F4EA] shadow-2xl shadow-black/30">
         <button
