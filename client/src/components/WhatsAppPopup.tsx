@@ -6,6 +6,8 @@ const WHATSAPP_URL =
   "https://api.whatsapp.com/send/?phone=41799253192&text&type=phone_number&app_absent=0";
 const SHOW_DELAY_MS = 3000;
 const DISMISSED_KEY = "geenie_whatsapp_popup_dismissed";
+const CONSENT_KEY = "geenie_analytics_consent";
+const CONSENT_EVENT = "geenie:consent-change";
 
 export default function WhatsAppPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,8 +15,30 @@ export default function WhatsAppPopup() {
   useEffect(() => {
     if (window.sessionStorage.getItem(DISMISSED_KEY) === "1") return;
 
-    const timer = window.setTimeout(() => setIsVisible(true), SHOW_DELAY_MS);
-    return () => window.clearTimeout(timer);
+    let timer: number | undefined;
+    const scheduleShow = () => {
+      timer = window.setTimeout(() => setIsVisible(true), SHOW_DELAY_MS);
+    };
+
+    // Let the cookie banner take priority on a first visit. The popup is
+    // scheduled after the visitor makes a consent decision.
+    if (window.localStorage.getItem(CONSENT_KEY)) {
+      scheduleShow();
+    } else {
+      const handleConsentChange = () => {
+        window.removeEventListener(CONSENT_EVENT, handleConsentChange);
+        scheduleShow();
+      };
+      window.addEventListener(CONSENT_EVENT, handleConsentChange);
+      return () => {
+        window.removeEventListener(CONSENT_EVENT, handleConsentChange);
+        if (timer !== undefined) window.clearTimeout(timer);
+      };
+    }
+
+    return () => {
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
   }, []);
 
   function dismiss() {

@@ -3,6 +3,7 @@ import { loadAnalyticsScript } from "../lib/analytics";
 
 type ConsentState = "unknown" | "granted" | "denied";
 const CONSENT_KEY = "geenie_analytics_consent";
+const CONSENT_EVENT = "geenie:consent-change";
 
 function readConsent(): ConsentState {
   if (typeof window === "undefined") return "unknown";
@@ -25,6 +26,7 @@ export default function CookieConsent() {
 
   function choose(nextConsent: Exclude<ConsentState, "unknown">) {
     window.localStorage.setItem(CONSENT_KEY, nextConsent);
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setConsent(nextConsent);
 
     if (nextConsent === "granted") {
