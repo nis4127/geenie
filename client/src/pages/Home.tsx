@@ -442,7 +442,7 @@ export default function Home() {
       {/* 7. Social Proof / Testimonials */}
       <section className="py-24 bg-[#050505] border-b border-[#242832]">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#242832] border border-[#242832]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-[#242832] border border-[#242832]">
             <div className="bg-[#111318] p-12 flex flex-col justify-between transition-all group">
               <div>
                 <div className="flex flex-wrap gap-3 mb-8">
@@ -472,6 +472,22 @@ export default function Home() {
               <div className="mt-12 pt-8 border-t border-[#242832]">
                 <span className="block font-bold text-sm text-[#F6F4EA] uppercase tracking-tight">Joël Kunz</span>
                 <span className="block text-xs text-slate-500 uppercase tracking-widest font-mono mt-1">Produktionsleiter, Balero</span>
+              </div>
+            </div>
+
+            <div className="bg-[#111318] p-12 flex flex-col justify-between transition-all group">
+              <div>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <span className="text-[10px] font-mono text-[#FFD400] border border-[#FFD400]/20 px-2 py-1 uppercase font-bold">Ist-Analyse</span>
+                  <span className="text-[10px] font-mono text-[#FFD400] border border-[#FFD400]/20 px-2 py-1 uppercase font-bold">Verkaufskonzept</span>
+                </div>
+                <p className="text-[#F6F4EA] font-medium leading-relaxed text-lg italic">
+                  &ldquo;Die Zusammenarbeit mit Geenie Media war für die Confiserie Jonasch ein entscheidender Schritt nach vorn. Anstatt uns mit Standardlösungen abzuspeisen, wurde unsere Ist-Situation präzise analysiert. Darauf basierend hat Geenie Media eine massgeschneiderte Marketingstrategie und ein fundiertes Verkaufskonzept für uns entwickelt. Besonders wertvoll waren die klaren, konkreten Handlungsanweisungen, die wir direkt in unseren Arbeitsalltag integrieren konnten. Ein absolut professioneller und zielgerichteter Partner!&rdquo;
+                </p>
+              </div>
+              <div className="mt-12 pt-8 border-t border-[#242832]">
+                <span className="block font-bold text-sm text-[#F6F4EA] uppercase tracking-tight">Gian Jonasch</span>
+                <span className="block text-xs text-slate-500 uppercase tracking-widest font-mono mt-1">Confiserie Jonasch</span>
               </div>
             </div>
           </div>
