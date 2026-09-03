@@ -54,6 +54,9 @@ export default function Home() {
             src="/assets/bg-hero.webp" 
             alt="Hero Background" 
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(#242832_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
@@ -124,6 +127,8 @@ export default function Home() {
             src="/assets/bg-problem.webp" 
             alt="Problem Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -183,6 +188,8 @@ export default function Home() {
             src="/assets/bg-hero.webp" 
             alt="Positioning Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -224,7 +231,7 @@ export default function Home() {
             <div className="lg:col-span-7 relative">
               <div className="aspect-square sm:aspect-video rounded-2xl bg-[#111318] border border-[#242832] overflow-hidden relative">
                 <div className="absolute inset-0 opacity-20 pointer-events-none">
-                  <img src="/assets/geenie-cta-bg.webp" alt="Background" className="w-full h-full object-cover" />
+                  <img src="/assets/geenie-cta-bg.webp" alt="Background" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12">
                   <div className="grid grid-cols-2 gap-px bg-[#242832] w-full h-full border border-[#242832]">
@@ -259,6 +266,8 @@ export default function Home() {
             src="/assets/bg-services.webp" 
             alt="Services Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -333,6 +342,8 @@ export default function Home() {
             src="/assets/bg-transformation.webp" 
             alt="Transformation Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -474,6 +485,8 @@ export default function Home() {
             src="/assets/bg-cta.webp" 
             alt="CTA Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">

@@ -132,6 +132,8 @@ export default function Kreation() {
             src="/assets/bg-transformation.webp" 
             alt="Digital Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -159,6 +161,8 @@ export default function Kreation() {
             src="/assets/bg-problem.webp" 
             alt="Design Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -186,6 +190,8 @@ export default function Kreation() {
             src="/assets/bg-cta.webp" 
             alt="CTA Background" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">

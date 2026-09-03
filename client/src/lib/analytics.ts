@@ -3,6 +3,8 @@ export type AnalyticsProps = Record<string, AnalyticsScalar>;
 
 declare global {
   interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
     umami?: {
       track: (
         eventName: string,
@@ -19,8 +21,11 @@ declare global {
  * configured yet, events remain disabled rather than being sent implicitly.
  */
 const ANALYTICS_SCRIPT_ID = "geenie-umami-script";
+const GOOGLE_ANALYTICS_SCRIPT_ID = "geenie-google-analytics-script";
+const GOOGLE_ANALYTICS_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || "G-0YZ4VSD60T";
 
 let analyticsScriptPromise: Promise<void> | undefined;
+let googleAnalyticsScriptPromise: Promise<void> | undefined;
 
 export function trackAnalytics(
   eventName: string,
@@ -40,6 +45,31 @@ export function hasAnalyticsConsent(): boolean {
   } catch {
     return false;
   }
+}
+
+export function loadGoogleAnalyticsScript(): Promise<void> {
+  if (typeof document === "undefined") return Promise.resolve();
+  if (document.getElementById(GOOGLE_ANALYTICS_SCRIPT_ID)) return Promise.resolve();
+  if (googleAnalyticsScriptPromise) return googleAnalyticsScriptPromise;
+
+  googleAnalyticsScriptPromise = new Promise<void>((resolve) => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = (...args: unknown[]) => {
+      window.dataLayer?.push(args);
+    };
+    window.gtag("js", new Date());
+    window.gtag("config", GOOGLE_ANALYTICS_ID, { anonymize_ip: true });
+
+    const script = document.createElement("script");
+    script.id = GOOGLE_ANALYTICS_SCRIPT_ID;
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
+    script.addEventListener("load", () => resolve(), { once: true });
+    script.addEventListener("error", () => resolve(), { once: true });
+    document.head.appendChild(script);
+  });
+
+  return googleAnalyticsScriptPromise;
 }
 
 export function loadAnalyticsScript(): Promise<void> {

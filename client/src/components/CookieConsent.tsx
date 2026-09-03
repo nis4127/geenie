@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { loadAnalyticsScript } from "../lib/analytics";
+import {
+  loadAnalyticsScript,
+  loadGoogleAnalyticsScript,
+} from "../lib/analytics";
 
 type ConsentState = "unknown" | "granted" | "denied";
 const CONSENT_KEY = "geenie_analytics_consent";
@@ -20,7 +23,10 @@ export default function CookieConsent() {
     setConsent(current);
 
     if (current === "granted") {
-      void loadAnalyticsScript();
+      void Promise.all([
+        loadAnalyticsScript(),
+        loadGoogleAnalyticsScript(),
+      ]);
     }
   }, []);
 
@@ -30,7 +36,10 @@ export default function CookieConsent() {
     setConsent(nextConsent);
 
     if (nextConsent === "granted") {
-      void loadAnalyticsScript();
+      void Promise.all([
+        loadAnalyticsScript(),
+        loadGoogleAnalyticsScript(),
+      ]);
     }
   }
 

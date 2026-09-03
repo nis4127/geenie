@@ -112,6 +112,8 @@ export default function UeberUns() {
                       src="/assets/portrait-yannis-optimized.webp" 
                       alt="Yannis K. Denzler" 
                       className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -192,6 +194,8 @@ export default function UeberUns() {
               src="/assets/bg-cta.webp" 
               alt="CTA Background" 
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="container mx-auto px-6 relative z-10 text-center">

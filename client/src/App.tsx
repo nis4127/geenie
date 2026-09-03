@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -7,13 +7,13 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import CookieConsent from "./components/CookieConsent";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { SystemCheckProvider } from "./contexts/SystemCheckContext";
-import Home from "./pages/Home";
-import Kreation from "./pages/Kreation";
-import Projektanfrage from "./pages/Projektanfrage";
-import UeberUns from "./pages/UeberUns";
-import Datenschutz from "./pages/Datenschutz";
-import Agb from "./pages/Agb";
-import Showroom from "./pages/Showroom";
+const Home = lazy(() => import("./pages/Home"));
+const Kreation = lazy(() => import("./pages/Kreation"));
+const Projektanfrage = lazy(() => import("./pages/Projektanfrage"));
+const UeberUns = lazy(() => import("./pages/UeberUns"));
+const Datenschutz = lazy(() => import("./pages/Datenschutz"));
+const Agb = lazy(() => import("./pages/Agb"));
+const Showroom = lazy(() => import("./pages/Showroom"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -41,7 +41,12 @@ function ScrollToTop() {
 
 function Router() {
   return (
-    <Switch>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#050505]" aria-label="Seite wird geladen" />
+      }
+    >
+      <Switch>
       <Route path="/" component={Home} />
       <Route path="/kreation" component={Kreation} />
       <Route path="/showroom" component={Showroom} />
@@ -51,8 +56,9 @@ function Router() {
       <Route path="/agb" component={Agb} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 

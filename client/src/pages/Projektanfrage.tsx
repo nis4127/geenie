@@ -111,6 +111,8 @@ export default function Projektanfrage() {
           src="/assets/bg-transformation.webp" 
           alt="Background" 
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
