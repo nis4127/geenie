@@ -24,6 +24,7 @@ export default function Layout({ children }: LayoutProps) {
     { name: "Kreation & Umsetzung", href: "/kreation" },
     { name: "Print Showroom", href: "/showroom" },
     { name: "Über uns", href: "/ueber-uns" },
+    { name: "Starter-Website · 499.–", href: "/starter-website" },
     { name: "Kontakt", href: "/projektanfrage" },
   ];
 

@@ -14,6 +14,7 @@ const UeberUns = lazy(() => import("./pages/UeberUns"));
 const Datenschutz = lazy(() => import("./pages/Datenschutz"));
 const Agb = lazy(() => import("./pages/Agb"));
 const Showroom = lazy(() => import("./pages/Showroom"));
+const StarterWebsite = lazy(() => import("./pages/StarterWebsite"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -52,6 +53,7 @@ function Router() {
       <Route path="/showroom" component={Showroom} />
       <Route path="/ueber-uns" component={UeberUns} />
       <Route path="/projektanfrage" component={Projektanfrage} />
+      <Route path="/starter-website" component={StarterWebsite} />
       <Route path="/datenschutz" component={Datenschutz} />
       <Route path="/agb" component={Agb} />
       <Route path="/404" component={NotFound} />

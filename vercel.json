@@ -5,6 +5,7 @@
     { "source": "/projektanfrage", "destination": "/projektanfrage/index.html" },
     { "source": "/datenschutz", "destination": "/datenschutz/index.html" },
     { "source": "/agb", "destination": "/agb/index.html" },
-    { "source": "/showroom", "destination": "/showroom/index.html" }
+    { "source": "/showroom", "destination": "/showroom/index.html" },
+    { "source": "/starter-website", "destination": "/starter-website/index.html" }
   ]
 }
