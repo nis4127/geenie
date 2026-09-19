@@ -54,7 +54,7 @@ export default function UeberUns() {
           <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
             <img 
               src="/assets/bg-hero.webp" 
-              alt="Hero Background" 
+              alt="Abstrakter Geenie-Media-Hintergrund für die Über-uns-Seite" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -192,7 +192,7 @@ export default function UeberUns() {
           <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
             <img 
               src="/assets/bg-cta.webp" 
-              alt="CTA Background" 
+            alt="Geenie Media Kontakt-CTA Hintergrund" 
               className="w-full h-full object-cover"
               loading="lazy"
               decoding="async"

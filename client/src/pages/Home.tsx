@@ -52,7 +52,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
           <img 
             src="/assets/bg-hero.webp" 
-            alt="Hero Background" 
+            alt="Abstrakter High-Performance Hintergrund für Geenie Media" 
             className="w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
@@ -125,7 +125,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
           <img 
             src="/assets/bg-problem.webp" 
-            alt="Problem Background" 
+            alt="Abstrakter Hintergrund zur digitalen Herausforderung regionaler Betriebe" 
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
@@ -186,7 +186,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
           <img 
             src="/assets/bg-hero.webp" 
-            alt="Positioning Background" 
+            alt="Abstrakter Geenie-Media-Hintergrund für strategische Positionierung" 
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
@@ -231,7 +231,7 @@ export default function Home() {
             <div className="lg:col-span-7 relative">
               <div className="aspect-square sm:aspect-video rounded-2xl bg-[#111318] border border-[#242832] overflow-hidden relative">
                 <div className="absolute inset-0 opacity-20 pointer-events-none">
-                  <img src="/assets/geenie-cta-bg.webp" alt="Background" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                  <img src="/assets/geenie-cta-bg.webp" alt="Geenie Media System-CTA Hintergrund" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12">
                   <div className="grid grid-cols-2 gap-px bg-[#242832] w-full h-full border border-[#242832]">
@@ -264,7 +264,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
           <img 
             src="/assets/bg-services.webp" 
-            alt="Services Background" 
+            alt="Abstrakter Hintergrund für Webdesign- und Digital-Systeme" 
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
@@ -340,7 +340,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
           <img 
             src="/assets/bg-transformation.webp" 
-            alt="Transformation Background" 
+            alt="Abstrakter Hintergrund für digitale Transformation" 
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
@@ -499,7 +499,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
           <img 
             src="/assets/bg-cta.webp" 
-            alt="CTA Background" 
+            alt="Geenie Media Kontakt-CTA Hintergrund" 
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"

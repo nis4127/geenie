@@ -109,7 +109,7 @@ export default function Projektanfrage() {
       <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">
         <img 
           src="/assets/bg-transformation.webp" 
-          alt="Background" 
+          alt="Abstrakter Hintergrund für die Projektanfrage bei Geenie Media" 
           className="w-full h-full object-cover"
           loading="lazy"
           decoding="async"
