@@ -1,8 +1,7 @@
 import { ArrowDown, ArrowRight, Check, Clock3, Mail, MapPin, Search, Zap } from "lucide-react";
 import Layout from "../components/Layout";
-import { useSystemCheck } from "../contexts/SystemCheckContext";
 
-const offerMailto = "mailto:info@geenie-media.ch?subject=Anfrage%3A%20Starter-Website%20499%20CHF&body=Hallo%20Geenie%20Media%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20Starter-Website%20f%C3%BCr%20499%20CHF.%0A%0AName%3A%20%0AFirma%3A%20%0ATelefon%3A%20%0A%0AFreundliche%20Gr%C3%BCsse";
+const starterProjectUrl = "https://www.geenie-media.ch/projektanfrage?projekt=starter-website";
 
 const included = [
   "Die Digitale Visitenkarte: Eine perfekt strukturierte Seite (One-Pager) mit all deinen Leistungen, Über-uns-Bereich und Kontakt.",
@@ -19,8 +18,6 @@ const steps = [
 ];
 
 export default function StarterWebsite() {
-  const { openSystemCheck } = useSystemCheck();
-
   return (
     <Layout>
       <div className="relative overflow-hidden pb-16 sm:pb-0">
@@ -46,7 +43,7 @@ export default function StarterWebsite() {
                 </p>
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-start">
                   <div className="flex flex-col items-center sm:items-start">
-                    <a href={offerMailto} className="inline-flex min-h-12 items-center justify-center gap-3 bg-[#DEFF9A] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#050505] transition-transform hover:bg-[#cbf47d] active:scale-[0.98]">
+                    <a href={starterProjectUrl} className="inline-flex min-h-12 items-center justify-center gap-3 bg-[#DEFF9A] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#050505] transition-transform hover:bg-[#cbf47d] active:scale-[0.98]">
                       Jetzt Starter-Website anfragen <ArrowRight className="h-4 w-4" />
                     </a>
                     <span className="mt-2 text-center text-[10px] text-slate-600 sm:text-left">Unverbindliche Anfrage • Live in 7 Tagen • Keine versteckten Monats-Abos</span>
@@ -107,12 +104,12 @@ export default function StarterWebsite() {
 
         <section className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40"><div className="container mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-28"><div><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">03 / Leistungsumfang</span><h2 className="mt-5 max-w-md text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">Was ist für 499.– CHF drin?</h2></div><div className="divide-y divide-[#242832] border-y border-[#242832]">{included.map((item) => <div key={item} className="flex gap-5 py-7 text-base leading-relaxed text-slate-300 sm:text-lg"><Check className="mt-1 h-5 w-5 shrink-0 text-[#DEFF9A]" strokeWidth={3} /><span>{item}</span></div>)}</div></div></section>
 
-        <section className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40"><div className="container mx-auto max-w-7xl"><div className="mb-14 max-w-2xl"><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">04 / Ablauf</span><h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">In drei Schritten online.</h2></div><div className="grid gap-px border border-[#242832] bg-[#242832] md:grid-cols-3">{steps.map(([number, title, text]) => <div key={number} className="bg-[#050505] p-7 sm:p-9"><div className="mb-14 font-mono text-sm font-bold text-[#DEFF9A]">{number}</div><h3 className="text-2xl font-bold tracking-[-0.03em]">{title}</h3><p className="mt-4 text-sm leading-relaxed text-slate-400">{text}</p></div>)}</div><div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-start"><div className="flex flex-col items-center sm:items-start"><a href={offerMailto} className="inline-flex min-h-12 items-center justify-center gap-3 bg-[#DEFF9A] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#050505] transition-colors hover:bg-[#cbf47d] active:scale-[0.98]">Starter-Website anfragen <ArrowRight className="h-4 w-4" /></a><span className="mt-2 text-center text-[10px] text-slate-600 sm:text-left">Unverbindliche Anfrage • Live in 7 Tagen • Keine versteckten Monats-Abos</span></div><button type="button" onClick={openSystemCheck} className="inline-flex min-h-12 items-center justify-center gap-3 border border-[#242832] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#F6F4EA] transition-all hover:border-[#DEFF9A] hover:text-[#DEFF9A] active:scale-[0.98]">15-Minuten System-Check buchen <ArrowRight className="h-4 w-4" /></button></div></div></section>
+        <section className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40"><div className="container mx-auto max-w-7xl"><div className="mb-14 max-w-2xl"><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">04 / Ablauf</span><h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">In drei Schritten online.</h2></div><div className="grid gap-px border border-[#242832] bg-[#242832] md:grid-cols-3">{steps.map(([number, title, text]) => <div key={number} className="bg-[#050505] p-7 sm:p-9"><div className="mb-14 font-mono text-sm font-bold text-[#DEFF9A]">{number}</div><h3 className="text-2xl font-bold tracking-[-0.03em]">{title}</h3><p className="mt-4 text-sm leading-relaxed text-slate-400">{text}</p></div>)}</div><div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-start"><div className="flex flex-col items-center sm:items-start"><a href={starterProjectUrl} className="inline-flex min-h-12 items-center justify-center gap-3 bg-[#DEFF9A] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#050505] transition-colors hover:bg-[#cbf47d] active:scale-[0.98]">Starter-Website anfragen <ArrowRight className="h-4 w-4" /></a><span className="mt-2 text-center text-[10px] text-slate-600 sm:text-left">Unverbindliche Anfrage • Live in 7 Tagen • Keine versteckten Monats-Abos</span></div><a href={starterProjectUrl} className="inline-flex min-h-12 items-center justify-center gap-3 border border-[#242832] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#F6F4EA] transition-all hover:border-[#DEFF9A] hover:text-[#DEFF9A] active:scale-[0.98]">15-Minuten System-Check buchen <ArrowRight className="h-4 w-4" /></a></div></div></section>
 
         <section className="px-6 py-12 lg:px-12 lg:py-16"><div className="container mx-auto max-w-7xl"><p className="max-w-5xl text-[11px] leading-relaxed text-slate-500">Angebot gilt für eine standardisierte One-Pager-Website auf Basis unserer performanten Vorlagen. Texte, Logo und Bildmaterial werden vom Kunden digital angeliefert. Erweiterungen wie zusätzliche Unterseiten, komplexes Tracking oder Google-Ads-Kampagnen sind nicht im Preis inbegriffen, können aber jederzeit modular hinzugebucht werden.</p></div></section>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#242832] bg-[#050505]/95 p-3 backdrop-blur-sm sm:hidden"><a href={offerMailto} className="flex min-h-12 items-center justify-center gap-2 bg-[#DEFF9A] px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-[#050505]">499.– CHF anfragen <ArrowRight className="h-4 w-4" /></a></div>
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#242832] bg-[#050505]/95 p-3 backdrop-blur-sm sm:hidden"><a href={starterProjectUrl} className="flex min-h-12 items-center justify-center gap-2 bg-[#DEFF9A] px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-[#050505]">499.– CHF anfragen <ArrowRight className="h-4 w-4" /></a></div>
     </Layout>
   );
 }
