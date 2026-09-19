@@ -1,7 +1,15 @@
+import { useEffect } from "react";
 import { ArrowDown, ArrowRight, Check, Clock3, Mail, MapPin, Search, Zap } from "lucide-react";
 import Layout from "../components/Layout";
 
 const starterProjectUrl = "https://www.geenie-media.ch/projektanfrage?projekt=starter-website";
+const starterPageUrl = "https://www.geenie-media.ch/starter-website";
+const starterTitle = "Starter-Website für 499.– CHF | Geenie Media";
+const starterDescription = "Professionelle Website für Handwerker & KMU in der Schweiz für CHF 499.–. Ultraschnell, modern & ohne versteckte Abo-Kosten. In 7 Tagen live.";
+const starterKeywords = "Website Handwerker Schweiz, Günstige Website KMU, Starter Website 499 CHF, Webdesign Schweiz, One Pager Website";
+const starterOgTitle = "Starter-Website für CHF 499.– | Geenie Media";
+const starterOgDescription = "Kein Baukasten-Frust. Keine Agentur-Mondpreise. Deine neue High-Performance Website in 7 Tagen.";
+const starterOgImage = "https://www.geenie-media.ch/assets/og-starter-website.png";
 
 const included = [
   "Die Digitale Visitenkarte: Eine perfekt strukturierte Seite (One-Pager) mit all deinen Leistungen, Über-uns-Bereich und Kontakt.",
@@ -18,6 +26,68 @@ const steps = [
 ];
 
 export default function StarterWebsite() {
+  useEffect(() => {
+    document.title = starterTitle;
+
+    const setMeta = (selector: string, attribute: "name" | "property", value: string) => {
+      let element = document.head.querySelector<HTMLMetaElement>(selector);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attribute, selector.includes("property=") ? selector.split('property="')[1].split('"')[0] : selector.split('name="')[1].split('"')[0]);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", value);
+    };
+
+    setMeta('meta[name="description"]', "name", starterDescription);
+    setMeta('meta[name="keywords"]', "name", starterKeywords);
+    setMeta('meta[property="og:title"]', "property", starterOgTitle);
+    setMeta('meta[property="og:description"]', "property", starterOgDescription);
+    setMeta('meta[property="og:url"]', "property", starterPageUrl);
+    setMeta('meta[property="og:type"]', "property", "website");
+    setMeta('meta[property="og:site_name"]', "property", "Geenie Media");
+    setMeta('meta[property="og:locale"]', "property", "de_CH");
+    setMeta('meta[property="og:image"]', "property", starterOgImage);
+    setMeta('meta[property="og:image:alt"]', "property", "Starter-Website Vorschau Geenie Media");
+    setMeta('meta[name="twitter:card"]', "name", "summary_large_image");
+    setMeta('meta[name="twitter:title"]', "name", starterOgTitle);
+    setMeta('meta[name="twitter:description"]', "name", starterOgDescription);
+    setMeta('meta[name="twitter:image"]', "name", starterOgImage);
+
+    const productSchema = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      name: "Starter-Website für Handwerker & KMU",
+      image: starterOgImage,
+      description: "Standardisierte High-Performance One-Pager Website zum Festpreis von CHF 499.-",
+      brand: { "@type": "Brand", name: "Geenie Media" },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "CHF",
+        price: "499.00",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock",
+        url: starterPageUrl,
+      },
+    };
+    let schemaScript = document.head.querySelector<HTMLScriptElement>('script[data-starter-product-schema="true"]');
+    if (!schemaScript) {
+      schemaScript = document.createElement("script");
+      schemaScript.type = "application/ld+json";
+      schemaScript.dataset.starterProductSchema = "true";
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify(productSchema);
+
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = starterPageUrl;
+  }, []);
+
   return (
     <Layout>
       <div className="relative overflow-hidden pb-16 sm:pb-0">
@@ -35,9 +105,9 @@ export default function StarterWebsite() {
                 <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-[#DEFF9A] sm:text-xs">
                   <span>Live in 7 Tagen</span><span className="text-slate-600">•</span><span>Keine versteckten Abo-Kosten</span><span className="text-slate-600">•</span><span>100% High-Performance</span>
                 </div>
-                <p className="mt-7 max-w-2xl text-xl font-medium leading-relaxed text-slate-300 sm:text-2xl">
+                <h2 className="mt-7 max-w-2xl text-xl font-bold leading-relaxed tracking-[-0.02em] text-slate-300 sm:text-2xl">
                   Kein Baukasten-Frust. Keine Agentur-Mondpreise. Deine neue Website in 7 Tagen.
-                </p>
+                </h2>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
                   Die meisten Handwerker und regionalen Betriebe brauchen keine riesige Website mit 20 Unterseiten. Sie brauchen eine Plattform, die extrem schnell lädt, auf dem Handy perfekt aussieht und aus Besuchern echte Anfragen macht. Genau das liefern wir.
                 </p>
@@ -90,7 +160,7 @@ export default function StarterWebsite() {
 
         <section id="vergleich" className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40">
           <div className="container mx-auto max-w-7xl">
-            <div className="mb-14 max-w-2xl"><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">01 / Warum so günstig?</span><h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">Kein Rabatt. Ein besseres System.</h2></div>
+            <div className="mb-14 max-w-2xl"><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">01 / Warum so günstig?</span><h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">Warum Geenie Media?</h2></div>
             <div className="grid border-y border-[#242832] md:grid-cols-2">
               <div className="border-b border-[#242832] p-7 sm:p-10 md:border-b-0 md:border-r"><div className="mb-10 flex items-center justify-between font-mono text-xs uppercase tracking-widest text-slate-500"><span>Klassische Agentur</span><span>Oft 4'000+ CHF</span></div><div className="space-y-4 text-slate-400"><div className="flex gap-3"><span className="text-slate-600">—</span> Lange Konzeptphasen</div><div className="flex gap-3"><span className="text-slate-600">—</span> Komplexe Pakete und Zusatzkosten</div><div className="flex gap-3"><span className="text-slate-600">—</span> Schwerfällige Baukasten-Technik</div></div></div>
               <div className="bg-[#111318] p-7 sm:p-10"><div className="mb-10 flex items-center justify-between font-mono text-xs uppercase tracking-widest text-[#DEFF9A]"><span>Geenie System</span><span>499.– CHF</span></div><div className="space-y-4 text-[#F6F4EA]"><div className="flex gap-3"><Check className="h-5 w-5 shrink-0 text-[#DEFF9A]" /> Klarer One-Pager-Fokus</div><div className="flex gap-3"><Check className="h-5 w-5 shrink-0 text-[#DEFF9A]" /> Fixer Preis, live in 7 Tagen</div><div className="flex gap-3"><Check className="h-5 w-5 shrink-0 text-[#DEFF9A]" /> Ultraschnelles High-Performance-Setup</div></div></div>
@@ -99,12 +169,12 @@ export default function StarterWebsite() {
         </section>
 
         <section id="system" className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40">
-          <div className="container mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-28"><div><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">02 / Das System</span><h2 className="mt-5 max-w-md text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">Alles, was du brauchst. Nichts, was du nicht brauchst.</h2></div><div className="max-w-3xl"><p className="text-xl leading-relaxed text-[#F6F4EA] sm:text-2xl">Wir erfinden das Rad nicht jedes Mal neu. Statt wochenlanger Konzeptphasen nutzen wir unser bewährtes High-Performance-Setup.</p><p className="mt-7 text-base leading-relaxed text-slate-400 sm:text-lg">Du bekommst eine „Digitale Visitenkarte“, die technisch auf dem neuesten Stand ist – zu einem festen Preis. Ohne versteckte Kosten.</p></div></div>
+          <div className="container mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-28"><div><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">02 / Das System</span><h2 className="mt-5 max-w-md text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">Das System dahinter.</h2></div><div className="max-w-3xl"><p className="text-xl leading-relaxed text-[#F6F4EA] sm:text-2xl">Wir erfinden das Rad nicht jedes Mal neu. Statt wochenlanger Konzeptphasen nutzen wir unser bewährtes High-Performance-Setup.</p><p className="mt-7 text-base leading-relaxed text-slate-400 sm:text-lg">Du bekommst eine „Digitale Visitenkarte“, die technisch auf dem neuesten Stand ist – zu einem festen Preis. Ohne versteckte Kosten.</p></div></div>
         </section>
 
-        <section className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40"><div className="container mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-28"><div><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">03 / Leistungsumfang</span><h2 className="mt-5 max-w-md text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">Was ist für 499.– CHF drin?</h2></div><div className="divide-y divide-[#242832] border-y border-[#242832]">{included.map((item) => <div key={item} className="flex gap-5 py-7 text-base leading-relaxed text-slate-300 sm:text-lg"><Check className="mt-1 h-5 w-5 shrink-0 text-[#DEFF9A]" strokeWidth={3} /><span>{item}</span></div>)}</div></div></section>
+        <section className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40"><div className="container mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-28"><div><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">03 / Leistungsumfang</span><h2 className="mt-5 max-w-md text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">Was ist in der Starter-Website enthalten?</h2></div><div className="divide-y divide-[#242832] border-y border-[#242832]">{included.map((item) => <div key={item} className="flex gap-5 py-7 text-base leading-relaxed text-slate-300 sm:text-lg"><Check className="mt-1 h-5 w-5 shrink-0 text-[#DEFF9A]" strokeWidth={3} /><h3 className="font-medium leading-relaxed">{item}</h3></div>)}</div></div></section>
 
-        <section className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40"><div className="container mx-auto max-w-7xl"><div className="mb-14 max-w-2xl"><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">04 / Ablauf</span><h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">In drei Schritten online.</h2></div><div className="grid gap-px border border-[#242832] bg-[#242832] md:grid-cols-3">{steps.map(([number, title, text]) => <div key={number} className="bg-[#050505] p-7 sm:p-9"><div className="mb-14 font-mono text-sm font-bold text-[#DEFF9A]">{number}</div><h3 className="text-2xl font-bold tracking-[-0.03em]">{title}</h3><p className="mt-4 text-sm leading-relaxed text-slate-400">{text}</p></div>)}</div><div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-start"><div className="flex flex-col items-center sm:items-start"><a href={starterProjectUrl} className="inline-flex min-h-12 items-center justify-center gap-3 bg-[#DEFF9A] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#050505] transition-colors hover:bg-[#cbf47d] active:scale-[0.98]">Starter-Website anfragen <ArrowRight className="h-4 w-4" /></a><span className="mt-2 text-center text-[10px] text-slate-600 sm:text-left">Unverbindliche Anfrage • Live in 7 Tagen • Keine versteckten Monats-Abos</span></div><a href={starterProjectUrl} className="inline-flex min-h-12 items-center justify-center gap-3 border border-[#242832] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#F6F4EA] transition-all hover:border-[#DEFF9A] hover:text-[#DEFF9A] active:scale-[0.98]">15-Minuten System-Check buchen <ArrowRight className="h-4 w-4" /></a></div></div></section>
+        <section className="border-b border-[#242832] px-6 py-24 sm:py-32 lg:px-12 lg:py-40"><div className="container mx-auto max-w-7xl"><div className="mb-14 max-w-2xl"><span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">04 / Ablauf</span><h2 className="mt-5 text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl">In 3 Schritten zu deiner neuen Website</h2></div><div className="grid gap-px border border-[#242832] bg-[#242832] md:grid-cols-3">{steps.map(([number, title, text]) => <div key={number} className="bg-[#050505] p-7 sm:p-9"><div className="mb-14 font-mono text-sm font-bold text-[#DEFF9A]">{number}</div><h3 className="text-2xl font-bold tracking-[-0.03em]">{title}</h3><p className="mt-4 text-sm leading-relaxed text-slate-400">{text}</p></div>)}</div><div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-start"><div className="flex flex-col items-center sm:items-start"><a href={starterProjectUrl} className="inline-flex min-h-12 items-center justify-center gap-3 bg-[#DEFF9A] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#050505] transition-colors hover:bg-[#cbf47d] active:scale-[0.98]">Starter-Website anfragen <ArrowRight className="h-4 w-4" /></a><span className="mt-2 text-center text-[10px] text-slate-600 sm:text-left">Unverbindliche Anfrage • Live in 7 Tagen • Keine versteckten Monats-Abos</span></div><a href={starterProjectUrl} className="inline-flex min-h-12 items-center justify-center gap-3 border border-[#242832] px-7 py-4 font-mono text-sm font-bold uppercase tracking-wider text-[#F6F4EA] transition-all hover:border-[#DEFF9A] hover:text-[#DEFF9A] active:scale-[0.98]">15-Minuten System-Check buchen <ArrowRight className="h-4 w-4" /></a></div></div></section>
 
         <section className="px-6 py-12 lg:px-12 lg:py-16"><div className="container mx-auto max-w-7xl"><p className="max-w-5xl text-[11px] leading-relaxed text-slate-500">Angebot gilt für eine standardisierte One-Pager-Website auf Basis unserer performanten Vorlagen. Texte, Logo und Bildmaterial werden vom Kunden digital angeliefert. Erweiterungen wie zusätzliche Unterseiten, komplexes Tracking oder Google-Ads-Kampagnen sind nicht im Preis inbegriffen, können aber jederzeit modular hinzugebucht werden.</p></div></section>
       </div>

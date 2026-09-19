@@ -228,6 +228,7 @@ export default defineConfig({
         datenschutz: path.resolve(import.meta.dirname, "client/datenschutz/index.html"),
         agb: path.resolve(import.meta.dirname, "client/agb/index.html"),
         showroom: path.resolve(import.meta.dirname, "client/showroom/index.html"),
+        starterWebsite: path.resolve(import.meta.dirname, "client/starter-website/index.html"),
       },
     },
   },
