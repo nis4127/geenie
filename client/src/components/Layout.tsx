@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { 
   Menu, 
-  X, 
-  ChevronDown
+  X
 } from "lucide-react";
 import WhatsAppPopup from "./WhatsAppPopup";
 
@@ -11,73 +10,73 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+const navLinks = [
+  { name: "Starter-Website", href: "/starter-website" },
+  { name: "Kreation & Umsetzung", href: "/kreation" },
+  { name: "Strategie & Consulting", href: "/" },
+  { name: "Print Showroom", href: "/showroom" },
+  { name: "Über uns", href: "/ueber-uns" },
+  { name: "Kontakt", href: "/projektanfrage" },
+] as const;
+
 export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMenuOpen] = useState(false);
   const [location] = useLocation();
   const [impressumOpen, setImpressumOpen] = useState(false);
   const [datenschutzOpen, setDatenschutzOpen] = useState(false);
   const [agbOpen, setAgbOpen] = useState(false);
-
-
-  const navLinks = [
-    { name: "Strategie & Consulting", href: "/" },
-    { name: "Kreation & Umsetzung", href: "/kreation" },
-    { name: "Print Showroom", href: "/showroom" },
-    { name: "Über uns", href: "/ueber-uns" },
-    { name: "Starter-Website", href: "/starter-website" },
-    { name: "Kontakt", href: "/projektanfrage" },
-  ];
+  const currentPath = location.split(/[?#]/)[0].replace(/\/+$/, "") || "/";
 
   return (
     <div className="min-h-screen bg-[#050505] text-[#F6F4EA] flex flex-col selection:bg-[#DEFF9A] selection:text-[#050505]">
       {/* Navigation Header */}
       <header className="sticky top-0 z-50 bg-[#050505] border-b border-[#242832] backdrop-blur-md bg-opacity-95">
         <div className="container mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-4 cursor-pointer group">
-              <img 
-                src="/assets/logo-primaer-schwarz-weiss.svg" 
-                alt="Geenie Logo" 
-                className="w-auto h-12 object-contain" 
-              />
-            </a>
-          </Link>
+          <a href="/" aria-label="Geenie Media – Startseite" className="flex items-center gap-4 cursor-pointer group">
+            <img
+              src="/assets/logo-primaer-schwarz-weiss.svg"
+              alt="Geenie Media Logo"
+              className="w-auto h-12 object-contain"
+            />
+          </a>
 
-          <nav className="hidden lg:flex items-center gap-12 text-[13px] font-bold uppercase tracking-widest">
+          <nav
+            id="main-navigation"
+            aria-label="Hauptnavigation"
+            className={`${mobileMenuOpen ? "absolute inset-x-0 top-full z-50 flex h-[calc(100dvh-97px)]" : "hidden"} flex-col gap-0 overflow-y-auto border-t border-[#242832] bg-[#050505] p-6 text-lg font-bold uppercase tracking-widest lg:static lg:flex lg:h-auto lg:flex-row lg:items-center lg:gap-5 xl:gap-8 lg:overflow-visible lg:border-0 lg:bg-transparent lg:p-0 lg:text-[11px] xl:text-[13px]`}
+          >
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a className={`transition-all hover:text-[#DEFF9A] ${location === link.href ? 'text-[#DEFF9A]' : 'text-slate-500'}`}>
-                  {link.name}
-                </a>
-              </Link>
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={currentPath === link.href ? "page" : undefined}
+                onClick={() => setMenuOpen(false)}
+                className={`min-h-12 border-b border-[#242832] py-4 text-left transition-all hover:text-[#DEFF9A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DEFF9A] focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] lg:min-h-0 lg:border-0 lg:py-0 ${
+                  currentPath === link.href ? "text-[#DEFF9A]" : "text-slate-500"
+                } ${
+                  link.href === "/projektanfrage"
+                    ? `lg:border lg:border-[#DEFF9A]/60 lg:px-4 lg:py-3 lg:hover:bg-[#DEFF9A] lg:hover:text-[#050505] ${currentPath === link.href ? "lg:bg-[#DEFF9A] lg:text-[#050505]" : "lg:text-[#F6F4EA]"}`
+                    : ""
+                }`}
+              >
+                {link.name}
+              </a>
             ))}
           </nav>
 
-
           {/* Mobile Menu Trigger */}
           <button 
+            type="button"
             onClick={() => setMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#F6F4EA] hover:text-[#DEFF9A]"
+            aria-label={mobileMenuOpen ? "Hauptnavigation schließen" : "Hauptnavigation öffnen"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="main-navigation"
+            className="lg:hidden p-2 text-[#F6F4EA] hover:text-[#DEFF9A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DEFF9A]"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </header>
-
-      {/* Mobile Navigation Drawer */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[65px] z-40 bg-[#050505] text-[#F6F4EA] flex flex-col p-6 lg:hidden border-t border-[#242832] animate-in fade-in slide-in-from-top duration-200">
-          <div className="flex flex-col gap-6 text-lg font-medium">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a onClick={() => setMenuOpen(false)} className={`text-left py-2 border-b border-[#242832] hover:text-[#DEFF9A] ${location === link.href ? 'text-[#DEFF9A]' : ''}`}>
-                  {link.name}
-                </a>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
 
       <main className="flex-grow">
         {children}
