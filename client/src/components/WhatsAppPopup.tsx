@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
 import { trackAnalytics } from "../lib/analytics";
 
 const WHATSAPP_URL =
@@ -64,8 +64,20 @@ export default function WhatsAppPopup() {
         </button>
 
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-[#050505]">
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          <div className="relative h-11 w-11 shrink-0 rounded-full bg-[#25D366] p-0.5">
+            <img
+              src="/assets/whatsapp-avatar.webp"
+              alt="Yannis Denzler von Geenie Media"
+              width="160"
+              height="160"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full rounded-full object-cover"
+            />
+            <span
+              className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[#111318] bg-[#25D366]"
+              aria-label="Jetzt erreichbar"
+            />
           </div>
           <div className="min-w-0">
             <p className="text-[10px] font-mono font-bold uppercase tracking-[0.16em] text-[#DEFF9A]">
