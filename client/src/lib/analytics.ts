@@ -35,6 +35,18 @@ export function trackAnalytics(
   if (!hasAnalyticsConsent()) return;
 
   window.umami?.track(eventName, props);
+  window.gtag?.("event", eventName, props ?? {});
+}
+
+export function trackPageView(path: string): void {
+  if (typeof window === "undefined") return;
+  if (!hasAnalyticsConsent()) return;
+
+  window.gtag?.("event", "page_view", {
+    page_path: path,
+    page_location: window.location.href,
+    page_title: document.title,
+  });
 }
 
 export function hasAnalyticsConsent(): boolean {
@@ -58,7 +70,10 @@ export function loadGoogleAnalyticsScript(): Promise<void> {
       window.dataLayer?.push(args);
     };
     window.gtag("js", new Date());
-    window.gtag("config", GOOGLE_ANALYTICS_ID, { anonymize_ip: true });
+    window.gtag("config", GOOGLE_ANALYTICS_ID, {
+      anonymize_ip: true,
+      send_page_view: false,
+    });
 
     const script = document.createElement("script");
     script.id = GOOGLE_ANALYTICS_SCRIPT_ID;

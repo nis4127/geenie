@@ -35,6 +35,8 @@ export default function Layout({ children }: LayoutProps) {
             <img
               src="/assets/logo-primaer-schwarz-weiss.svg"
               alt="Geenie Media Logo"
+              width="150"
+              height="48"
               className="w-auto h-12 object-contain"
             />
           </a>
@@ -91,6 +93,8 @@ export default function Layout({ children }: LayoutProps) {
               <img 
                 src="/assets/logo-primaer-schwarz-weiss.svg" 
                 alt="Geenie Logo" 
+                width="125"
+                height="40"
                 className="w-auto h-10 object-contain" 
               />
             </div>
@@ -104,7 +108,7 @@ export default function Layout({ children }: LayoutProps) {
               <a href="https://api.whatsapp.com/send/?phone=41799253192&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="hover:text-[#DEFF9A] transition-colors">WhatsApp</a>
             </div>
             
-            <div className="text-[10px] font-mono text-slate-600">
+            <div className="text-[10px] font-mono text-slate-400">
               &copy; 2024 Geenie Media. Alle Rechte vorbehalten.
             </div>
           </div>

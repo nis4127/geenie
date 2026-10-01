@@ -7,6 +7,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import CookieConsent from "./components/CookieConsent";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { SystemCheckProvider } from "./contexts/SystemCheckContext";
+import { trackPageView } from "./lib/analytics";
 const Home = lazy(() => import("./pages/Home"));
 const Kreation = lazy(() => import("./pages/Kreation"));
 const Projektanfrage = lazy(() => import("./pages/Projektanfrage"));
@@ -23,6 +24,8 @@ function ScrollToTop() {
   useEffect(() => {
     const currentPath = location.split("#")[0];
     const hasHashTarget = typeof window !== "undefined" && window.location.hash.length > 1;
+
+    trackPageView(currentPath);
 
     // Keep deliberate in-page anchors, such as /showroom#gm-category-01,
     // at their target instead of overriding the browser's anchor behavior.
