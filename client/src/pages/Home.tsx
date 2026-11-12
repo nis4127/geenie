@@ -72,12 +72,12 @@ export default function Home() {
             </div>
 
             <h1 className="font-bold text-5xl sm:text-6xl lg:text-8xl tracking-tight leading-[0.9] mb-8 uppercase">
-              Dein Können ist stark. <br />
-              <span className="text-[#DEFF9A]">Dein Auftritt bremst.</span>
+              Webdesign für KMU<br />
+              <span className="text-[#DEFF9A]">in Muttenz &amp; Basel.</span>
             </h1>
 
             <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mb-12 font-medium">
-              Geenie Media aus Muttenz baut digitale Systeme, die echte Qualität sichtbar machen und Premiumpreise legitimieren. Keine Agentur-Floskeln. Nur präzise Systemlogik für messbares Wachstum – für KMU in Basel und der ganzen Schweiz.
+              Geenie Media aus Muttenz entwickelt schnelle Websites, klare Markenauftritte und digitale Systeme für Handwerksbetriebe und regionale KMU in Basel-Landschaft und der ganzen Schweiz. Weniger Marketing. Mehr System.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
@@ -185,6 +185,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 3. Local relevance section */}
+      <section id="local-services" className="py-24 bg-[#050505] border-b border-[#242832]">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <span className="text-xs font-mono text-[#DEFF9A] tracking-[0.2em] uppercase font-bold">Muttenz &bull; Basel &bull; Schweiz</span>
+              <h2 className="text-4xl sm:text-5xl font-bold mt-4 uppercase leading-tight">Digitale Sichtbarkeit für regionale Unternehmen.</h2>
+            </div>
+            <div className="lg:col-span-7 space-y-6 text-slate-400 leading-relaxed font-medium">
+              <p>Als Webdesign- und Digitalagentur in Muttenz unterstützen wir Unternehmen, die online klarer gefunden und verstanden werden wollen. Wir verbinden Strategie, Branding, Webentwicklung und messbare Kontaktwege zu einem digitalen System.</p>
+              <p>Unser Angebot richtet sich an Handwerksbetriebe, regionale Dienstleister und KMU in Muttenz, Basel und der Schweiz. Je nach Ausgangslage entwickeln wir eine neue Website, schärfen die Positionierung, strukturieren Inhalte oder bauen eine digitale Kundenreise mit Kontaktformular, Maps-Anbindung und Tracking auf.</p>
+              <div className="flex flex-wrap gap-x-8 gap-y-3 pt-2 text-sm">
+                <a href="/kreation" className="text-[#DEFF9A] hover:text-white transition-colors underline underline-offset-4">Webdesign für KMU ansehen <ArrowRight className="inline w-4 h-4 ml-1" /></a>
+                <a href="/showroom" className="text-[#DEFF9A] hover:text-white transition-colors underline underline-offset-4">Print- und Markenmaterial ansehen <ArrowRight className="inline w-4 h-4 ml-1" /></a>
+                <a href="/starter-website" className="text-[#DEFF9A] hover:text-white transition-colors underline underline-offset-4">Starter-Website für CHF 499.– <ArrowRight className="inline w-4 h-4 ml-1" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Positioning Section */}
       <section id="positioning" className="py-20 bg-[#050505] border-b border-[#242832] relative overflow-hidden">
         <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
@@ -284,7 +305,7 @@ export default function Home() {
             <div className="bg-[#050505] p-12 flex flex-col h-full transition-all group">
               <div className="mb-12">
                 <span className="text-[10px] font-mono text-slate-400 uppercase tracking-[0.3em] font-bold">Phase 01</span>
-                <h3 className="text-3xl font-bold mt-4 text-[#F6F4EA] uppercase tracking-tight">System Design</h3>
+                <h3 className="text-3xl font-bold mt-4 text-[#F6F4EA] uppercase tracking-tight">Strategie &amp; Positionierung</h3>
               </div>
               <div className="space-y-4 flex-grow">
                 <div className="flex items-center gap-3 text-slate-400 font-medium">
@@ -306,7 +327,7 @@ export default function Home() {
             <div className="bg-[#050505] p-12 flex flex-col h-full transition-all group">
               <div className="mb-12">
                 <span className="text-[10px] font-mono text-slate-400 uppercase tracking-[0.3em] font-bold">Phase 02</span>
-                <h3 className="text-3xl font-bold mt-4 text-[#F6F4EA] uppercase tracking-tight">System Build</h3>
+                <h3 className="text-3xl font-bold mt-4 text-[#F6F4EA] uppercase tracking-tight">Webdesign &amp; Webentwicklung</h3>
               </div>
               <div className="space-y-4 flex-grow">
                 <div className="flex items-center gap-3 text-slate-400 font-medium">
@@ -325,7 +346,7 @@ export default function Home() {
             <div className="bg-[#050505] p-12 flex flex-col h-full transition-all group">
               <div className="mb-12">
                 <span className="text-[10px] font-mono text-slate-400 uppercase tracking-[0.3em] font-bold">Phase 03</span>
-                <h3 className="text-3xl font-bold mt-4 text-[#F6F4EA] uppercase tracking-tight">System Growth</h3>
+                <h3 className="text-3xl font-bold mt-4 text-[#F6F4EA] uppercase tracking-tight">Digitale Systeme &amp; Lead-Generierung</h3>
               </div>
               <div className="space-y-4 flex-grow">
                 <div className="flex items-center gap-3 text-slate-400 font-medium">

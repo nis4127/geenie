@@ -85,8 +85,8 @@ export default function Showroom() {
           <div className="gm-hero-shade" />
           <div className="gm-hero-content">
             <p className="gm-kicker gm-kicker--light">GEENIE MEDIA / DIGITALER SHOWROOM</p>
-            <h1>Material, das den<br /><span>ersten Eindruck</span><br />trägt.</h1>
-            <p>Von der Präsentationsmappe bis zum Hardcover: Printprodukte, die Ihre Marke nicht nur zeigen, sondern spürbar machen.</p>
+            <h1>Printdesign für<br /><span>Muttenz &amp; Basel.</span></h1>
+            <p>Von der Präsentationsmappe bis zum Hardcover: Markenmaterial, das Ihre Leistungen sichtbar macht und den ersten Eindruck bei Kunden trägt.</p>
             <a className="gm-text-cta" href="#gm-category-01">Produktwelten entdecken <ArrowDownRight size={17} /></a>
           </div>
           <div className="gm-hero-index">01—05 / ARCHIVE<br /><span>WENIGER MARKETING.<br />MEHR SYSTEM.</span></div>
@@ -97,11 +97,38 @@ export default function Showroom() {
           <div className="gm-intro-copy">
             <p className="gm-kicker">DAS PRINZIP</p>
             <h2>Ein System für alles,<br /><span>was Ihre Marke berührt.</span></h2>
-            <p>Wir denken Print nicht als einzelne Artikel, sondern als zusammenhängende Materialwelt. Jede Oberfläche, jedes Format und jede Veredelung folgt Ihrem Auftritt — präzise geplant, hochwertig produziert.</p>
+            <p>Wir denken Print nicht als einzelne Artikel, sondern als zusammenhängende Materialwelt. Für regionale Dienstleister, Handwerksbetriebe und KMU in Muttenz, Basel und der Schweiz planen wir Oberfläche, Format und Veredelung passend zu Ihrem Auftritt.</p>
             <Link href="/projektanfrage"><a className="gm-text-cta gm-text-cta--dark">Projekt besprechen <ArrowUpRight size={15} /></a></Link>
           </div>
           <div className="gm-intro-paper"><img src={`${base}/paper-texture.webp`} alt="Warme Papierlagen mit sichtbarer Materialstruktur" loading="lazy" decoding="async" width={2304} height={1536} /></div>
           <div className="gm-intro-detail"><img src={`${base}/system-detail.webp`} alt="Präzise arrangierte Printmaterialien" loading="lazy" decoding="async" width={1664} height={2080} /><span>01—05 / TACTILE SYSTEM</span></div>
+        </section>
+
+        <section className="gm-project-intro" aria-labelledby="gm-project-title">
+          <div>
+            <p className="gm-kicker">PROJEKTE &amp; ANWENDUNGEN</p>
+            <h2 id="gm-project-title">Material, das im<br /><span>Geschäft wirkt.</span></h2>
+          </div>
+          <div className="gm-project-intro__copy">
+            <p>Gute Printprodukte sind kein Selbstzweck. Sie helfen beim Kundentermin, strukturieren Angebote und machen die Qualität eines Unternehmens greifbar.</p>
+            <div className="gm-project-grid">
+              <article>
+                <span>01 / HANDWERK &amp; DIENSTLEISTUNG</span>
+                <h3>Präsentationsmappen für Offerten</h3>
+                <p>Ein klar aufgebautes Set aus Mappe, Angebotsunterlagen und Visitenkarten für professionelle Kundentermine.</p>
+              </article>
+              <article>
+                <span>02 / REGIONALE MARKEN</span>
+                <h3>Visitenkarten &amp; Papeterie</h3>
+                <p>Durchgängige Geschäftsdrucksachen, die den Markenauftritt vom ersten Kontakt bis zur Offerte konsistent halten.</p>
+              </article>
+              <article>
+                <span>03 / PREMIUM-AUFTRITT</span>
+                <h3>Broschüren &amp; Hardcover</h3>
+                <p>Hochwertige Publikationen für Referenzen, Produkte und Leistungen, die auch haptisch im Gedächtnis bleiben.</p>
+              </article>
+            </div>
+          </div>
         </section>
 
         <section className="gm-archive">
