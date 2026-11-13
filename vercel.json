@@ -7,5 +7,7 @@
     { "source": "/agb", "destination": "/agb/index.html" },
     { "source": "/showroom", "destination": "/showroom/index.html" },
     { "source": "/starter-website", "destination": "/starter-website/index.html" }
+    ,{ "source": "/musterdruck", "destination": "/musterdruck/index.html" }
+    ,{ "source": "/danke-musterdruck", "destination": "/danke-musterdruck/index.html" }
   ]
 }

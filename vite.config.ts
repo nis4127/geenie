@@ -229,6 +229,8 @@ export default defineConfig({
         agb: path.resolve(import.meta.dirname, "client/agb/index.html"),
         showroom: path.resolve(import.meta.dirname, "client/showroom/index.html"),
         starterWebsite: path.resolve(import.meta.dirname, "client/starter-website/index.html"),
+        musterdruck: path.resolve(import.meta.dirname, "client/musterdruck/index.html"),
+        dankeMusterdruck: path.resolve(import.meta.dirname, "client/danke-musterdruck/index.html"),
       },
     },
   },
