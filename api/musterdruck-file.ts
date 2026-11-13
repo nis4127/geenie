@@ -1,29 +1,32 @@
 import { get } from "@vercel/blob";
 
-function json(body: unknown, status = 200) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { "Content-Type": "application/json; charset=utf-8" },
-  });
-}
+type NodeRequest = {
+  method?: string;
+  url?: string;
+};
 
-export default async function handler(request: Request) {
-  if (request.method !== "GET") return json({ error: "Method not allowed" }, 405);
-  const pathname = new URL(request.url).searchParams.get("pathname");
-  if (!pathname || !pathname.startsWith("musterdruck/")) return json({ error: "Invalid pathname" }, 400);
+type NodeResponse = {
+  status: (code: number) => NodeResponse;
+  setHeader: (name: string, value: string) => NodeResponse;
+  end: (body?: string | Uint8Array) => void;
+};
+
+export default async function handler(req: NodeRequest, res: NodeResponse) {
+  if (req.method !== "GET") return res.status(405).setHeader("Content-Type", "application/json").end(JSON.stringify({ error: "Method not allowed" }));
+  const pathname = new URL(req.url || "/", "https://www.geenie-media.ch").searchParams.get("pathname");
+  if (!pathname || !pathname.startsWith("musterdruck/")) return res.status(400).setHeader("Content-Type", "application/json").end(JSON.stringify({ error: "Invalid pathname" }));
 
   try {
     const result = await get(pathname, { access: "private" });
-    if (!result || result.statusCode !== 200) return new Response("Not found", { status: 404 });
-    return new Response(result.stream, {
-      headers: {
-        "Content-Type": result.blob.contentType || "application/pdf",
-        "Content-Disposition": `attachment; filename="${encodeURIComponent(result.blob.pathname.split("/").pop() || "druckdaten.pdf")}"`,
-        "Cache-Control": "private, no-store",
-        "X-Content-Type-Options": "nosniff",
-      },
-    });
+    if (!result || result.statusCode !== 200) return res.status(404).end("Not found");
+    res.status(200)
+      .setHeader("Content-Type", result.blob.contentType || "application/pdf")
+      .setHeader("Content-Disposition", `attachment; filename="${encodeURIComponent(result.blob.pathname.split("/").pop() || "druckdaten.pdf")}"`)
+      .setHeader("Cache-Control", "private, no-store")
+      .setHeader("X-Content-Type-Options", "nosniff");
+    const buffer = Buffer.from(await result.stream.arrayBuffer());
+    return res.end(buffer);
   } catch {
-    return new Response("Not found", { status: 404 });
+    return res.status(404).end("Not found");
   }
 }
