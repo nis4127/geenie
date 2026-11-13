@@ -96,7 +96,7 @@ function MusterdruckThankYou() {
           <div className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-[#FFD400] text-[#050505]"><CheckCircle2 className="h-8 w-8" /></div>
           <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#FFD400]">Musteranfrage erhalten</span>
           <h1 className="mt-4 text-4xl font-bold uppercase leading-none sm:text-6xl">Ihr Muster ist<br /><span className="text-[#FFD400]">auf dem Weg.</span></h1>
-          <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-slate-400">Vielen Dank. Wir prüfen Ihre Angaben und melden uns mit dem nächsten Schritt sowie der unverbindlichen Staffel-Offerte.</p>
+          <p className="mx-auto mt-7 w-full max-w-[36rem] text-base leading-relaxed text-slate-400">Vielen Dank. Wir prüfen Ihre Angaben und melden uns mit dem nächsten Schritt sowie der unverbindlichen Staffel-Offerte.</p>
           <a href="/" className="mt-9 inline-flex min-h-12 items-center gap-3 bg-[#FFD400] px-6 py-4 font-mono text-xs font-bold uppercase tracking-widest text-[#050505] transition-transform hover:-translate-y-1">Zur Startseite <ArrowRight className="h-4 w-4" /></a>
         </div>
       </main>
