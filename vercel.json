@@ -6,6 +6,11 @@
       "source": "/broschueren-musterdruck",
       "destination": "/musterdruck",
       "permanent": true
+    },
+    {
+      "source": "/broschueren-musterdruck/",
+      "destination": "/musterdruck",
+      "permanent": true
     }
   ],
   "rewrites": [
