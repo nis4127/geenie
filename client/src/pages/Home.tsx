@@ -122,6 +122,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Print lead magnet */}
+      <section className="py-12 sm:py-16 bg-[#DEFF9A] text-[#050505] border-b border-[#242832]">
+        <div className="container mx-auto px-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div className="max-w-3xl">
+            <span className="text-[10px] font-mono tracking-[0.2em] uppercase font-bold opacity-70">Print-Muster für Ihre Entscheidung</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 uppercase leading-tight">Broschüre zuerst fühlen.</h2>
+            <p className="mt-3 text-base sm:text-lg font-medium max-w-2xl">Fordern Sie kostenlos ein persönliches Broschüren-Muster an – inklusive unverbindlicher Staffel-Offerte.</p>
+          </div>
+          <a href="/musterdruck" className="shrink-0 inline-flex min-h-12 items-center justify-center gap-3 border border-[#050505] bg-[#050505] px-6 py-4 text-center font-mono text-sm font-bold uppercase tracking-wider text-[#DEFF9A] transition-all hover:bg-transparent hover:text-[#050505] active:scale-[0.98]">
+            Kostenlosen Musterdruck konfigurieren <ArrowRight className="w-5 h-5" />
+          </a>
+        </div>
+      </section>
+
       {/* 2. Problem Section */}
       <section id="problem" className="py-20 bg-[#111318] border-b border-[#242832] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 mix-blend-screen pointer-events-none">

@@ -148,7 +148,10 @@ export default function Showroom() {
 
         <section className="gm-showroom-cta">
           <div><p className="gm-kicker gm-kicker--light">DER NÄCHSTE SCHRITT</p><h2>Was soll Ihre Marke<br /><span>haptisch erzählen?</span></h2></div>
-          <Link href="/projektanfrage"><a className="gm-button">Projekt anfragen <ArrowRight size={16} /></a></Link>
+          <div className="gm-showroom-cta__actions">
+            <a className="gm-button gm-button--primary" href="/musterdruck">Kostenlosen Musterdruck anfordern <ArrowRight size={16} /></a>
+            <Link href="/projektanfrage"><a className="gm-button gm-button--secondary">Projekt anfragen <ArrowRight size={16} /></a></Link>
+          </div>
         </section>
       </div>
     </Layout>

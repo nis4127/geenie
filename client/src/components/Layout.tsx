@@ -15,6 +15,7 @@ const navLinks = [
   { name: "Kreation & Umsetzung", href: "/kreation" },
   { name: "Strategie & Consulting", href: "/" },
   { name: "Print Showroom", href: "/showroom" },
+  { name: "Kostenloser Musterdruck", href: "/musterdruck" },
   { name: "Über uns", href: "/ueber-uns" },
   { name: "Kontakt", href: "/projektanfrage" },
 ] as const;
