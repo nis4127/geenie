@@ -1,6 +1,13 @@
 {
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install --frozen-lockfile",
+  "redirects": [
+    {
+      "source": "/broschueren-musterdruck",
+      "destination": "/musterdruck",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/ueber-uns", "destination": "/ueber-uns/index.html" },
     { "source": "/kreation", "destination": "/kreation/index.html" },
