@@ -1,4 +1,5 @@
 {
+  "outputDirectory": "dist/public",
   "rewrites": [
     { "source": "/ueber-uns", "destination": "/ueber-uns/index.html" },
     { "source": "/kreation", "destination": "/kreation/index.html" },
