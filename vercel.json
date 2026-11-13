@@ -1,5 +1,6 @@
 {
   "outputDirectory": "dist/public",
+  "installCommand": "pnpm install --frozen-lockfile",
   "rewrites": [
     { "source": "/ueber-uns", "destination": "/ueber-uns/index.html" },
     { "source": "/kreation", "destination": "/kreation/index.html" },
