@@ -203,9 +203,17 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+export default defineConfig(({ command }) => {
+  const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
-export default defineConfig({
+  // The Manus runtime is only needed by the local development environment.
+  // It injects a large helper bundle into every HTML document, which should
+  // never be sent to production visitors or search crawlers.
+  if (command === "serve") {
+    plugins.push(vitePluginManusRuntime());
+  }
+
+  return {
   plugins,
   resolve: {
     alias: {
@@ -252,4 +260,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  };
 });
