@@ -39,6 +39,8 @@
 .gm-project-grid article > span { color:#DEFF9A; font-family:'IBM Plex Mono',monospace; font-size:8px; line-height:1.4; letter-spacing:.12em; }
 .gm-project-grid h3 { margin:28px 0 12px; color:#F6F4EA; font-size:22px; line-height:1; }
 .gm-project-grid p { margin:0; color:#94A3B8; font-size:13px; line-height:1.6; }
+.gm-project-link { display:inline-flex; align-items:center; gap:8px; margin-top:22px; color:#DEFF9A; font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; transition:color .2s ease,gap .2s ease; }
+.gm-project-link:hover { color:#F6F4EA; gap:12px; }
 .gm-archive { width:min(1320px,calc(100% - 96px)); margin:0 auto; padding:105px 0 130px; display:grid; grid-template-columns:195px 1fr; gap:8%; }
 .gm-archive-nav { position:sticky; top:98px; align-self:start; }
 .gm-archive-nav nav { border-top:1px solid #242832; }

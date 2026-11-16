@@ -515,6 +515,14 @@ export default function Home() {
               <div className="mt-12 pt-8 border-t border-[#242832]">
                 <span className="block font-bold text-sm text-[#F6F4EA] uppercase tracking-tight">Joël Kunz</span>
                 <span className="block text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Produktionsleiter, Balero</span>
+                <a
+                  href="/assets/balero-booklet-geenie-media.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2 mt-6 text-xs font-mono uppercase tracking-wider text-[#DEFF9A] hover:text-white transition-colors"
+                >
+                  <FileText className="w-4 h-4" /> Referenz-Booklet ansehen (PDF)
+                </a>
               </div>
             </div>
 

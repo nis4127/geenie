@@ -126,6 +126,9 @@ export default function Showroom() {
                 <span>03 / PREMIUM-AUFTRITT</span>
                 <h3>Broschüren &amp; Hardcover</h3>
                 <p>Hochwertige Publikationen für Referenzen, Produkte und Leistungen, die auch haptisch im Gedächtnis bleiben.</p>
+                <a className="gm-project-link" href="/assets/balero-booklet-geenie-media.pdf" target="_blank" rel="noopener">
+                  Bâléro-Booklet ansehen <ArrowUpRight size={14} />
+                </a>
               </article>
             </div>
           </div>
