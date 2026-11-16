@@ -104,7 +104,7 @@ export default function Layout({ children }: LayoutProps) {
               <button onClick={() => setImpressumOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Impressum</button>
               <button onClick={() => setDatenschutzOpen(true)} className="hover:text-[#DEFF9A] transition-colors">Datenschutz</button>
               <a href="/agb" aria-current={currentPath === "/agb" ? "page" : undefined} className="hover:text-[#DEFF9A] transition-colors">AGB</a>
-              <a href="https://www.linkedin.com/in/yannis-k-denzler/" target="_blank" rel="noopener noreferrer" className="hover:text-[#DEFF9A] transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/company/geenie-media/" target="_blank" rel="noopener noreferrer" className="hover:text-[#DEFF9A] transition-colors">LinkedIn</a>
               <a href="https://instagram.com/geenie.media" target="_blank" rel="noopener noreferrer" className="hover:text-[#DEFF9A] transition-colors">Instagram</a>
               <a href="https://api.whatsapp.com/send/?phone=41799253192&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="hover:text-[#DEFF9A] transition-colors">WhatsApp</a>
             </div>
