@@ -61,6 +61,8 @@ export default function StarterWebsite() {
       image: starterOgImage,
       description: "Standardisierte High-Performance One-Pager Website zum Festpreis von CHF 499.-",
       brand: { "@type": "Brand", name: "Geenie Media" },
+      seller: { "@id": "https://www.geenie-media.ch/#organization" },
+      mainEntityOfPage: { "@id": "https://www.geenie-media.ch/starter-website#webpage" },
       offers: {
         "@type": "Offer",
         priceCurrency: "CHF",
