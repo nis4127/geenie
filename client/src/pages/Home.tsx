@@ -545,6 +545,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="faq" className="border-b border-[#242832] bg-[#050505] py-24 sm:py-32">
+        <div className="container mx-auto max-w-5xl px-6">
+          <div className="mb-12 max-w-2xl">
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#DEFF9A]">FAQ / Häufige Fragen</span>
+            <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">Klarheit vor dem ersten Gespräch.</h2>
+          </div>
+          <div className="divide-y divide-[#242832] border-y border-[#242832]">
+            <details className="group py-6">
+              <summary className="cursor-pointer list-none pr-8 text-xl font-bold text-[#F6F4EA] marker:hidden">Was macht Geenie Media?</summary>
+              <p className="mt-4 max-w-3xl leading-relaxed text-slate-400">Geenie Media entwickelt schnelle Websites, klare Markenauftritte und digitale Systeme für Handwerksbetriebe, regionale Dienstleister und KMU.</p>
+            </details>
+            <details className="group py-6">
+              <summary className="cursor-pointer list-none pr-8 text-xl font-bold text-[#F6F4EA] marker:hidden">Für welche Unternehmen arbeitet Geenie Media?</summary>
+              <p className="mt-4 max-w-3xl leading-relaxed text-slate-400">Geenie Media arbeitet vor allem für Handwerksbetriebe, regionale Dienstleister und KMU in Muttenz, Basel, Basel-Landschaft und der Schweiz.</p>
+            </details>
+            <details className="group py-6">
+              <summary className="cursor-pointer list-none pr-8 text-xl font-bold text-[#F6F4EA] marker:hidden">Welche digitalen Leistungen bietet Geenie Media an?</summary>
+              <p className="mt-4 max-w-3xl leading-relaxed text-slate-400">Zum Angebot gehören Webdesign, Webentwicklung, strategische Positionierung, Branding, Printumsetzung und digitale Kontaktwege wie Formulare, Maps-Anbindung und Tracking.</p>
+            </details>
+            <details className="group py-6">
+              <summary className="cursor-pointer list-none pr-8 text-xl font-bold text-[#F6F4EA] marker:hidden">Wie kann ich ein Projekt bei Geenie Media starten?</summary>
+              <p className="mt-4 max-w-3xl leading-relaxed text-slate-400">Du kannst eine unverbindliche Projektanfrage senden. In einem kurzen System-Check klären wir Ausgangslage, Ziel und den passenden nächsten Schritt.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-32 bg-[#111318] relative overflow-hidden border-b border-[#242832]">
         <div className="absolute inset-0 opacity-20 mix-blend-screen pointer-events-none">
