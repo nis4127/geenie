@@ -72,7 +72,9 @@ export function loadGoogleAnalyticsScript(): Promise<void> {
     window.gtag("js", new Date());
     window.gtag("config", GOOGLE_ANALYTICS_ID, {
       anonymize_ip: true,
-      send_page_view: false,
+      // The script is loaded only after consent. Let GA4 record the current
+      // page immediately instead of losing the first view in the SPA.
+      send_page_view: true,
     });
 
     const script = document.createElement("script");
